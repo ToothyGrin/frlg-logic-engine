@@ -1,0 +1,36 @@
+{
+  "towns": [
+    {
+      "name": "Pallet Town",
+      "reqToEnter": [
+        "canAccessRoute1",
+        { "AND": ["canAccessRoute21", "hasSurf"] }
+      ],
+      "poi": [],
+      "borders": ["Route 1", "Route 21"]
+    },
+    {
+      "name": "Viridian City",
+      "reqToEnter": ["canAccessRoute2West", "canAccessRoute1"],
+      "poi": ["moveTutor"],
+      "borders": ["Route 1", "Route 2", "Route 22"]
+    },
+    {
+      "name": "Pewter City",
+      "reqToEnter": ["canAccessRoute2West", "canAccessRoute3"],
+      "poi": ["Old Amber Scientist"],
+      "borders": ["Route 2", "Route 3"]
+    },
+    {
+      "name": "Cerulean City",
+      "reqToEnter": [
+        "canAccessRoute4East",
+        "canAccessRoute5",
+        { "AND": ["canAccessRoute9", "hasCut"] },
+        "canAccessRoute24"
+      ],
+      "poi": ["Jynx Trader"],
+      "borders": ["Route 4 East", "Route 5", "Route 9", "Route 24"]
+    }
+  ]
+}

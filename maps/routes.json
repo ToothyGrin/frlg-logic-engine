@@ -1,0 +1,96 @@
+{
+  "routes": [
+    {
+      "name": "Route 1",
+      "reqToEnter": ["canAccessPalletTown", "canAccessViridianCity"],
+      "poi": [],
+      "borders": ["Pallet Town", "Viridian City"]
+    },
+    {
+      "name": "Route 2 West",
+      "reqToEnter": [
+        "canAccessViridianCity",
+        "canAccessPewterCity",
+        { "AND": ["canAccessRoute2East", "hasCut"] }
+      ],
+      "poi": [],
+      "borders": ["Viridian City", "Pewter City"]
+    },
+    {
+      "name": "Route 2 East",
+      "reqToEnter": [
+        "canAccessDiglettCave",
+        { "AND": ["canAccessRoute2West", "hasCut"] }
+      ],
+      "poi": ["Mr. Mime Trader"],
+      "borders": ["Pallet Town", "Viridian City"]
+    },
+    {
+      "name": "Route 3",
+      "reqToEnter": [
+        {
+          "AND": ["hasBoulderBadge", "canAccessPewterCity"]
+        },
+        "canAccessRoute4West"
+      ],
+      "poi": [],
+      "borders": ["Pewter City", "Route 4"]
+    },
+    {
+      "name": "Route 4 West",
+      "reqToEnter": ["canAccessRoute3", "canAccessMtMoon"],
+      "poi": ["Magikarp Salesman"],
+      "borders": ["Route 3", "Mt. Moon"]
+    },
+    {
+      "name": "Route 4 East",
+      "reqToEnter": ["canAccessMtMoon", "canAccessCeruleanCity"],
+      "poi": [],
+      "borders": ["Mt. Moon", "Cerulean City"]
+    },
+    {
+      "name": "Route 5",
+      "reqToEnter": [
+        { "AND": ["canAccessCeruleanCity", "hasCascadeBadge"] },
+        { "AND": ["canAccessSaffronCity", "hasTea"] },
+        "canAccessUnderground56"
+      ],
+      "poi": ["Day Care"],
+      "borders": ["Cerulean City", "Saffron City"]
+    },
+    {
+      "name": "Route 6",
+      "reqToEnter": [
+        "canAccessVermillionCity",
+        { "AND": ["canAccessSaffronCity", "hasTea"] },
+        "canAccessUnderground56"
+      ],
+      "poi": [],
+      "borders": ["Vermillion City", "Saffron City"]
+    },
+    {
+      "name": "Route 22",
+      "reqToEnter": ["canAccessViridianCity", "canAccessRoute23"],
+      "poi": [],
+      "borders": ["Viridian City", "Route 23"]
+    },
+    {
+      "name": "Route 23",
+      "reqToEnter": ["hasBoulderBadge", "canAccessVictoryRoad"],
+      "poi": [],
+      "borders": ["Route 22", "Indigo League"]
+    },
+    {
+      "name": "Route 24",
+      "reqToEnter": ["canAccessCeruleanCity", "canAccessRoute25"],
+      "poi": [],
+      "borders": ["Cerulean City", "Route 25"]
+    },
+    {
+      "name": "Route 25",
+      "reqToEnter": ["canAccessRoute24"],
+      "poi": ["Bill's House"],
+      "borders": ["Route 24"]
+    }
+  ]
+}

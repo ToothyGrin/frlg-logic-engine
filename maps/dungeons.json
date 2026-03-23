@@ -1,0 +1,28 @@
+{
+  "dungeons": [
+    {
+      "name": "Viridian Forest",
+      "reqToEnter": ["canAccessRoute2West"],
+      "poi": [],
+      "borders": ["Route 2"]
+    },
+    {
+      "name": "Mt. Moon",
+      "reqToEnter": ["canAccessRoute4West", "canAccessRoute4East"],
+      "poi": [],
+      "borders": ["Route 4"]
+    },
+    {
+      "name": "Cerulean Cave",
+      "reqToEnter": [{ "AND": ["canAccessRoute24", "hasSurf"] }],
+      "poi": [],
+      "borders": ["Route 4", "Route 24"]
+    },
+    {
+      "name": "Route 5 to 6 Underground",
+      "reqToEnter": ["canAccessRoute5", "canAccessRoute6"],
+      "poi": [],
+      "borders": ["Route 5", "Route 6"]
+    }
+  ]
+}
