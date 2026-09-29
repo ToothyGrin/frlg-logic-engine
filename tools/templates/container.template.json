@@ -1,0 +1,14 @@
+{
+  "id": "<container_id>",
+  "name": "<Display Name>",
+  "zones": [
+    {
+      "id": "zone_<container_id>",
+      "connections": [],
+      "warps": [],
+      "encounter_sources": [],
+      "item_sources": [],
+      "trainers": []
+    }
+  ]
+}

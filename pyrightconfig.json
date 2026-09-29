@@ -1,0 +1,5 @@
+{
+  "typeCheckingMode": "standard",
+  "include": ["tools"],
+  "exclude": ["**/__pycache__"]
+}

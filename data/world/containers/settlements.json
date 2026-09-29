@@ -1,0 +1,225 @@
+[
+  {
+    "id": "pallet_town",
+    "name": "Pallet Town",
+    "zones": [
+      {
+        "id": "zone_pallet_town",
+        "connections": ["conn_pallet_town_route_1_border", "conn_pallet_town_land_water"],
+        "warps": [
+          "warp_players_house_entrance",
+          "warp_rivals_house_entrance",
+          "warp_oaks_lab_entrance"
+        ],
+        "encounter_sources": [
+          "enc_pallet_town_old_rod",
+          "enc_pallet_town_good_rod",
+          "enc_pallet_town_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_pallet_town_water",
+        "connections": ["conn_pallet_town_land_water", "conn_pallet_town_route_21_border"],
+        "warps": [],
+        "encounter_sources": [
+          "enc_pallet_town_surf",
+          "enc_pallet_town_old_rod",
+          "enc_pallet_town_good_rod",
+          "enc_pallet_town_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "viridian_city",
+    "name": "Viridian City",
+    "zones": [
+      {
+        "id": "zone_viridian_city",
+        "connections": [
+          "conn_viridian_city_north_old_man_event",
+          "conn_viridian_city_north_cut_tree",
+          "conn_viridian_city_move_tutor_island_cut_tree",
+          "conn_viridian_city_move_tutor_island_ledge",
+          "conn_viridian_city_land_water",
+          "conn_viridian_city_route_1_border",
+          "conn_viridian_city_route_22_border"
+        ],
+        "warps": [
+          "warp_viridian_city_pokecenter_entrance",
+          "warp_viridian_city_pokemart_entrance",
+          "warp_viridian_city_trainer_school_entrance",
+          "warp_viridian_city_residence_1_entrance"
+        ],
+        "encounter_sources": [
+          "enc_viridian_city_old_rod",
+          "enc_viridian_city_good_rod",
+          "enc_viridian_city_super_rod"
+        ],
+        "item_sources": [
+          "item_gift_viridian_city_old_man",
+          "item_pickup_viridian_city_behind_tree"
+        ],
+        "trainers": []
+      },
+      {
+        "id": "zone_viridian_city_north",
+        "connections": [
+          "conn_viridian_city_north_old_man_event",
+          "conn_viridian_city_north_cut_tree",
+          "conn_viridian_city_route_2_border"
+        ],
+        "warps": ["warp_viridian_city_gym_entrance"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_viridian_city_water",
+        "connections": [
+          "conn_viridian_city_land_water",
+          "conn_viridian_city_move_tutor_island_water"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_viridian_city_surf",
+          "enc_viridian_city_old_rod",
+          "enc_viridian_city_good_rod",
+          "enc_viridian_city_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_viridian_city_move_tutor_island",
+        "connections": [
+          "conn_viridian_city_move_tutor_island_cut_tree",
+          "conn_viridian_city_move_tutor_island_water",
+          "conn_viridian_city_move_tutor_island_ledge"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_viridian_city_old_rod",
+          "enc_viridian_city_good_rod",
+          "enc_viridian_city_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "pewter_city",
+    "name": "Pewter City",
+    "zones": [
+      {
+        "id": "zone_pewter_city",
+        "connections": [
+          "conn_pewter_city_route_2_border",
+          "conn_pewter_city_route_3_border",
+          "conn_pewter_city_museum_backyard_cut_tree"
+        ],
+        "warps": [
+          "warp_pewter_city_pokecenter_entrance",
+          "warp_pewter_city_pokemart_entrance",
+          "warp_pewter_city_south_house_entrance",
+          "warp_pewter_city_north_house_entrance",
+          "warp_pewter_city_museum_entrance",
+          "warp_pewter_city_gym_entrance"
+        ],
+        "encounter_sources": [],
+        "item_sources": ["item_pickup_pewter_city_west_of_museum"],
+        "trainers": []
+      },
+      {
+        "id": "zone_pewter_city_museum_backyard",
+        "connections": ["conn_pewter_city_museum_backyard_cut_tree"],
+        "warps": ["warp_pewter_city_museum_side_entrance"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city",
+    "name": "Cerulean City",
+    "zones": [
+      {
+        "id": "zone_cerulean_city",
+        "connections": [
+          "conn_cerulean_city_route_4_border",
+          "conn_cerulean_city_route_24_border",
+          "conn_cerulean_city_southeast_cut_tree"
+        ],
+        "warps": [
+          "warp_cerulean_city_pokecenter_entrance",
+          "warp_cerulean_city_pokemart_entrance",
+          "warp_cerulean_city_gym_entrance",
+          "warp_cerulean_city_bike_shop_entrance",
+          "warp_cerulean_city_traders_house_entrance",
+          "warp_cerulean_city_burgled_house_south_entrance",
+          "warp_cerulean_city_backyard_house_south_entrance",
+          "warp_cerulean_city_berry_powder_house_entrance",
+          "warp_cerulean_city_old_mans_house_entrance"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_cerulean_city_southeast",
+        "connections": [
+          "conn_cerulean_city_route_5_border",
+          "conn_cerulean_city_route_5_ledge",
+          "conn_cerulean_city_route_9_border",
+          "conn_cerulean_city_southeast_cut_tree"
+        ],
+        "warps": ["warp_cerulean_city_burgled_house_north_entrance"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_cerulean_city_backyard",
+        "connections": [],
+        "warps": ["warp_cerulean_city_backyard_house_north_entrance"],
+        "encounter_sources": [],
+        "item_sources": ["item_pickup_cerulean_city_backyard"],
+        "trainers": []
+      },
+      {
+        "id": "zone_cerulean_city_water",
+        "connections": [
+          "conn_cerulean_city_water_cave_border",
+          "conn_cerulean_city_water_route_4_border",
+          "conn_cerulean_city_water_route_24_border"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_cerulean_city_surf",
+          "enc_cerulean_city_old_rod",
+          "enc_cerulean_city_good_rod",
+          "enc_cerulean_city_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_cerulean_city_cave",
+        "connections": [
+          "conn_cerulean_city_cave_route_4_border",
+          "conn_cerulean_city_water_cave_border"
+        ],
+        "warps": [],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

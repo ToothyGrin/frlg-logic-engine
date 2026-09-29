@@ -1,0 +1,6 @@
+{
+  "id": "choice_<context>",
+  "option_type": "item_source",
+  "options": ["item_<source_a>", "item_<source_b>"],
+  "max_selections": 1
+}

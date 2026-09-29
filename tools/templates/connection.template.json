@@ -1,0 +1,6 @@
+{
+  "id": "conn_<location>_<feature>",
+  "type": "border",
+  "zones": ["zone_<a>", "zone_<b>"],
+  "requires": null
+}

@@ -1,5 +1,5 @@
 {
-  "printWidth": 80,
+  "printWidth": 92,
   "tabWidth": 2,
   "useTabs": false,
 
@@ -12,7 +12,5 @@
 
   "arrowParens": "always",
 
-  "proseWrap": "preserve",
-
-  "jsonRecursiveSort": false
+  "endOfLine": "lf"
 }

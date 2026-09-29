@@ -1,0 +1,154 @@
+[
+  {
+    "id": "viridian_forest",
+    "name": "Viridian Forest",
+    "zones": [
+      {
+        "id": "zone_viridian_forest",
+        "connections": [],
+        "warps": [
+          "warp_viridian_forest_south_gate_north_entrance",
+          "warp_viridian_forest_north_gate_south_entrance"
+        ],
+        "encounter_sources": ["enc_viridian_forest_grass"],
+        "item_sources": [
+          "item_pickup_viridian_forest_lone_tree",
+          "item_pickup_viridian_forest_southwest_deadend",
+          "item_pickup_viridian_forest_southeast",
+          "item_pickup_viridian_forest_center_flowerpatch",
+          "item_pickup_viridian_forest_opp_sammy",
+          "item_pickup_viridian_forest_northeast_road"
+        ],
+        "trainers": [
+          "trainer_viridian_forest_bug_catcher_rick",
+          "trainer_viridian_forest_bug_catcher_doug",
+          "trainer_viridian_forest_bug_catcher_anthony",
+          "trainer_viridian_forest_bug_catcher_charlie",
+          "trainer_viridian_forest_bug_catcher_sammy"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "mt_moon",
+    "name": "Mt. Moon",
+    "zones": [
+      {
+        "id": "zone_mt_moon_1f",
+        "connections": [],
+        "warps": [
+          "warp_mt_moon_1f_exit",
+          "warp_mt_moon_1f_northwest_ladder_down",
+          "warp_mt_moon_1f_center_ladder_down",
+          "warp_mt_moon_1f_east_ladder_down"
+        ],
+        "encounter_sources": ["enc_mt_moon_cave_1f"],
+        "item_sources": [
+          "item_pickup_mt_moon_1f_southwest_above_trainer",
+          "item_pickup_mt_moon_1f_southwest_below_trainer",
+          "item_pickup_mt_moon_1f_southeast_far_left",
+          "item_pickup_mt_moon_1f_southeast_corner",
+          "item_pickup_mt_moon_1f_east_wall",
+          "item_pickup_mt_moon_1f_northwest_corner"
+        ],
+        "trainers": [
+          "trainer_mt_moon_bug_catcher_kent",
+          "trainer_mt_moon_lass_iris",
+          "trainer_mt_moon_super_nerd_jovan",
+          "trainer_mt_moon_bug_catcher_robby",
+          "trainer_mt_moon_lass_miriam",
+          "trainer_mt_moon_youngster_josh",
+          "trainer_mt_moon_hiker_marcos"
+        ]
+      },
+      {
+        "id": "zone_mt_moon_b1f_east_corner",
+        "connections": [],
+        "warps": [
+          "warp_mt_moon_b1f_east_corner_ladder_up",
+          "warp_mt_moon_b1f_east_corner_ladder_down"
+        ],
+        "encounter_sources": ["enc_mt_moon_cave_b1f"],
+        "item_sources": [
+          "item_pickup_mt_moon_b1f_east_corner_four_rocks",
+          "item_pickup_mt_moon_b1f_east_corner_southwest_rock_a",
+          "item_pickup_mt_moon_b1f_east_corner_southwest_rock_b"
+        ],
+        "trainers": []
+      },
+      {
+        "id": "zone_mt_moon_b1f_west_corner",
+        "connections": [],
+        "warps": [
+          "warp_mt_moon_b1f_west_corner_ladder_up",
+          "warp_mt_moon_b1f_west_corner_ladder_down"
+        ],
+        "encounter_sources": ["enc_mt_moon_cave_b1f"],
+        "item_sources": ["item_pickup_mt_moon_b1f_west_corner_southeast_rock"],
+        "trainers": []
+      },
+      {
+        "id": "zone_mt_moon_b1f_east_room",
+        "connections": [],
+        "warps": [
+          "warp_mt_moon_b1f_east_room_ladder_up",
+          "warp_mt_moon_b1f_east_room_ladder_down"
+        ],
+        "encounter_sources": ["enc_mt_moon_cave_b1f"],
+        "item_sources": ["item_pickup_mt_moon_b1f_east_room_northeast_rock"],
+        "trainers": []
+      },
+      {
+        "id": "zone_mt_moon_b1f_west_room",
+        "connections": [],
+        "warps": [
+          "warp_mt_moon_b1f_west_room_ladder_up",
+          "warp_mt_moon_b1f_west_room_ladder_down"
+        ],
+        "encounter_sources": ["enc_mt_moon_cave_b1f"],
+        "item_sources": ["item_pickup_mt_moon_b1f_west_room_northeast_rock"],
+        "trainers": []
+      },
+      {
+        "id": "zone_mt_moon_b2f",
+        "connections": [],
+        "warps": [
+          "warp_mt_moon_b2f_center_ladder_up",
+          "warp_mt_moon_b2f_northwest_ladder_up"
+        ],
+        "encounter_sources": ["enc_mt_moon_cave_b2f"],
+        "item_sources": [
+          "item_pickup_mt_moon_b2f_north_crater",
+          "item_pickup_mt_moon_b2f_west_rock",
+          "item_pickup_mt_moon_b2f_northwest_by_ladder",
+          "item_pickup_mt_moon_b2f_fossil_west",
+          "item_pickup_mt_moon_b2f_fossil_east"
+        ],
+        "trainers": [
+          "trainer_mt_moon_b2f_east_rocket_grunt",
+          "trainer_mt_moon_b2f_west_rocket_grunt",
+          "trainer_mt_moon_b2f_super_nerd_miguel"
+        ]
+      },
+      {
+        "id": "zone_mt_moon_b2f_northeast_deadend",
+        "connections": [],
+        "warps": ["warp_mt_moon_b2f_northeast_deadend_ladder_up"],
+        "encounter_sources": ["enc_mt_moon_cave_b2f"],
+        "item_sources": [
+          "item_pickup_mt_moon_b2f_northeast_deadend_plateau",
+          "item_pickup_mt_moon_b2f_northeast_deadend_east_rock"
+        ],
+        "trainers": ["trainer_mt_moon_b2f_northeast_deadend_rocket_grunt"]
+      },
+      {
+        "id": "zone_mt_moon_b2f_central_deadend",
+        "connections": [],
+        "warps": ["warp_mt_moon_b2f_central_deadend_ladder_up"],
+        "encounter_sources": ["enc_mt_moon_cave_b2f"],
+        "item_sources": ["item_pickup_mt_moon_b2f_central_deadend_plateau"],
+        "trainers": ["trainer_mt_moon_b2f_central_deadend_rocket_grunt"]
+      }
+    ]
+  }
+]

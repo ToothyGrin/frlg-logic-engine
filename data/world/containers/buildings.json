@@ -1,0 +1,510 @@
+[
+  {
+    "id": "players_house",
+    "name": "Player's House",
+    "zones": [
+      {
+        "id": "zone_players_house",
+        "connections": [],
+        "warps": ["warp_players_house_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "rivals_house",
+    "name": "Rival's House",
+    "zones": [
+      {
+        "id": "zone_rivals_house",
+        "connections": [],
+        "warps": ["warp_rivals_house_exit"],
+        "encounter_sources": [],
+        "item_sources": ["item_gift_rivals_house_daisy"],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "oaks_lab",
+    "name": "Oak's Lab",
+    "zones": [
+      {
+        "id": "zone_oaks_lab",
+        "connections": [],
+        "warps": ["warp_oaks_lab_exit"],
+        "encounter_sources": [],
+        "item_sources": ["item_gift_oaks_lab_professor_oak_after_parcel"],
+        "trainers": ["trainer_oaks_lab_rival"]
+      }
+    ]
+  },
+  {
+    "id": "viridian_city_pokecenter",
+    "name": "Viridian City PokeCenter",
+    "zones": [
+      {
+        "id": "zone_viridian_city_pokecenter_1f",
+        "connections": [],
+        "warps": [
+          "warp_viridian_city_pokecenter_exit",
+          "warp_viridian_city_pokecenter_stair_up"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_viridian_city_pokecenter_2f",
+        "connections": [],
+        "warps": ["warp_viridian_city_pokecenter_stair_down"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "viridian_city_pokemart",
+    "name": "Viridian City PokeMart",
+    "zones": [
+      {
+        "id": "zone_viridian_city_pokemart",
+        "connections": [],
+        "warps": ["warp_viridian_city_pokemart_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "viridian_city_trainer_school",
+    "name": "Viridian City Trainer School",
+    "zones": [
+      {
+        "id": "zone_viridian_city_trainer_school",
+        "connections": [],
+        "warps": ["warp_viridian_city_trainer_school_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "viridian_city_residence_1",
+    "name": "Viridian City Residence 1",
+    "zones": [
+      {
+        "id": "zone_viridian_city_residence_1",
+        "connections": [],
+        "warps": ["warp_viridian_city_residence_1_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "viridian_city_gym",
+    "name": "Viridian City Gym",
+    "zones": [
+      {
+        "id": "zone_viridian_city_gym",
+        "connections": [],
+        "warps": ["warp_viridian_city_gym_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "viridian_forest_south_gate",
+    "name": "Viridian Forest South Gate",
+    "zones": [
+      {
+        "id": "zone_viridian_forest_south_gate",
+        "connections": [],
+        "warps": [
+          "warp_viridian_forest_south_gate_south_exit",
+          "warp_viridian_forest_south_gate_north_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "viridian_forest_north_gate",
+    "name": "Viridian Forest North Gate",
+    "zones": [
+      {
+        "id": "zone_viridian_forest_north_gate",
+        "connections": [],
+        "warps": [
+          "warp_viridian_forest_north_gate_south_exit",
+          "warp_viridian_forest_north_gate_north_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "route_2_gate",
+    "name": "Route 2 Gate",
+    "zones": [
+      {
+        "id": "zone_route_2_gate_1f",
+        "connections": [],
+        "warps": [
+          "warp_route_2_gate_north_exit",
+          "warp_route_2_gate_south_exit",
+          "warp_route_2_gate_stair_up"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_route_2_gate_2f",
+        "connections": [],
+        "warps": ["warp_route_2_gate_stair_down"],
+        "encounter_sources": [],
+        "item_sources": ["item_gift_route_2_prof_aide"],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "route_2_traders_house",
+    "name": "Route 2 Trader's House",
+    "zones": [
+      {
+        "id": "zone_route_2_traders_house",
+        "connections": [],
+        "warps": ["warp_route_2_traders_house_exit"],
+        "encounter_sources": [],
+        "pokemon_sources": ["pokemon_trade_route_2"],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "pewter_city_pokecenter",
+    "name": "Pewter City PokeCenter",
+    "zones": [
+      {
+        "id": "zone_pewter_city_pokecenter_1f",
+        "connections": [],
+        "warps": [
+          "warp_pewter_city_pokecenter_exit",
+          "warp_pewter_city_pokecenter_stair_up"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_pewter_city_pokecenter_2f",
+        "connections": [],
+        "warps": ["warp_pewter_city_pokecenter_stair_down"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "pewter_city_pokemart",
+    "name": "Pewter City PokeMart",
+    "zones": [
+      {
+        "id": "zone_pewter_city_pokemart",
+        "connections": [],
+        "warps": ["warp_pewter_city_pokemart_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "pewter_city_gym",
+    "name": "Pewter City Gym",
+    "zones": [
+      {
+        "id": "zone_pewter_city_gym",
+        "connections": [],
+        "warps": ["warp_pewter_city_gym_exit"],
+        "encounter_sources": [],
+        "item_sources": ["item_gift_pewter_city_defeat_brock"],
+        "trainers": ["trainer_pewter_city_gym_camper_liam", "trainer_leader_brock"]
+      }
+    ]
+  },
+  {
+    "id": "pewter_city_south_house",
+    "name": "Pewter City South House",
+    "zones": [
+      {
+        "id": "zone_pewter_city_south_house",
+        "connections": [],
+        "warps": ["warp_pewter_city_south_house_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "pewter_city_north_house",
+    "name": "Pewter City North House",
+    "zones": [
+      {
+        "id": "zone_pewter_city_north_house",
+        "connections": [],
+        "warps": ["warp_pewter_city_north_house_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "pewter_city_museum",
+    "name": "Pewter City Museum of Science",
+    "zones": [
+      {
+        "id": "zone_pewter_city_museum_1f",
+        "connections": [],
+        "warps": ["warp_pewter_city_museum_exit", "warp_pewter_city_museum_stair_up"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_pewter_city_museum_2f",
+        "connections": [],
+        "warps": ["warp_pewter_city_museum_stair_down"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_pewter_city_museum_side",
+        "connections": [],
+        "warps": ["warp_pewter_city_museum_side_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "route_4_pokecenter",
+    "name": "Route 4 PokeCenter",
+    "zones": [
+      {
+        "id": "zone_route_4_pokecenter_1f",
+        "connections": [],
+        "warps": ["warp_route_4_pokecenter_exit", "warp_route_4_pokecenter_stair_up"],
+        "encounter_sources": [],
+        "pokemon_sources": ["pokemon_vendor_route_4_magikarp_salesman"],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_route_4_pokecenter_2f",
+        "connections": [],
+        "warps": ["warp_route_4_pokecenter_stair_down"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_pokecenter",
+    "name": "Cerulean City PokeCenter",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_pokecenter_1f",
+        "connections": [],
+        "warps": [
+          "warp_cerulean_city_pokecenter_exit",
+          "warp_cerulean_city_pokecenter_stair_up"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_cerulean_city_pokecenter_2f",
+        "connections": [],
+        "warps": ["warp_cerulean_city_pokecenter_stair_down"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_pokemart",
+    "name": "Cerulean City PokeMart",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_pokemart",
+        "connections": [],
+        "warps": ["warp_cerulean_city_pokemart_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_gym",
+    "name": "Cerulean City Gym",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_gym",
+        "connections": [],
+        "warps": ["warp_cerulean_city_gym_exit"],
+        "encounter_sources": [],
+        "item_sources": ["item_gift_cerulean_city_defeat_misty"],
+        "trainers": [
+          "trainer_cerulean_city_gym_swimmer_m_luis",
+          "trainer_cerulean_city_gym_picnicker_diana",
+          "trainer_leader_misty"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_bike_shop",
+    "name": "Cerulean City Bike Shop",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_bike_shop",
+        "connections": [],
+        "warps": ["warp_cerulean_city_bike_shop_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_traders_house",
+    "name": "Cerulean City Trader's House",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_traders_house",
+        "connections": [],
+        "warps": ["warp_cerulean_city_traders_house_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "pokemon_sources": ["pokemon_trade_cerulean_city"],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_burgled_house",
+    "name": "Cerulean City Burgled House",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_burgled_house",
+        "connections": [],
+        "warps": [
+          "warp_cerulean_city_burgled_house_south_exit",
+          "warp_cerulean_city_burgled_house_north_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_backyard_house",
+    "name": "Cerulean City Backyard House",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_backyard_house",
+        "connections": [],
+        "warps": [
+          "warp_cerulean_city_backyard_house_south_exit",
+          "warp_cerulean_city_backyard_house_north_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_berry_powder_house",
+    "name": "Cerulean City Berry Powder House",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_berry_powder_house",
+        "connections": [],
+        "warps": ["warp_cerulean_city_berry_powder_house_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_old_mans_house",
+    "name": "Cerulean City Old Man's House",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_old_mans_house",
+        "connections": [],
+        "warps": ["warp_cerulean_city_old_mans_house_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "route_25_sea_cottage",
+    "name": "Sea Cottage",
+    "zones": [
+      {
+        "id": "zone_route_25_sea_cottage",
+        "connections": [],
+        "warps": ["warp_route_25_sea_cottage_exit"],
+        "encounter_sources": [],
+        "item_sources": ["item_gift_route_25_bill"],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "victory_road_gate",
+    "name": "Victory Road Gate",
+    "zones": [
+      {
+        "id": "zone_victory_road_gate",
+        "connections": [],
+        "warps": ["warp_victory_road_gate_south_exit", "warp_victory_road_gate_north_exit"],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

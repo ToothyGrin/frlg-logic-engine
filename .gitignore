@@ -1,41 +1,32 @@
-# Compiled Lua sources
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Node / Prettier
+node_modules/
+
+# Lua build artifacts
+*.luac
 luac.out
 
-# luarocks build files
-*.src.rock
+# Generated archives
 *.zip
 *.tar.gz
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+# Temporary files
+*.tmp
+*.bak
 
-# Precompiled Headers
-*.gch
-*.pch
+# OS metadata
+.DS_Store
+Thumbs.db
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
+# Local scratch code
+sandbox.lua
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
+# Local chat logs
+chat.md
