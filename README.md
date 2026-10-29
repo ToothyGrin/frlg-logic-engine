@@ -7,6 +7,9 @@ and Pokémon availability independently from the presentation layer.
 
 Planned modes include Professor Oak Challenge support and manual Warp Randomiser tracking.
 
+The v1.0 target is a publication-ready tracker for the complete single-player FRLG world,
+including the Sevii Islands and post-game, subject to the exclusions in `docs/PROJECT.md`.
+
 ## Project Status
 
 World loading, runtime indexing, Connection traversal, and reachability are implemented

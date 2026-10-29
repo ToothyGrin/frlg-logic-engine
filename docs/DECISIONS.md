@@ -250,7 +250,7 @@ Its containing Zone is derived from the Zone declaration.
 
 ### D017 — A Vanilla Portal Is an Unordered Pair of Warps
 
-**Status:** Accepted
+**Status:** Superseded in authored representation by D044; normal links remain bidirectional
 
 A normal vanilla Portal is represented as exactly two Warp IDs:
 
@@ -270,7 +270,7 @@ Array order carries no traversal meaning.
 
 ### D018 — Portal Runtime Lookups Are Derived
 
-**Status:** Accepted
+**Status:** Derivation principle retained; sibling index superseded by D044's destination index
 
 Each vanilla Portal pairing is authored once.
 
@@ -289,10 +289,10 @@ and derives each Warp's containing Zone from Zone declarations.
 
 **Status:** Accepted
 
-Vanilla uses the canonical Portal pairings by default.
+Vanilla uses the canonical typed Warp links by default (D044).
 
 A later Warp Randomiser mode may replace the active mapping with manually tracked or
-otherwise supplied pairs without changing the vanilla dataset.
+otherwise supplied links without changing the vanilla dataset.
 
 Reachability is recalculated when the active mapping changes.
 
@@ -302,12 +302,9 @@ Reachability is recalculated when the active mapping changes.
 
 **Status:** Accepted
 
-The common Portal model covers bidirectional Warp pairs.
-
-Rare discrete movement mechanics such as one-way drops may use Warp references without being
-forced into the normal Portal representation.
-
-Their exact schema is deferred until required by vanilla FRLG data.
+Normal links cover bidirectional Warp pairs. D044 also represents drops in the same
+collection using a directional type. A landing-only or unpaired Warp need not have an
+outgoing link; declaring a Warp in a Zone does not itself make it a traversable departure.
 
 ---
 
@@ -486,50 +483,401 @@ Other HM capabilities should follow this policy when their badge mappings are im
 
 ---
 
+### D032 — Adopt Type Prefixes Except Item-Source Naming
+
+**Status:** Accepted (29 October 2026)
+
+Use `zone_`, `conn_`, `warp_`, `enc_`, `trainer_`, and `state_` for their existing
+object types. Use `species_` for Pokémon species definitions and `item_` for item
+definitions. Map containers retain descriptive unprefixed IDs such as `pallet_town`.
+
+Item-source prefixes are deferred to O004 alongside item acquisition object types.
+Keep existing `item_pickup_` and `item_gift_` references in the meantime; do not migrate
+them to `item_source_` or `itemsrc_` as part of this decision.
+
+---
+
+### D033 — Warp IDs Describe Physical Endpoints in Full
+
+**Status:** Accepted (29 October 2026)
+
+Prefer descriptive Warp IDs over brevity. Include enough physical context to identify
+the endpoint clearly: landmark, floor, local section, doorway side, movement mechanism,
+and endpoint role as applicable. There is no need to shorten a useful identifier simply
+because it is long.
+
+Examples:
+
+```text
+warp_viridian_forest_south_gate_north_entrance
+warp_mt_moon_b1f_east_corner_ladder_up
+warp_cerulean_city_burgled_house_south_entrance
+```
+
+These are descriptive examples, not a fixed-length naming template requiring every
+qualifier on every Warp. Use the physical context needed by the location. Zone declarations
+and Portal pairs remain authoritative for ownership and destination; IDs do not encode
+the currently paired destination.
+
+---
+
+### D034 — Name Pokémon Acquisition Sources Independently of Their Rewards
+
+**Status:** Accepted (29 October 2026)
+
+Apply D026 to Pokémon acquisition sources. Identify the location, NPC, or acquisition
+mechanism rather than the current species, received nickname, or other changeable contents.
+Use additional physical qualifiers when needed to distinguish sources at the same location.
+
+Accepted examples and prefixes:
+
+```text
+static_encounter_seafoam_islands_b4f
+pokemon_gift_silph_co_7f_employee
+pokemon_trade_route_2_traders_house
+pokemon_vendor_route_4_pokecenter_salesman
+fossil_revival_helix_fossil
+```
+
+The fossil name identifies a revival input option, not its output species. Keep the
+yielded species, requested trade species, nickname, price, and other contents in data.
+The source's Zone association records its location even when its ID names a mechanism.
+
+Research evidence: `pret/pokefirered` uses both location/NPC and species-based script
+labels, while Universal Pokémon Randomizer ZX can replace the species associated with
+these sources and modify in-game trade contents. The tracker therefore keeps stable source
+IDs rather than copying all vanilla script-label conventions.
+
+- [Vanilla trade data](https://github.com/pret/pokefirered/blob/master/src/data/ingame_trades.h)
+- [ZX FRLG static, gift, vendor, and fossil slots](https://github.com/Ajarmar/universal-pokemon-randomizer-zx/blob/master/src/com/dabomstew/pkrandom/config/gen3_offsets.ini#L459-L484)
+- [ZX trade options](https://github.com/Ajarmar/universal-pokemon-randomizer-zx/blob/master/src/com/dabomstew/pkrandom/newgui/Bundle.properties#L117-L131)
+
+This settles the listed source-ID conventions. Exact schemas, Zone reference-array
+names, Game Corner grouping, roaming Pokémon, and external connectivity remain under O003.
+No existing source references are renamed as part of this documentation decision.
+
+---
+
+### D035 — Pokémon Vendors Contain Multiple Offers
+
+**Status:** Accepted (29 October 2026)
+
+One Pokémon vendor object may contain several offers. Each offer records its species,
+price, and currency. A Zone references the vendor object once rather than referencing
+a separate acquisition-source object for each offer.
+
+Use the same vendor type for the single Route 4 salesman purchase and the Game Corner's
+multiple Pokémon prize offers. Exact offer fields and version-specific representation
+will be settled when implemented.
+
+---
+
+### D036 — Pokémon Acquisition References Are Optional Zone Arrays
+
+**Status:** Accepted (29 October 2026)
+
+Replace the draft mixed `pokemon_sources` array with direct homogeneous arrays on a Zone:
+
+```text
+static_encounters
+pokemon_gifts
+pokemon_trades
+pokemon_vendors
+fossil_revivals
+```
+
+These arrays are optional in authored JSON. Omission means no references of that type,
+equivalent to an empty array. Authors need not add empty categories to every Zone.
+When present, each property must contain an array of IDs of its corresponding object type.
+
+Acquisition readers must handle absent arrays as empty when these mechanics are
+implemented. Keep the existing topology-array requirements for `connections` and `warps`;
+this decision does not change those or the current `encounter_sources` convention.
+
+No nesting under a `pokemon_sources` object is required. Detailed acquisition schemas,
+runtime readers, validation, and migration of draft references remain implementation work.
+
+---
+
+### D037 — Version 1.0 Assumes Single-Player Acquisition
+
+**Status:** Accepted (29 October 2026)
+
+Version 1.0 evaluates acquisition within a single FRLG game. Do not assume access to
+external player trades, another game's Pokémon or held items, or external connectivity
+rewards. External trading must not make the entire Pokédex available early.
+
+NPC in-game trades remain ordinary single-player acquisition sources under D034.
+Evolution through trading with another player is not assumed possible in v1.0.
+External acquisition may be designed as a later explicit mode or policy.
+
+---
+
+### D038 — Roamers Use Release Availability, With Implementation Deferred
+
+**Status:** Accepted direction; detailed rules and implementation deferred
+
+For an availability tracker, the eligible roaming Pokémon may become available when
+its verified release/progression conditions are satisfied. Tracking its current map or
+requiring a current sighting is not part of this intended availability model.
+
+Before implementation, verify the actual release predicate, species-selection rules,
+and any relevant encounter or removal conditions. Do not assume that one generic flag
+releases every roaming species or attach the roamer to a single fixed Zone.
+
+The exact state IDs, schema, and evaluation remain deferred until roaming acquisition
+is implemented. This is distinct from external connectivity, which D037 excludes from v1.0.
+
+---
+
+### D039 — Item Pickups, Gifts, and Multi-Offer Vendors
+
+**Status:** Accepted (29 October 2026)
+
+Retain `item_pickup_` and `item_gift_` for item acquisition sources and use `item_vendor_`
+for shops and item prize exchanges. Item definitions continue to use `item_` (D032).
+Do not replace these source prefixes with a generic `item_source_` or `itemsrc_` prefix.
+
+One item vendor object may contain several offers, following the Pokémon vendor model
+in D035. Offers record their item, price, and currency. A single vendor can therefore
+represent either one offer or a catalogue.
+
+Visible and hidden items use the pickup type, with visibility represented as a property.
+Regeneration or repeatability is a property of the pickup rather than requiring another
+source type. Detailed fields and renewal conditions will be defined when implemented.
+
+This settles the initial pickup/gift/vendor grouping and source prefixes under O004.
+Zone reference-array names and other acquisition mechanics remain for discussion.
+
+---
+
+### D040 — Item Acquisition References Are Optional Zone Arrays
+
+**Status:** Accepted (29 October 2026)
+
+Replace the draft mixed `item_sources` array with direct homogeneous arrays on a Zone:
+
+```text
+item_pickups
+item_gifts
+item_vendors
+```
+
+These properties follow the optional-array convention in D036. Omitted and empty arrays
+both mean no sources of that type. When present, an array contains IDs of its corresponding
+source type. Unused categories need not appear on every Zone.
+
+Detailed acquisition schemas, runtime readers, validation, and migration of existing
+draft references remain implementation work. Topology-array requirements are unchanged.
+
+---
+
+### D041 — Held Items Share Their Pokémon Acquisition Data; Defer Pickup
+
+**Status:** Accepted (29 October 2026)
+
+NPC trade held items belong to the corresponding Pokémon trade data. Wild Pokémon held
+items belong with the relevant encounter data. Do not duplicate those held-item facts
+as independent Zone pickup or gift sources.
+
+Thief and Covet are methods of obtaining a Pokémon's held item and must use the same
+wild held-item data. Their detailed eligibility and availability rules will be verified
+when implemented, rather than inventing a separate source inventory for each move.
+
+Pickup is deferred beyond v1.0 (F007). External item trading and Mystery Gift are
+excluded from v1.0 under the single-player scope in D037.
+
+Together, D039–D041 settle O004's current object grouping, source prefixes, Zone
+reference arrays, and remaining acquisition-mechanic scope. Detailed schemas remain
+implementation work.
+
+---
+
+### D042 — Version Applicability Uses Optional Entry Filters
+
+**Status:** Accepted (29 October 2026), aligned with the supplied earlier conversation
+
+Use one shared dataset and a selected game version (`firered` or `leafgreen`). Entries
+may carry a `versions` array listing their applicable games. Omit it when the entry applies
+to both. Write identical entries once; split an entry only when its actual data differs.
+
+Apply this convention to encounter records, trade exchanges, vendor offers, and other
+acquisition entries at the boundary where content differs. Keep source IDs stable.
+Do not duplicate entire shared sources or use a general `by_version` override/merge system.
+
+Readers filter entries for the selected game. Validation requires non-empty recognized
+version lists when supplied. Validate the filtered result according to its collection:
+wild rates total 100% per game; a fixed trade has one applicable exchange per applicable
+game; a vendor may have multiple applicable offers. Encounter-specific uniqueness rules
+must not be applied indiscriminately to vendor offers or other collections.
+
+Exact source payload field names, including the illustrative trade `exchanges` collection,
+remain to be finalized with each concrete mechanic. The applicability convention is settled.
+
+---
+
+### D043 — Wild Encounters Use Species-Aggregated Table Entries
+
+**Status:** Accepted; recovered from the supplied Project Plan Documentation extract
+
+For v1.0, an encounter source has `id`, `method`, `requires`, and `encounters`.
+Each encounter record has `pokemon`, `levels`, numeric `rate`, and optional `versions`.
+The `pokemon` reference uses the accepted `species_` ID prefix (D032), replacing the
+older extract's `pokemon_` prefix without changing the field's meaning.
+
+`levels` is a non-empty array of the exact possible positive integer levels, including
+non-contiguous possibilities. It does not imply equal probabilities. `rate` is the total
+percentage for that species within the applicable version's source, greater than zero
+and no greater than 100. Do not use min/max ranges or per-level weights in v1.0.
+
+After D042 filtering, each supported version's encounter rates must total 100%, and
+each species has at most one applicable aggregated record in a source. Different
+records for the same species are valid when their version applicability does not overlap.
+
+The supplied Route 3 and Route 4 screenshots illustrate these rules. Their data is
+reference material for later authoring, not encounter data already loaded by the engine.
+Detailed encounter validation and runtime acquisition remain implementation work.
+
+---
+
+### D044 — Standardize Warp Links With Type-Based Direction
+
+**Status:** Accepted (29 October 2026); implementation migration pending
+
+Use one collection of typed Warp links, following Connections' type-based direction
+convention. Each object has `type` and a two-element `warps` array:
+
+```json
+{"type": "normal", "warps": ["warp_a", "warp_b"]}
+```
+
+```json
+{"type": "drop", "warps": ["warp_departure", "warp_landing"]}
+```
+
+Normal links allow both directions and array order has no traversal meaning. Drop links
+allow only first endpoint to second endpoint. Do not introduce a separate drop collection.
+Warp IDs are still declared by Zones, with no standalone objects repeating those IDs.
+
+Derive `warp_to_destination` rather than `warp_to_sibling`: a normal link produces two
+entries and a drop produces one. Multiple incoming links may share a destination, while
+each departure has at most one active outgoing destination. A destination's occurrence
+in a drop does not create a reverse departure. Validate outgoing mappings, rather than
+requiring every endpoint to occur in only one link.
+
+The distinction follows the map records and activation code in `pret/pokefirered`:
+destination records and usable departure triggers are separate facts. Verify Mansion's
+actual tile behaviours before authoring its drop endpoints; reciprocal map references
+alone do not establish a traversable return route.
+
+- [Mansion 3F Warp records](https://github.com/pret/pokefirered/blob/master/data/maps/PokemonMansion_3F/map.json#L74-L130)
+- [Mansion 1F arrival records](https://github.com/pret/pokefirered/blob/master/data/maps/PokemonMansion_1F/map.json#L138-L158)
+- [Warp activation checks](https://github.com/pret/pokefirered/blob/master/src/field_control_avatar.c#L806-L869)
+
+This revises D017's bare-pair representation and D018's sibling lookup. Migrate the
+existing Portal data, generator, validator, indexes, solver, and tests together in a
+later implementation step. File placement is addressed under O007.
+
+---
+
+### D045 — Build Runtime Collections From Small Authored Source Files
+
+**Status:** Accepted (29 October 2026); implementation migration pending
+
+Adopt the authored-source/generated-aggregate pattern inspected in the supplied
+MobiusFFTool project. Retain category-based runtime collections while partitioning
+large authored categories into smaller files grouped by area or natural entity.
+
+For example:
+
+```text
+data/source/world/containers/buildings/pallet_town.json
+data/source/world/containers/buildings/viridian_city.json
+    -> data/world/containers/buildings.json
+
+data/source/world/connections/pallet_town.json
+data/source/world/connections/viridian_city.json
+    -> data/world/connections.json
+```
+
+Use the same approach for other large categories, including typed Warp links. Authored
+files contain arrays of their category's records, combined into the runtime category
+array. Each object is authored once, including cross-area Connections and Warp links.
+File grouping does not alter object identity, graph relationships, or reference ownership.
+
+The source files are authoritative. Generated aggregates are never edited manually.
+Use a shared configurable builder with deterministic collection ordering, duplicate-ID
+and reference validation, and a non-writing check mode that fails on stale outputs.
+Preserve meaningful array order, especially directional endpoints and versioned content.
+
+Implement using existing Python tooling. The Lua runtime continues loading a small
+set of category files and building its indexes; generated compact indexes are not needed
+at this stage. Small reference categories may remain single authored files until splitting
+is useful. Detailed partitions and cross-area authoring conventions will be documented
+with migration.
+
+The current data files are still authored directly. Source extraction, builder/check
+commands, generated-file documentation, validation integration, and deployment workflow
+must be introduced together in a later implementation step.
+
+---
+
+### D046 — Version 1.0 Is a Publication-Ready Single-Player FRLG Tracker
+
+**Status:** Accepted (29 October 2026)
+
+Version 1.0 covers the complete single-player FireRed and LeafGreen world, including
+mainland Kanto, the Sevii Islands, and post-game content, subject to the agreed exclusions.
+
+Version 1.0 means publication-ready: a reliable, usable, documented tracker that includes
+most functionality needed by the majority of players. A working engine or partial-world
+prototype alone does not meet that release standard. Earlier usable development milestones
+may be released without being called v1.0.
+
+The existing exclusions and simplifications remain in force, including single-player
+acquisition (no external trading or Mystery Gift), Pickup deferred beyond v1.0, HM usability
+based on acquired HM and badge, and later challenge/randomiser/autotracking enhancements.
+Full-world scope does not imply that every Pokémon is obtainable in either selected game.
+
+Deferring the detailed design of an in-scope mechanic until implementation does not remove
+it from the v1.0 content boundary. Roaming acquisition details remain deferred under D038,
+but relevant single-player roaming availability belongs to complete-world coverage.
+
+---
+
 ## Open Decisions
 
 ### O001 — Final Type-Prefix Vocabulary
 
-**Status:** Open
+**Status:** Resolved by D032 and D039
 
-The project is moving towards descriptive type-prefixed IDs for heavily cross-referenced
-objects, for example:
-
-```text
-zone_route_2_southwest
-conn_route_2_southwest_southeast_tree
-warp_route_2_gate_north_entrance
-enc_route_1_grass
-itemsrc_route_1_pokemart_employee
-trainer_route_3_lass_janice
-state_can_cut
-```
-
-The exact prefix spellings still need to be frozen.
-
-Questions include whether prefixes such as `itemsrc_` are preferable to longer names such as
-`item_source_`, and whether Pokémon and item entity IDs should also receive explicit type
-prefixes.
+The non-item-source prefix vocabulary is accepted as D032. Item-source naming was deferred
+to O004 and is now accepted as D039.
 
 ---
 
 ### O002 — Final Warp Naming Grammar
 
-**Status:** Open
+**Status:** Resolved by D033
 
-Warp IDs need to remain understandable around structures with several entrances and exits,
-such as the two gatehouses between Route 2 and Viridian Forest.
-
-The current entrance/exit and compass-direction approach is workable but not yet formally
-specified as a naming grammar.
+Descriptive physical-endpoint names are accepted. Include all useful location and
+transition qualifiers, favoring clarity over short identifiers. Existing names follow
+this approach; no renaming is required by this decision.
 
 ---
 
 ### O003 — Remaining Pokémon Acquisition Object Types
 
-**Status:** Open
+**Status:** Resolved for current design by D034–D038; detailed schemas deferred to implementation
 
-Wild encounter tables are settled, but exact object types and array names remain open for:
+D034 settles prefixes and stable-source naming for static encounters, gifts, trades,
+vendors, and fossil revival. D035 settles multi-offer vendors and Game Corner grouping.
+D036 settles optional direct Zone reference arrays. D037 excludes external acquisition
+from v1.0 while retaining NPC trades. D038 records release-based roaming availability
+and defers its detailed rules and implementation.
+
+Wild encounter tables are settled. Detailed schemas for these accepted categories will
+be designed when each mechanic is implemented:
 
 - static Pokémon battles;
 - NPC gifts;
@@ -537,8 +885,9 @@ Wild encounter tables are settled, but exact object types and array names remain
 - Pokémon vendors;
 - Game Corner prize Pokémon;
 - fossil revival;
-- roaming Pokémon;
-- external connectivity.
+
+Roaming details will be researched when implemented. External connectivity is outside
+v1.0 under D037.
 
 These should be designed as each concrete mechanic is implemented rather than forced into
 one generic source type.
@@ -547,11 +896,15 @@ one generic source type.
 
 ### O004 — Item Acquisition Object Types
 
-**Status:** Open
+**Status:** Resolved for current design by D039–D041; detailed schemas deferred to implementation
 
-The project has not yet decided whether the broad `item_sources` concept remains one
-coherent object type or should be split into homogeneous arrays such as pickups, gifts, and
-vendors.
+Item-source prefix naming deferred from O001 is resolved by D039: use `item_pickup_`,
+`item_gift_`, and `item_vendor_`. Item vendors support multiple offers. Pickup visibility
+and regeneration are properties rather than separate source types.
+
+D040 settles optional direct `item_pickups`, `item_gifts`, and `item_vendors` Zone arrays.
+D041 attaches held items to their Pokémon acquisition data, links Thief/Covet to wild
+held items, defers Pickup, and confirms the external acquisition exclusions.
 
 Relevant mechanics include:
 
@@ -571,50 +924,45 @@ Relevant mechanics include:
 
 ### O005 — FireRed and LeafGreen Differences
 
-**Status:** Open
+**Status:** Resolved by D042; encounter representation recovered as D043
 
 The world topology is largely shared, but encounters and other content differ between
 versions.
 
-The project still needs a consistent representation for version-specific data.
+Use optional per-entry `versions` filters with a single shared dataset. Shared entries
+are authored once; differing entries are split by applicability. See D042–D043.
 
 ---
 
 ### O006 — One-Way Warp and Drop Representation
 
-**Status:** Open, but not blocking current work
+**Status:** Resolved by D044; implementation pending
 
 Pokémon Mansion and similar mechanics include one-way discrete movement that fits the Warp
 concept but not the normal bidirectional Portal pairing.
 
-The common Portal schema will remain simple until a concrete vanilla representation is
-needed.
+Use one typed-link collection with `normal` and `drop` types, mirroring Connection
+direction semantics. D044 records the schema and required migration.
 
 ---
 
 ### O007 — Physical File Organisation
 
-**Status:** Open
+**Status:** Resolved by D045; implementation pending
 
-The logical model is clearer than the final filesystem layout.
-
-The project still needs to decide when data belongs in broad files such as
-`connections.json` and `portals.json` versus more granular per-area files.
-
-The decision should favour local discoverability without creating unnecessarily large
-monolithic documents.
+Author small category-based source files grouped by area or natural entity, and build
+the broad runtime category collections. D045 records the accepted source/aggregate split
+and stale-output checks, based on the MobiusFFTool workflow.
 
 ---
 
 ### O008 — Exact Version 1.0 Content Boundary
 
-**Status:** Open
+**Status:** Resolved by D046
 
-The project has not yet frozen whether the first stable release must include all Sevii
-Islands and post-game content or whether some post-game coverage may land after the first
-usable vanilla release.
-
-This does not block the early-Kanto vertical slice.
+Version 1.0 covers the complete single-player FRLG world, including the Sevii Islands
+and post-game, subject to agreed exclusions. It must be publication-ready and meet most
+needs of the majority of players. Earlier development milestones may have smaller scope.
 
 ---
 
@@ -683,6 +1031,16 @@ Autotracking must not constrain the core data model prematurely.
 
 A future challenge mode may optionally model money, Poké Balls, or other consumables when
 resource exhaustion can make an otherwise accessible acquisition impossible.
+
+---
+
+### F007 — Pickup Ability Item Acquisition
+
+**Status:** Deferred beyond v1.0
+
+Do not implement Pickup-derived item availability for v1.0. Research the FRLG-specific
+item selection and eligibility rules when this feature is resumed; do not assume that
+another game's level-based Pickup behaviour applies.
 
 ---
 

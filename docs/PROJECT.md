@@ -40,7 +40,12 @@ EmoTracker that they can be validated and tested outside the UI.
 
 ## Version 1.0 Scope
 
-Version 1.0 focuses on vanilla FRLG functionality.
+Version 1.0 covers the complete single-player vanilla FRLG world, including mainland
+Kanto, the Sevii Islands, and post-game content, subject to the agreed exclusions (D046).
+
+It is the publication-ready release: reliable and usable, with documentation and most
+functionality needed by the majority of players. Earlier milestones can provide usable
+partial coverage without being called v1.0.
 
 It should provide a reliable base-game world and logic engine before specialised modes are
 implemented.
@@ -58,6 +63,12 @@ Version 1.0 does not require:
 
 Canonical data such as prices may still be stored even when the corresponding resource
 quantity is not tracked.
+
+Version 1.0 assumes single-player acquisition (D037). NPC in-game trades remain in scope,
+but external player trades, external held-item transfers, connectivity rewards, and
+evolutions requiring a trade with another player are not assumed available.
+External item trading and Mystery Gift are excluded; Pickup-derived item availability
+is deferred beyond v1.0 (D041/F007).
 
 ## Current State
 
@@ -274,12 +285,12 @@ Tasks include:
 - add encounters, trainers, items, gifts, trades, vendors, static encounters, and other
   acquisition mechanics as their schemas are settled;
 - add FireRed and LeafGreen differences;
-- add Sevii Islands and post-game content according to the eventual v1.0 completion
-  boundary.
+- complete Sevii Islands and post-game content within the single-player v1.0 boundary.
 
 Exit condition:
 
-The chosen v1.0 vanilla FRLG scope is represented and validated by the core engine.
+The complete single-player v1.0 world scope is represented and validated by the core engine,
+subject to agreed exclusions. Publication readiness is completed in Phase 6.
 
 ### Phase 5 — Minimal EmoTracker Integration
 
@@ -301,6 +312,10 @@ A user can track a vanilla FRLG playthrough through EmoTracker using the core en
 ### Phase 6 — Vanilla FRLG 1.0
 
 Goal: complete, test, document, and polish the first stable vanilla tracker.
+
+Release standard (D046): publication-ready coverage of the complete single-player FRLG
+world, including Sevii and post-game, with most functionality needed by the majority of
+players. The agreed exclusions remain in force. A working engine alone is insufficient.
 
 Potential work includes:
 

@@ -257,55 +257,31 @@ A Cut tree, ledge, or ordinary continuous map border is not a Warp.
 
 ### Portals
 
-A Portal represents the normal vanilla case in which two Warps are linked bidirectionally.
-
-The canonical vanilla representation is an unordered pair of Warp IDs:
-
-```json
-["warp_pallet_town_rival_house_entrance", "warp_rivals_house_exit"]
-```
-
-A Portal collection is therefore an array of two-element arrays:
+D044 generalizes Portal mappings into one collection of typed Warp links, with direction
+determined by type just as it is for Connections:
 
 ```json
 [
-  ["warp_pallet_town_rival_house_entrance", "warp_rivals_house_exit"],
-  ["warp_pallet_town_player_house_entrance", "warp_players_house_exit"],
-  ["warp_pallet_town_oaks_lab_entrance", "warp_oaks_lab_exit"]
+  {"type": "normal", "warps": ["warp_players_house_entrance", "warp_players_house_exit"]},
+  {"type": "drop", "warps": ["warp_example_drop", "warp_example_landing"]}
 ]
 ```
 
-For normal vanilla Portals:
+`normal` permits both directions; array order is immaterial. `drop` permits only the first
+endpoint to the second. The drop IDs above are illustrative, not authored Mansion endpoints.
+Each Warp still belongs to exactly one Zone through its declaration there.
 
-```text
-Warp A ↔ Warp B
-```
+The loader will derive `warp_to_destination[A] = B`; normal links additionally derive
+`warp_to_destination[B] = A`. Several incoming links may share one destination, but each
+departure has at most one outgoing destination. An arrival endpoint does not automatically
+create a reverse route. Landing-only and unpaired Warps remain possible.
 
-Array order has no traversal meaning.
+Actual departure behaviour must be verified from the source's activation and tile rules,
+not merely reciprocal destination references in map records.
 
-The loader derives runtime indexes such as:
-
-```text
-warp_to_zone[Warp A] = Zone A
-warp_to_zone[Warp B] = Zone B
-
-warp_to_sibling[Warp A] = Warp B
-warp_to_sibling[Warp B] = Warp A
-```
-
-The authored data therefore stores each Portal relationship only once while the runtime
-engine receives efficient reciprocal lookup tables.
-
-#### Warps That Are Not Portals
-
-Not every discrete movement mechanic must be represented as a Portal.
-
-For example, one-way drops in Pokémon Mansion behave like game-engine warps but do not form
-a normal bidirectional door pair.
-
-The exact representation of one-way Warp mechanics is deferred until the vanilla data
-requires it. The common Portal model should not be made more complicated to anticipate rare
-exceptions.
+Implementation note: the current data, validator, and Lua engine still use bare Portal
+pairs and `warp_to_sibling`. Migration to D044 must update these together; the examples
+above describe the accepted target design rather than current runtime behaviour.
 
 ## State
 
@@ -431,6 +407,11 @@ The engine distinguishes three broad scopes:
 
 ### Homogeneous Reference Arrays
 
+Version 1.0 uses the single-player scope in D037: NPC trades remain in scope; external
+trades and connectivity acquisition do not. For roaming Pokémon, D038 records the
+intended release-based availability model without tracking their current map. Exact
+release, species-selection, and encounter conditions remain deferred until implementation.
+
 Reference arrays contain one domain-object type only.
 
 For example:
@@ -446,7 +427,28 @@ Every reference in `encounter_sources` resolves to an encounter table.
 NPC trades, Pokémon vendors, gifts, static encounters, fossil revival, and other mechanics
 should not be mixed into that array merely because they all yield Pokémon.
 
-Their exact object types and array names will be defined as each mechanic is implemented.
+Accepted decisions D034–D036 define separate source types and direct Zone reference
+arrays: `static_encounters`, `pokemon_gifts`, `pokemon_trades`, `pokemon_vendors`, and
+`fossil_revivals`. These replace the draft mixed `pokemon_sources` array when migrated.
+
+These five arrays are optional in authored JSON. An omitted array means no sources of
+that type, just as an empty array does. Authors should include only useful categories;
+for example, ordinary houses need no `fossil_revivals` property. Acquisition readers will
+treat missing arrays as empty when implemented. Present properties must be arrays of
+the corresponding source IDs.
+
+This optionality does not change the existing topology-array requirements. Exact source
+object fields and runtime acquisition logic will be defined as each mechanic is implemented.
+
+D039–D040 apply the same approach to items: `item_pickups`, `item_gifts`, and `item_vendors`
+are optional direct Zone arrays, replacing the mixed draft `item_sources` array when
+migrated. Omission means no references, equivalent to an empty array. A vendor contains
+one or more offers; visibility and renewal behaviour are properties of pickup sources.
+
+D041 keeps NPC trade held items in trade data and wild held items in encounter data.
+Thief and Covet use those wild held-item facts as acquisition methods rather than
+duplicating them as independent Zone sources. Pickup is deferred beyond v1.0; external
+item trading and Mystery Gift are excluded from v1.0 under D037.
 
 ### Encounter Sources
 
@@ -462,6 +464,25 @@ enc_viridian_city_surfing
 
 Different encounter methods may share the encounter-table abstraction when their schema and
 behaviour remain coherent.
+
+D043 fixes the initial encounter shape: source `id`, `method`, `requires`, and an
+`encounters` array. Each record contains a `pokemon` species-ID reference, exact possible
+`levels`, numeric total species `rate`, and optional `versions`. Aggregate by species,
+without per-level weights or min/max ranges. The field `pokemon` references `species_*`
+IDs under D032.
+
+### Game-Version Applicability
+
+D042 uses a shared dataset and a selected version, `firered` or `leafgreen`. Acquisition
+entries may specify `versions`, for example `["firered"]`; omission means both games.
+Author identical entries once, splitting only entries whose data differs. Source IDs
+remain stable and no general version-override merge is needed.
+
+The same applicability test can filter encounters, trade exchanges, and vendor offers.
+Validate each filtered collection according to its meaning. Encounter rates total 100%
+separately for each supported game, with one aggregated record per species. A fixed
+trade resolves to one exchange per applicable game; a vendor may resolve to several offers.
+The existing engine does not yet implement these acquisition readers or encounter checks.
 
 ### Stable Source Identity
 
@@ -529,17 +550,17 @@ knowledge.
 IDs should not encode mutable behaviour such as the current reward or requirement, and must
 never depend on authoring order.
 
-The current direction is to use type prefixes for heavily cross-referenced leaf objects, for
-example:
+Accepted decision D032 uses type prefixes for heavily cross-referenced objects, for example:
 
 ```text
 zone_route_2_southwest
 conn_route_2_southwest_southeast_tree
 warp_route_2_gate_north_entrance
 enc_route_1_grass
-itemsrc_route_1_pokemart_employee
 trainer_route_3_lass_janice
 state_can_cut
+species_bulbasaur
+item_potion
 ```
 
 Map-container IDs may remain concise when their natural names are already clear:
@@ -566,8 +587,36 @@ zone_route_2_southwest
 zone_viridian_city_north
 ```
 
-The exact final prefix vocabulary and Warp naming grammar remain open and are recorded in
-`DECISIONS.md`.
+Item-source naming is accepted in D039: `item_pickup_`, `item_gift_`, and `item_vendor_`.
+Item vendors can contain multiple offers, like Pokémon vendors. D033 settles Warp naming:
+include useful physical location and
+transition details, favoring descriptive IDs over brevity. For example:
+
+```text
+warp_viridian_forest_south_gate_north_entrance
+warp_mt_moon_b1f_east_corner_ladder_up
+warp_cerulean_city_burgled_house_south_entrance
+```
+
+Qualifiers are included as needed, rather than forcing every Warp into a fixed number of
+name segments. Ownership and destination still come from Zone declarations and Portal pairs.
+
+## Authored and Runtime Data Files
+
+D045 separates small authoritative authoring files from generated runtime collections.
+For large categories, group source records by area or natural entity under `data/source/`;
+for example, building arrays in `data/source/world/containers/buildings/pallet_town.json`
+and `viridian_city.json` combine into `data/world/containers/buildings.json`.
+
+A shared configurable Python builder will combine and validate collections, produce
+deterministic output, and provide a non-writing stale-output check. Generated files
+must not be edited manually. Preserve meaningful nested-array ordering and author each
+object once even when it links areas. Lua continues to read category aggregates and
+derive runtime indexes. Compact reference data may remain in single authored files.
+
+This is the accepted target layout; the existing directly authored data has not yet
+been migrated. Introduce the source split, generated-file workflow, checks, and runtime
+packaging together.
 
 ## Modes
 
