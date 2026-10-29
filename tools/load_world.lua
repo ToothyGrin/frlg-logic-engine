@@ -1,4 +1,6 @@
 local World = require("logic.world")
+local State = require("logic.state")
+local Reachability = require("logic.reachability")
 local read_json = require("logic.json_file")
 local json = require("lib.dkjson")
 
@@ -25,4 +27,10 @@ assert(
     == "warp_players_house_entrance"
 )
 
-print("World loaded; sample lookups passed.")
+local state = State.evaluate({})
+local reachable = Reachability.solve(world, "zone_players_house", state)
+assert(reachable.zone_pallet_town, "The player's house should connect to Pallet Town")
+assert(reachable.zone_viridian_city, "The opening path should reach Viridian City")
+assert(reachable.zone_pallet_town_water == nil, "Water should remain blocked without Surf")
+
+print("World loaded; sample lookups and evaluated reachability passed.")

@@ -77,10 +77,37 @@ occur together.
 | `FRLG-L015` | Silph Co. Card Key doors | Individual persistent door flags verified; exact Card Key predicate still to be traced | Partial | Partial |
 | `FRLG-L016` | Cerulean Cave guard | Guard/hide state exists; exact unlock script still to be traced | Partial | Partial |
 | `FRLG-L017` | Fishing access/table selection | Shore or Surf; current map fishing table | Encounter rule | Verified |
+| `FRLG-L018` | Surf initiation | Soul Badge flag + a party Pokémon knows Surf; suitable water context | Field-move rule | Verified |
 
 ---
 
 ## Detailed Findings
+
+### FRLG-L018 — Starting Surf Checks Badge State and a Party Move
+
+**Classification:** Field-move rule **Status:** Verified (29 October 2026)
+
+`GetInteractedWaterScript` in `src/field_control_avatar.c` checks badge flag
+`FLAG_BADGE05_GET`, `PartyHasMonWithSurf()`, and facing surfable/fishable water before
+returning the Surf-use script. The source also rejects fast-current interaction separately.
+It does not check HM03 inventory in this branch.
+
+#### Tracker implication
+
+The exact ordinary-water field-use check combines the Soul Badge with a party member
+knowing Surf. Accepted tracker decision D031 intentionally simplifies this to Soul Badge
+plus HM03 acquired, without move knowledge or Pokémon compatibility checks. Location
+suitability is represented by authored water Connections; special currents and other
+contextual water restrictions are not implemented by this capability predicate.
+
+HM03 ownership alone does not substitute for the party-move condition. A traded Pokémon
+that already knows Surf can satisfy that condition without owning the HM.
+
+#### Source
+
+- [`src/field_control_avatar.c`, Surf interaction][source-037]
+
+---
 
 ### FRLG-L001 — S.S. Anne Boarding Checks a Flag, Not the Bag
 
@@ -388,9 +415,9 @@ AND
 Cascade Badge obtained
 ```
 
-If v1 deliberately uses HM ownership as a convenience proxy for "can teach/has taught the
-move", that is a tracker simplification and should be documented as such rather than
-described as exact game logic.
+Accepted tracker decision D031 deliberately uses HM01 acquisition plus the Cascade Badge,
+without checking move knowledge or Pokémon compatibility. This is a tracker simplification,
+rather than the exact field-use predicate above.
 
 #### Source
 
@@ -977,3 +1004,4 @@ The purpose is not merely to know *what normally happens in a playthrough*, but 
 [source-034]: https://github.com/pret/pokefirered/blob/master/data/scripts/field_moves.inc
 [source-035]: https://github.com/pret/pokefirered/blob/master/src/item_use.c
 [source-036]: https://github.com/pret/pokefirered/blob/master/src/data/wild_encounters.json
+[source-037]: https://github.com/pret/pokefirered/blob/master/src/field_control_avatar.c#L568-L581

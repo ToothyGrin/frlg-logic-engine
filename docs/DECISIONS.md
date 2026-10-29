@@ -465,6 +465,27 @@ At minimum, validation should eventually cover:
 
 ---
 
+### D031 — HM Usability Uses Acquisition and Badge State
+
+**Status:** Accepted (29 October 2026)
+
+The tracker considers an HM usable once that HM and its corresponding badge have been
+acquired. It does not check whether any Pokémon knows the move, whether the current
+party contains a compatible Pokémon, or whether the player owns a compatible Pokémon.
+
+The first implemented capabilities are:
+
+```text
+state_can_cut = state_has_hm01_cut AND state_has_cascade_badge
+state_can_surf = state_has_hm03_surf AND state_has_soul_badge
+```
+
+This is an intentional tracker simplification. The vanilla field-use checks documented
+in FRLG-L008 and FRLG-L018 remain accurate research, but do not define the tracker policy.
+Other HM capabilities should follow this policy when their badge mappings are implemented.
+
+---
+
 ## Open Decisions
 
 ### O001 — Final Type-Prefix Vocabulary

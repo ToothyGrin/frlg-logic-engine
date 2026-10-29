@@ -205,7 +205,7 @@ For example:
   "id": "conn_pewter_city_route_3_border",
   "type": "border",
   "zones": ["zone_pewter_city", "zone_route_3"],
-  "requires": "state_has_boulder_badge"
+  "requires": "state_event_brock_defeated"
 }
 ```
 
@@ -216,11 +216,15 @@ Compound game logic belongs in state derivation. For example:
 
 ```text
 state_can_cut =
-    state_has_hm01_cut
-    AND state_has_cascade_badge
+    state_has_cascade_badge
+    AND state_has_hm01_cut
 ```
 
 The Connection only needs to ask whether `state_can_cut` is true.
+
+Accepted decision D031 considers HM ownership plus the corresponding badge sufficient.
+The tracker does not check move knowledge or Pokémon compatibility. This intentionally
+simplifies the vanilla party-move checks documented in `FRLG_VANILLA_LOGIC_REFERENCE.md`.
 
 Zones, Warps, and Portals do not carry accessibility requirements in v1.0.
 
@@ -359,6 +363,11 @@ state_can_surf
 ```
 
 Derived capabilities should normally not be independently toggled by the user.
+
+The initial implementation is `State.evaluate(player)` in `logic/state.lua`.
+It derives Cut and Surf from badge and HM acquisition facts, returns a fresh boolean state
+table, and preserves the existing parcel-delivery and Brock-event inputs. See `STATE.md`
+for supported inputs, examples, and the accepted HM-usability policy.
 
 ### Reachability State
 
@@ -630,7 +639,7 @@ Only Zones reachable through the starting vanilla state should be discovered.
 ### Brock Defeated
 
 The Pewter City to Route 3 Connection should become traversable when
-`state_has_boulder_badge` becomes true.
+`state_event_brock_defeated` becomes true. Badge acquisition remains a separate fact.
 
 ### Cut Available
 
