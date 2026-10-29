@@ -11,11 +11,11 @@ import argparse
 import json
 from pathlib import Path
 
-from validate_world import CONTAINER_FILES, ID_RE, WORLD_FILES, Report, validate_data
+from validate_world import BUILD_FILES, CONTAINER_FILES, ID_RE, Report, validate_data
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-SOURCE_ROOT = PROJECT_ROOT / "data" / "source" / "world"
-OUTPUT_ROOT = PROJECT_ROOT / "data" / "world"
+SOURCE_ROOT = PROJECT_ROOT / "data" / "source"
+OUTPUT_ROOT = PROJECT_ROOT / "data"
 
 
 def assemble(source_root: Path) -> tuple[dict, Report]:
@@ -25,7 +25,7 @@ def assemble(source_root: Path) -> tuple[dict, Report]:
     identities = {}
 
     # Share the category configuration with the existing world validator.
-    for name, relative_path in WORLD_FILES.items():
+    for name, relative_path in BUILD_FILES.items():
         directory = source_root / relative_path.with_suffix("")
         paths = sorted(directory.rglob("*.json"))
         records = []
@@ -88,8 +88,10 @@ def build(
     report = Report(strict=strict)
     source_root = source_root.resolve()
     output_root = output_root.resolve()
-    if source_root == output_root or source_root in output_root.parents or output_root in source_root.parents:
-        report.error("Source and output directories must be separate and must not contain each other")
+    destinations = [output_root / path for path in BUILD_FILES.values()]
+    if (source_root == output_root or source_root in output_root.parents
+            or any(source_root == path or source_root in path.parents for path in destinations)):
+        report.error("Source and output directories must be separate; generated files must not be inside source")
         return report
 
     try:
@@ -121,7 +123,7 @@ def build(
             output_root / relative_path: (
                 json.dumps(data[name], indent=2, ensure_ascii=False) + "\n"
             ).encode("utf-8")
-            for name, relative_path in WORLD_FILES.items()
+            for name, relative_path in BUILD_FILES.items()
         }
 
         for path, content in outputs.items():
@@ -140,8 +142,8 @@ def build(
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--source", type=Path, default=SOURCE_ROOT, help="Authored world source root")
-    parser.add_argument("--output", type=Path, default=OUTPUT_ROOT, help="Generated runtime world root")
+    parser.add_argument("--source", type=Path, default=SOURCE_ROOT, help="Authored data root (contains world/ and encounters/)")
+    parser.add_argument("--output", type=Path, default=OUTPUT_ROOT, help="Runtime data root (contains world/ and encounters/)")
     parser.add_argument("--check", action="store_true", help="Check without writing any files")
     parser.add_argument("--strict", action="store_true", help="Reject incomplete world references")
     args = parser.parse_args()

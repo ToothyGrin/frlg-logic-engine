@@ -2,7 +2,8 @@
 
 ## World Builder
 
-Edit the authoritative JSON arrays under `data/source/world/`. Generate and validate the
+Edit the authoritative JSON arrays under `data/source/world/` and
+`data/source/encounters/wild/`. Generate and validate the
 runtime collections from the project root:
 
 ```text
@@ -16,8 +17,10 @@ python tools/build_world.py --check
 ```
 
 Use `--strict` to reject unfinished references, or `--source PATH --output PATH` for an
-isolated build. Source and output directories must be separate. The six generated JSON
-files stay at their existing paths under `data/world/`; do not edit them directly.
+isolated build. These paths now refer to data roots containing `world/` and `encounters/`,
+defaulting to `data/source/` and `data/`. Generated files must stay outside the source root.
+The six world JSON files and `data/encounters/wild.json` stay at their runtime paths;
+do not edit them directly. All collections are validated before any output is written.
 
 Run the builder regression tests:
 
@@ -26,6 +29,22 @@ python -m unittest discover -s tests -p "test_*.py"
 ```
 
 See `data/source/world/README.md` for authoring conventions and the pre-commit workflow.
+
+## Archive Exports
+
+Commit reference images and their provenance README under `assets/reference/` alongside
+the authored data. `.gitattributes` marks that directory and its contents `export-ignore`,
+so Git archives exclude them while the repository retains them.
+
+After committing the intended changes, export the committed snapshot from the project root:
+
+```text
+git archive --format=zip --output=frlg_tracker.zip HEAD
+```
+
+This exports committed files only. Generated runtime data and future runtime artwork remain
+included; development references are excluded. A dedicated EmoTracker release packager is
+not implemented yet and must preserve the same exclusion when added.
 
 ## Validator
 
@@ -47,6 +66,10 @@ duplicate IDs, Zone and Connection references, Connection endpoint declarations,
 links, unique Warp ownership, conflicting outgoing routes, empty-string placeholders, and
 `state_*` requirements. Normal links are bidirectional; drops follow endpoint order. Shared
 landings and unpaired Warps are allowed; unfinished referenced endpoints remain draft warnings.
+It also checks wild encounter schemas, source references, exact levels, method requirements,
+version filters, effective species uniqueness, and rates totalling 100% per game. Missing
+encounter references are errors in draft mode too. The validator reads the sibling
+`encounters/wild.json` collection alongside `world/`; see `docs/ENCOUNTERS.md`.
 
 ## Generator
 

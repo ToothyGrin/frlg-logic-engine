@@ -22,6 +22,19 @@ local function test_capability_requirements()
     end
 end
 
+local function test_rod_facts()
+    for _, id in ipairs({"state_has_old_rod", "state_has_good_rod", "state_has_super_rod"}) do
+        assert(State.evaluate({})[id] == false, "Missing rods should be false")
+        for _, value in ipairs({true, false, "true", 1}) do
+            local player = {}
+            player[id] = value
+            assert(State.evaluate(player)[id] == (value == true), "Only true enables a rod")
+        end
+    end
+    local super_only = State.evaluate({state_has_super_rod = true})
+    assert(not super_only.state_has_old_rod and not super_only.state_has_good_rod, "Owning a rod does not imply owning other rods")
+end
+
 local function test_missing_and_invalid_flags()
     local missing = State.evaluate({})
     assert(missing.state_can_cut == false, "Missing Cut facts should mean unavailable")
@@ -72,12 +85,12 @@ local function test_independent_capabilities_and_events()
     local state = State.evaluate({
         state_has_cascade_badge = true,
         state_has_hm03_surf = true,
-        state_delivered_oaks_parcel = true,
+        state_event_oaks_parcel_delivered = true,
         state_event_brock_defeated = true,
     })
     assert(state.state_can_cut == false, "HM03 must not satisfy the HM01 requirement")
     assert(state.state_can_surf == false, "The Cascade Badge must not satisfy Surf's badge requirement")
-    assert(state.state_delivered_oaks_parcel, "Parcel delivery must pass through")
+    assert(state.state_event_oaks_parcel_delivered, "Parcel delivery must pass through")
     assert(state.state_event_brock_defeated, "Brock's event must pass through")
 
     local badge_only = State.evaluate({state_has_boulder_badge = true})
@@ -136,6 +149,7 @@ local function test_invalid_player_state()
 end
 
 test_capability_requirements()
+test_rod_facts()
 test_missing_and_invalid_flags()
 test_capabilities_cannot_be_overridden()
 test_independent_capabilities_and_events()

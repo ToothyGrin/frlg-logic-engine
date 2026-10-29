@@ -1,0 +1,28 @@
+[
+  {
+    "id": "enc_route_1_grass",
+    "method": "grass",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_pidgey",
+        "levels": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "rate": 50
+      },
+      {
+        "pokemon": "species_rattata",
+        "levels": [
+          2,
+          3,
+          4
+        ],
+        "rate": 50
+      }
+    ]
+  }
+]

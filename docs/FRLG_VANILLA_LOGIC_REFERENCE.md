@@ -78,10 +78,59 @@ occur together.
 | `FRLG-L016` | Cerulean Cave guard | Guard/hide state exists; exact unlock script still to be traced | Partial | Partial |
 | `FRLG-L017` | Fishing access/table selection | Shore or Surf; current map fishing table | Encounter rule | Verified |
 | `FRLG-L018` | Surf initiation | Soul Badge flag + a party Pokémon knows Surf; suitable water context | Field-move rule | Verified |
+| `FRLG-L019` | Viridian old-man roadblock | Old-man scene 0 blocks the road; completed Oak delivery scene sets it to 1 and moves him aside | Scene/object state | Verified |
+| `FRLG-L020` | Pallet Town Old Rod levels | Both Old Rod slots are Magikarp at levels 5–10 in both games; Viridian uses level 5 | Encounter data | Verified |
 
 ---
 
 ## Detailed Findings
+
+### FRLG-L020 — Pallet Town Has Different Old Rod Levels
+
+**Classification:** Encounter data **Status:** Verified (29 October 2026)
+
+The `fishing_mons` field defines Old Rod slots as indices 0 and 1, with weights 70%
+and 30%. In both `sPalletTown_FireRed` and `sPalletTown_LeafGreen`, both slots use
+`SPECIES_MAGIKARP`, minimum level 5 and maximum level 10. The corresponding Viridian
+City slots use minimum and maximum level 5. The supplied Bulbapedia screenshots agree.
+
+#### Tracker implication
+
+Author Pallet's aggregate as `species_magikarp`, levels `[5, 6, 7, 8, 9, 10]`, rate 100,
+shared across versions. Other maps retain their own table values; do not normalize all
+Old Rod sources to one global level. D043 stores possible levels without their weights.
+
+#### Source
+
+- [`src/data/wild_encounters.json`, slot groups and both versions' map tables][source-036]
+
+---
+
+### FRLG-L019 — Oak's Completed Delivery Scene Moves the Old Man Aside
+
+**Classification:** Scene/object state **Status:** Verified (29 October 2026)
+
+At the end of Oak's parcel-delivery/Pokédex scene, the lab script sets
+`VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN` to 1. Viridian's map transition script places
+the old man at (21, 11), lying in the road, for scene 0. For scene 1 it places him
+standing beside the road at (21, 8); scenes 2 and later use his normal placement.
+The catching tutorial starts from scene 1, so its completion is not required to pass.
+
+The lab scene removes `ITEM_OAKS_PARCEL` earlier, then awards the Pokédex and Poké Balls
+before setting the old-man scene. Current parcel inventory is not the road's predicate.
+
+#### Tracker implication
+
+`state_event_oaks_parcel_delivered` means the delivery/Pokédex scene has completed.
+It abstracts the resulting old-man scene change without requiring a tutorial flag.
+The graph retains its separate Cut alternative around the roadblock.
+
+#### Sources
+
+- [`PalletTown_ProfessorOaksLab/scripts.inc`, delivery scene][source-038]
+- [`ViridianCity/scripts.inc`, old-man placement and tutorial][source-039]
+
+---
 
 ### FRLG-L018 — Starting Surf Checks Badge State and a Party Move
 
@@ -317,6 +366,12 @@ The Pewter City route-blocking behaviour is implemented through the guide/scene/
 state. The researched Pewter City script does not contain a simple "Route 3 guard checks
 `FLAG_DEFEATED_BROCK`" predicate.
 
+Rechecked on 29 October 2026: the map's guide coordinate events at x=42,
+y=21–23 are active when `VAR_MAP_SCENE_PEWTER_CITY` is 0. The guide object uses
+`FLAG_HIDE_PEWTER_CITY_GYM_GUIDE`; the coordinate scripts send the player toward
+the Gym. Brock's victory advances the scene to 1 and hides the guide, so the
+completed victory progression is the appropriate tracker abstraction.
+
 #### Tracker implication
 
 It is reasonable for the tracker to expose a semantic state such as:
@@ -336,6 +391,7 @@ Likewise, `state_has_boulder_badge` should remain a separate concept.
 
 - [`PewterCity_Gym/scripts.inc`, Brock victory][source-017]
 - [`PewterCity/scripts.inc`, Gym guide logic][source-018]
+- [`PewterCity/map.json`, guide coordinate events][source-040]
 - [`flags.h`, boss clear flags][source-019]
 
 ---
@@ -1005,3 +1061,6 @@ The purpose is not merely to know *what normally happens in a playthrough*, but 
 [source-035]: https://github.com/pret/pokefirered/blob/master/src/item_use.c
 [source-036]: https://github.com/pret/pokefirered/blob/master/src/data/wild_encounters.json
 [source-037]: https://github.com/pret/pokefirered/blob/master/src/field_control_avatar.c#L568-L581
+[source-038]: https://github.com/pret/pokefirered/blob/master/data/maps/PalletTown_ProfessorOaksLab/scripts.inc#L549-L633
+[source-039]: https://github.com/pret/pokefirered/blob/master/data/maps/ViridianCity/scripts.inc#L1-L94
+[source-040]: https://github.com/pret/pokefirered/blob/master/data/maps/PewterCity/map.json#L181-L216

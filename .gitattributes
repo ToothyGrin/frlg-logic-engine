@@ -4,3 +4,7 @@
 # Binary assets
 *.png binary
 *.pdn binary
+
+# Development references stay in Git but are excluded from exported archives.
+/assets/reference export-ignore
+/assets/reference/** export-ignore

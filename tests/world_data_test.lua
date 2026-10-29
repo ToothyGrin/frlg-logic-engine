@@ -16,7 +16,7 @@ end
 
 local function test_evaluated_player_state(world)
     local player = {
-        state_delivered_oaks_parcel = true,
+        state_event_oaks_parcel_delivered = true,
         state_event_brock_defeated = true,
         state_has_cascade_badge = true,
         state_has_soul_badge = true,
@@ -42,9 +42,58 @@ local function test_evaluated_player_state(world)
     assert(player.state_can_cut == nil, "The full pipeline must not write capabilities into player facts")
 end
 
+local function test_progression_gate_facts(world)
+    local cases = {
+        {name = "Initial state", player = {}, north = false, route_3 = false},
+        {
+            name = "Holding Oak's Parcel does not complete delivery",
+            player = {state_has_oaks_parcel = true},
+            north = false, route_3 = false,
+        },
+        {
+            name = "Completed delivery opens the old-man path",
+            player = {state_event_oaks_parcel_delivered = true},
+            north = true, route_3 = false,
+        },
+        {
+            name = "Boulder Badge does not substitute for Brock's event",
+            player = {state_event_oaks_parcel_delivered = true, state_has_boulder_badge = true},
+            north = true, route_3 = false,
+        },
+        {
+            name = "Brock's event does not require a separate badge input",
+            player = {state_event_oaks_parcel_delivered = true, state_event_brock_defeated = true},
+            north = true, route_3 = true,
+        },
+        {
+            name = "Brock's event does not bypass the old man",
+            player = {state_event_brock_defeated = true},
+            north = false, route_3 = false,
+        },
+        {
+            name = "HM01 alone does not open the alternative path",
+            player = {state_has_hm01_cut = true},
+            north = false, route_3 = false,
+        },
+        {
+            name = "Usable Cut bypasses the old man but not Brock's guide",
+            player = {state_has_hm01_cut = true, state_has_cascade_badge = true},
+            north = true, route_3 = false,
+        },
+    }
+
+    for _, case in ipairs(cases) do
+        local reachable = Reachability.solve(world, "zone_players_house", State.evaluate(case.player))
+        assert((reachable.zone_viridian_city_north == true) == case.north, case.name)
+        assert((reachable.zone_pewter_city == true) == case.north, case.name)
+        assert((reachable.zone_route_3 == true) == case.route_3, case.name)
+    end
+end
+
 local function test_authored_world()
     local world = World.load(read_world_json)
     test_evaluated_player_state(world)
+    test_progression_gate_facts(world)
 
     local early = Reachability.solve(world, "zone_players_house", {})
     assert(early.zone_pallet_town, "The player's house Portal should lead to Pallet Town")
@@ -55,7 +104,7 @@ local function test_authored_world()
     assert(early.zone_pallet_town_water == nil, "Water should require Surf")
 
     local parcel = Reachability.solve(world, "zone_players_house", {
-        state_delivered_oaks_parcel = true,
+        state_event_oaks_parcel_delivered = true,
     })
     assert(parcel.zone_viridian_forest, "Parcel delivery should open the path through Viridian Forest")
     assert(parcel.zone_pewter_city, "Parcel delivery should allow reaching Pewter")
@@ -63,7 +112,7 @@ local function test_authored_world()
     assert(parcel.zone_pewter_city_museum_backyard == nil, "The museum ledge must not allow entry uphill")
 
     local brock = Reachability.solve(world, "zone_players_house", {
-        state_delivered_oaks_parcel = true,
+        state_event_oaks_parcel_delivered = true,
         state_event_brock_defeated = true,
     })
     assert(brock.zone_route_3, "Defeating Brock should open Route 3")

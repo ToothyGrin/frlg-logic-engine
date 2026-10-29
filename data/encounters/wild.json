@@ -1,1 +1,2966 @@
-[]
+[
+  {
+    "id": "enc_cerulean_city_good_rod",
+    "method": "good_rod",
+    "requires": "state_has_good_rod",
+    "encounters": [
+      {
+        "pokemon": "species_horsea",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 60,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_horsea",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_krabby",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_krabby",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 60,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20
+      }
+    ]
+  },
+  {
+    "id": "enc_cerulean_city_old_rod",
+    "method": "old_rod",
+    "requires": "state_has_old_rod",
+    "encounters": [
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_cerulean_city_super_rod",
+    "method": "super_rod",
+    "requires": "state_has_super_rod",
+    "encounters": [
+      {
+        "pokemon": "species_gyarados",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_horsea",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 84,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_krabby",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 84,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_psyduck",
+        "levels": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 1,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_slowpoke",
+        "levels": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 1,
+        "versions": [
+          "leafgreen"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enc_cerulean_city_surf",
+    "method": "surf",
+    "requires": "state_can_surf",
+    "encounters": [
+      {
+        "pokemon": "species_tentacool",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_mt_moon_cave_1f",
+    "method": "cave",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_clefairy",
+        "levels": [
+          8
+        ],
+        "rate": 1
+      },
+      {
+        "pokemon": "species_geodude",
+        "levels": [
+          7,
+          8,
+          9
+        ],
+        "rate": 25
+      },
+      {
+        "pokemon": "species_paras",
+        "levels": [
+          8
+        ],
+        "rate": 5
+      },
+      {
+        "pokemon": "species_zubat",
+        "levels": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "rate": 69
+      }
+    ]
+  },
+  {
+    "id": "enc_mt_moon_cave_b1f",
+    "method": "cave",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_paras",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_mt_moon_cave_b2f",
+    "method": "cave",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_clefairy",
+        "levels": [
+          10,
+          12
+        ],
+        "rate": 6
+      },
+      {
+        "pokemon": "species_geodude",
+        "levels": [
+          9,
+          10
+        ],
+        "rate": 30
+      },
+      {
+        "pokemon": "species_paras",
+        "levels": [
+          10,
+          12
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_zubat",
+        "levels": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "rate": 49
+      }
+    ]
+  },
+  {
+    "id": "enc_pallet_town_good_rod",
+    "method": "good_rod",
+    "requires": "state_has_good_rod",
+    "encounters": [
+      {
+        "pokemon": "species_horsea",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 60,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_horsea",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_krabby",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_krabby",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 60,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20
+      }
+    ]
+  },
+  {
+    "id": "enc_pallet_town_old_rod",
+    "method": "old_rod",
+    "requires": "state_has_old_rod",
+    "encounters": [
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_pallet_town_super_rod",
+    "method": "super_rod",
+    "requires": "state_has_super_rod",
+    "encounters": [
+      {
+        "pokemon": "species_gyarados",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_horsea",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 40,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_kingler",
+        "levels": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 4,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_krabby",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 40,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_psyduck",
+        "levels": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 1,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_seadra",
+        "levels": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 4,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_shellder",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 40,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_slowpoke",
+        "levels": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 1,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_staryu",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 40,
+        "versions": [
+          "leafgreen"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enc_pallet_town_surf",
+    "method": "surf",
+    "requires": "state_can_surf",
+    "encounters": [
+      {
+        "pokemon": "species_tentacool",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_route_1_grass",
+    "method": "grass",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_pidgey",
+        "levels": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "rate": 50
+      },
+      {
+        "pokemon": "species_rattata",
+        "levels": [
+          2,
+          3,
+          4
+        ],
+        "rate": 50
+      }
+    ]
+  },
+  {
+    "id": "enc_route_22_good_rod",
+    "method": "good_rod",
+    "requires": "state_has_good_rod",
+    "encounters": [
+      {
+        "pokemon": "species_goldeen",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20
+      },
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20
+      },
+      {
+        "pokemon": "species_poliwag",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 60
+      }
+    ]
+  },
+  {
+    "id": "enc_route_22_grass",
+    "method": "grass",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_mankey",
+        "levels": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "rate": 45
+      },
+      {
+        "pokemon": "species_rattata",
+        "levels": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "rate": 45
+      },
+      {
+        "pokemon": "species_spearow",
+        "levels": [
+          3,
+          5
+        ],
+        "rate": 10
+      }
+    ]
+  },
+  {
+    "id": "enc_route_22_old_rod",
+    "method": "old_rod",
+    "requires": "state_has_old_rod",
+    "encounters": [
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_route_22_super_rod",
+    "method": "super_rod",
+    "requires": "state_has_super_rod",
+    "encounters": [
+      {
+        "pokemon": "species_gyarados",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_poliwag",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 40
+      },
+      {
+        "pokemon": "species_poliwhirl",
+        "levels": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "rate": 40
+      },
+      {
+        "pokemon": "species_psyduck",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 5,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_slowpoke",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 5,
+        "versions": [
+          "leafgreen"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enc_route_22_surf",
+    "method": "surf",
+    "requires": "state_can_surf",
+    "encounters": [
+      {
+        "pokemon": "species_psyduck",
+        "levels": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "rate": 100,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_slowpoke",
+        "levels": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "rate": 100,
+        "versions": [
+          "leafgreen"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enc_route_23_good_rod",
+    "method": "good_rod",
+    "requires": "state_has_good_rod",
+    "encounters": [
+      {
+        "pokemon": "species_goldeen",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20
+      },
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20
+      },
+      {
+        "pokemon": "species_poliwag",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 60
+      }
+    ]
+  },
+  {
+    "id": "enc_route_23_grass",
+    "method": "grass",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_arbok",
+        "levels": [
+          44
+        ],
+        "rate": 5,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_ekans",
+        "levels": [
+          32,
+          34
+        ],
+        "rate": 20,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_fearow",
+        "levels": [
+          40,
+          42,
+          44
+        ],
+        "rate": 25
+      },
+      {
+        "pokemon": "species_mankey",
+        "levels": [
+          32,
+          34
+        ],
+        "rate": 30
+      },
+      {
+        "pokemon": "species_primeape",
+        "levels": [
+          42
+        ],
+        "rate": 5
+      },
+      {
+        "pokemon": "species_sandshrew",
+        "levels": [
+          32,
+          34
+        ],
+        "rate": 20,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_sandslash",
+        "levels": [
+          44
+        ],
+        "rate": 5,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_spearow",
+        "levels": [
+          32,
+          34
+        ],
+        "rate": 15
+      }
+    ]
+  },
+  {
+    "id": "enc_route_23_old_rod",
+    "method": "old_rod",
+    "requires": "state_has_old_rod",
+    "encounters": [
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_route_23_super_rod",
+    "method": "super_rod",
+    "requires": "state_has_super_rod",
+    "encounters": [
+      {
+        "pokemon": "species_gyarados",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_poliwag",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 40
+      },
+      {
+        "pokemon": "species_poliwhirl",
+        "levels": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "rate": 40
+      },
+      {
+        "pokemon": "species_psyduck",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 5,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_slowpoke",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 5,
+        "versions": [
+          "leafgreen"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enc_route_23_surf",
+    "method": "surf",
+    "requires": "state_can_surf",
+    "encounters": [
+      {
+        "pokemon": "species_psyduck",
+        "levels": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "rate": 100,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_slowpoke",
+        "levels": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "rate": 100,
+        "versions": [
+          "leafgreen"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enc_route_24_good_rod",
+    "method": "good_rod",
+    "requires": "state_has_good_rod",
+    "encounters": [
+      {
+        "pokemon": "species_horsea",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 60,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_horsea",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_krabby",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_krabby",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 60,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20
+      }
+    ]
+  },
+  {
+    "id": "enc_route_24_grass",
+    "method": "grass",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_abra",
+        "levels": [
+          8,
+          10,
+          12
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_bellsprout",
+        "levels": [
+          12,
+          13,
+          14
+        ],
+        "rate": 25,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_caterpie",
+        "levels": [
+          7
+        ],
+        "rate": 20
+      },
+      {
+        "pokemon": "species_kakuna",
+        "levels": [
+          8
+        ],
+        "rate": 4,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_kakuna",
+        "levels": [
+          8
+        ],
+        "rate": 1,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_metapod",
+        "levels": [
+          8
+        ],
+        "rate": 1,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_metapod",
+        "levels": [
+          8
+        ],
+        "rate": 4,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_oddish",
+        "levels": [
+          12,
+          13,
+          14
+        ],
+        "rate": 25,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_pidgey",
+        "levels": [
+          11,
+          13
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_weedle",
+        "levels": [
+          7
+        ],
+        "rate": 20
+      }
+    ]
+  },
+  {
+    "id": "enc_route_24_old_rod",
+    "method": "old_rod",
+    "requires": "state_has_old_rod",
+    "encounters": [
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_route_24_super_rod",
+    "method": "super_rod",
+    "requires": "state_has_super_rod",
+    "encounters": [
+      {
+        "pokemon": "species_gyarados",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_horsea",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 84,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_krabby",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 84,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_psyduck",
+        "levels": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 1,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_slowpoke",
+        "levels": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 1,
+        "versions": [
+          "leafgreen"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enc_route_24_surf",
+    "method": "surf",
+    "requires": "state_can_surf",
+    "encounters": [
+      {
+        "pokemon": "species_tentacool",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_route_25_good_rod",
+    "method": "good_rod",
+    "requires": "state_has_good_rod",
+    "encounters": [
+      {
+        "pokemon": "species_goldeen",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20
+      },
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20
+      },
+      {
+        "pokemon": "species_poliwag",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 60
+      }
+    ]
+  },
+  {
+    "id": "enc_route_25_grass",
+    "method": "grass",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_abra",
+        "levels": [
+          9,
+          11,
+          13
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_bellsprout",
+        "levels": [
+          12,
+          13,
+          14
+        ],
+        "rate": 25,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_caterpie",
+        "levels": [
+          8
+        ],
+        "rate": 20
+      },
+      {
+        "pokemon": "species_kakuna",
+        "levels": [
+          9
+        ],
+        "rate": 4,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_kakuna",
+        "levels": [
+          9
+        ],
+        "rate": 1,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_metapod",
+        "levels": [
+          9
+        ],
+        "rate": 1,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_metapod",
+        "levels": [
+          9
+        ],
+        "rate": 4,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_oddish",
+        "levels": [
+          12,
+          13,
+          14
+        ],
+        "rate": 25,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_pidgey",
+        "levels": [
+          11,
+          13
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_weedle",
+        "levels": [
+          8
+        ],
+        "rate": 20
+      }
+    ]
+  },
+  {
+    "id": "enc_route_25_old_rod",
+    "method": "old_rod",
+    "requires": "state_has_old_rod",
+    "encounters": [
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_route_25_super_rod",
+    "method": "super_rod",
+    "requires": "state_has_super_rod",
+    "encounters": [
+      {
+        "pokemon": "species_gyarados",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_poliwag",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 40
+      },
+      {
+        "pokemon": "species_poliwhirl",
+        "levels": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "rate": 40
+      },
+      {
+        "pokemon": "species_psyduck",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 5,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_slowpoke",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 5,
+        "versions": [
+          "leafgreen"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enc_route_25_surf",
+    "method": "surf",
+    "requires": "state_can_surf",
+    "encounters": [
+      {
+        "pokemon": "species_psyduck",
+        "levels": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "rate": 100,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_slowpoke",
+        "levels": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "rate": 100,
+        "versions": [
+          "leafgreen"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enc_route_2_grass",
+    "method": "grass",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_caterpie",
+        "levels": [
+          4,
+          5
+        ],
+        "rate": 5
+      },
+      {
+        "pokemon": "species_pidgey",
+        "levels": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "rate": 45
+      },
+      {
+        "pokemon": "species_rattata",
+        "levels": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "rate": 45
+      },
+      {
+        "pokemon": "species_weedle",
+        "levels": [
+          4,
+          5
+        ],
+        "rate": 5
+      }
+    ]
+  },
+  {
+    "id": "enc_route_3_grass",
+    "method": "grass",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_jigglypuff",
+        "levels": [
+          3,
+          5,
+          7
+        ],
+        "rate": 10
+      },
+      {
+        "pokemon": "species_mankey",
+        "levels": [
+          7
+        ],
+        "rate": 10
+      },
+      {
+        "pokemon": "species_nidoran_f",
+        "levels": [
+          6
+        ],
+        "rate": 1,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_nidoran_f",
+        "levels": [
+          6,
+          7
+        ],
+        "rate": 14,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_nidoran_m",
+        "levels": [
+          6,
+          7
+        ],
+        "rate": 14,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_nidoran_m",
+        "levels": [
+          6
+        ],
+        "rate": 1,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_pidgey",
+        "levels": [
+          6,
+          7
+        ],
+        "rate": 30
+      },
+      {
+        "pokemon": "species_spearow",
+        "levels": [
+          6,
+          7,
+          8
+        ],
+        "rate": 35
+      }
+    ]
+  },
+  {
+    "id": "enc_route_4_good_rod",
+    "method": "good_rod",
+    "requires": "state_has_good_rod",
+    "encounters": [
+      {
+        "pokemon": "species_horsea",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 60,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_horsea",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_krabby",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_krabby",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 60,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20
+      }
+    ]
+  },
+  {
+    "id": "enc_route_4_grass",
+    "method": "grass",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_ekans",
+        "levels": [
+          6,
+          8,
+          10,
+          12
+        ],
+        "rate": 25,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_mankey",
+        "levels": [
+          10,
+          12
+        ],
+        "rate": 5
+      },
+      {
+        "pokemon": "species_rattata",
+        "levels": [
+          8,
+          10,
+          12
+        ],
+        "rate": 35
+      },
+      {
+        "pokemon": "species_sandshrew",
+        "levels": [
+          6,
+          8,
+          10,
+          12
+        ],
+        "rate": 25,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_spearow",
+        "levels": [
+          8,
+          10,
+          12
+        ],
+        "rate": 35
+      }
+    ]
+  },
+  {
+    "id": "enc_route_4_old_rod",
+    "method": "old_rod",
+    "requires": "state_has_old_rod",
+    "encounters": [
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_route_4_super_rod",
+    "method": "super_rod",
+    "requires": "state_has_super_rod",
+    "encounters": [
+      {
+        "pokemon": "species_gyarados",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_horsea",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 84,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_krabby",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 84,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_psyduck",
+        "levels": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 1,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_slowpoke",
+        "levels": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 1,
+        "versions": [
+          "leafgreen"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enc_route_4_surf",
+    "method": "surf",
+    "requires": "state_can_surf",
+    "encounters": [
+      {
+        "pokemon": "species_tentacool",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_viridian_city_good_rod",
+    "method": "good_rod",
+    "requires": "state_has_good_rod",
+    "encounters": [
+      {
+        "pokemon": "species_goldeen",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20
+      },
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 20
+      },
+      {
+        "pokemon": "species_poliwag",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ],
+        "rate": 60
+      }
+    ]
+  },
+  {
+    "id": "enc_viridian_city_old_rod",
+    "method": "old_rod",
+    "requires": "state_has_old_rod",
+    "encounters": [
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_viridian_city_super_rod",
+    "method": "super_rod",
+    "requires": "state_has_super_rod",
+    "encounters": [
+      {
+        "pokemon": "species_gyarados",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_poliwag",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "rate": 40
+      },
+      {
+        "pokemon": "species_poliwhirl",
+        "levels": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "rate": 40
+      },
+      {
+        "pokemon": "species_psyduck",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 5,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_slowpoke",
+        "levels": [
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35
+        ],
+        "rate": 5,
+        "versions": [
+          "leafgreen"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enc_viridian_city_surf",
+    "method": "surf",
+    "requires": "state_can_surf",
+    "encounters": [
+      {
+        "pokemon": "species_psyduck",
+        "levels": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "rate": 100,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_slowpoke",
+        "levels": [
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40
+        ],
+        "rate": 100,
+        "versions": [
+          "leafgreen"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "enc_viridian_forest_grass",
+    "method": "grass",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_caterpie",
+        "levels": [
+          3,
+          4,
+          5
+        ],
+        "rate": 40
+      },
+      {
+        "pokemon": "species_kakuna",
+        "levels": [
+          4,
+          5,
+          6
+        ],
+        "rate": 10,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_kakuna",
+        "levels": [
+          5
+        ],
+        "rate": 5,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_metapod",
+        "levels": [
+          5
+        ],
+        "rate": 5,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_metapod",
+        "levels": [
+          4,
+          5,
+          6
+        ],
+        "rate": 10,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_pikachu",
+        "levels": [
+          3,
+          5
+        ],
+        "rate": 5
+      },
+      {
+        "pokemon": "species_weedle",
+        "levels": [
+          3,
+          4,
+          5
+        ],
+        "rate": 40
+      }
+    ]
+  }
+]

@@ -285,7 +285,7 @@
       "zone_viridian_city",
       "zone_viridian_city_north"
     ],
-    "requires": "state_delivered_oaks_parcel"
+    "requires": "state_event_oaks_parcel_delivered"
   },
   {
     "id": "conn_viridian_city_route_1_border",

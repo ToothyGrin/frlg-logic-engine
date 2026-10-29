@@ -11,20 +11,39 @@ boolean state table consumed by `Reachability.solve`.
 | `state_has_soul_badge` | Soul Badge acquired |
 | `state_has_hm01_cut` | HM01 Cut acquired |
 | `state_has_hm03_surf` | HM03 Surf acquired |
-| `state_delivered_oaks_parcel` | Existing parcel-delivery input used by the authored graph |
-| `state_event_brock_defeated` | Existing Brock-event input used by the authored graph |
+| `state_has_old_rod` | Old Rod acquired |
+| `state_has_good_rod` | Good Rod acquired |
+| `state_has_super_rod` | Super Rod acquired |
+| `state_event_oaks_parcel_delivered` | Oak's parcel-delivery/Pokédex scene completed; old man moved aside |
+| `state_event_brock_defeated` | Brock victory progression completed; Pewter's Route 3 guide removed |
 
 Only the boolean value `true` enables a fact. Missing, false, and nonboolean values become
 false. Unsupported keys are ignored. This is a small supported-input list, not a complete
 player-state schema or typo validator.
 
-The two existing story input names are preserved for compatibility with world data.
-Their naming and exact scene/object mapping remain to be reviewed separately; the
-evaluator does not infer story events from badges or change the graph's requirements.
+## Story Event Mapping
+
+These are manually supplied semantic events, representing the vanilla scene/object
+changes verified in FRLG-L019 and FRLG-L006 in `FRLG_VANILLA_LOGIC_REFERENCE.md`.
+
+Oak's completed scene sets `VAR_MAP_SCENE_VIRIDIAN_CITY_OLD_MAN` to 1. Viridian's
+transition script then places the old man beside the road; completing the catching
+tutorial (scene 2) is not required to pass. Holding Oak's Parcel does not satisfy this
+event. The input was renamed from `state_delivered_oaks_parcel` to
+`state_event_oaks_parcel_delivered`; callers must use the new name, with no legacy alias.
+
+Brock's victory sets his defeat flag and Boulder Badge flag separately, advances Pewter's
+map scene to 1, and hides the guide. The Route 3 guide triggers use scene 0. Our event
+represents this completed victory progression; the Connection does not model a direct
+check of the defeat flag or badge. No story event is inferred from badge ownership.
+
+The existing Cut alternative around the old man remains available under D031's policy.
+Unsupported inventory/badge facts used in regression cases remain ignored by the current
+evaluator; those cases guard against introducing an automatic substitute for these events.
 
 ## Derived Outputs
 
-The returned table contains the six normalized inputs plus:
+The returned table contains the nine normalized inputs plus:
 
 ```text
 state_can_cut = state_has_cascade_badge AND state_has_hm01_cut
@@ -35,6 +54,10 @@ These predicates implement accepted decision D031: an acquired HM plus its corre
 badge is sufficient. Pokémon move knowledge and compatibility are not checked.
 FRLG-L008 and FRLG-L018 in `FRLG_VANILLA_LOGIC_REFERENCE.md` document the different vanilla
 field-use checks; the tracker deliberately simplifies those checks.
+
+Each rod remains an independent acquisition fact. Owning the Super Rod does not imply
+owning the Old Rod or Good Rod. Rod facts gate their respective encounter sources;
+Surf capability separately gates Surf encounters and water Connections.
 
 Inputs named `state_can_cut` or `state_can_surf` are ignored; both outputs are recalculated
 from their authoritative facts. Party-related inputs are unsupported and have no effect.

@@ -9,7 +9,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from build_world import build
-from validate_world import WORLD_FILES, validate
+from validate_world import BUILD_FILES, validate
 
 
 class WorldBuildTests(unittest.TestCase):
@@ -33,12 +33,13 @@ class WorldBuildTests(unittest.TestCase):
                 "requires": None,
             }],
             "portals.json": [{"type": "normal", "warps": ["warp_b", "warp_a"]}],
+            "wild.json": [],
         }
         for name, records in self.data.items():
             self.write_source(name, records)
 
     def write_source(self, name, records, filename="part.json"):
-        path = self.source / WORLD_FILES[name].with_suffix("") / filename
+        path = self.source / BUILD_FILES[name].with_suffix("") / filename
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(records), encoding="utf-8")
         return path
@@ -50,14 +51,14 @@ class WorldBuildTests(unittest.TestCase):
         report = build(self.source, self.output)
         self.assertEqual(report.errors, [])
         self.assertEqual(report.warnings, [])
-        for name, relative_path in WORLD_FILES.items():
+        for name, relative_path in BUILD_FILES.items():
             self.assertEqual(json.loads((self.output / relative_path).read_text()), self.data[name])
-        self.assertEqual(validate(self.output, strict=True).errors, [])
+        self.assertEqual(validate(self.output / "world", strict=True).errors, [])
         self.assertEqual(build(self.source, self.output, check=True).errors, [])
 
     def test_check_reports_stale_files_without_writing(self):
         self.assertEqual(build(self.source, self.output).errors, [])
-        path = self.output / "connections.json"
+        path = self.output / "world" / "connections.json"
         path.write_bytes(b"[]\n")
         before = self.snapshot()
         report = build(self.source, self.output, check=True)
@@ -68,7 +69,7 @@ class WorldBuildTests(unittest.TestCase):
 
     def test_check_does_not_create_output_directory(self):
         report = build(self.source, self.output, check=True)
-        self.assertEqual(len(report.errors), len(WORLD_FILES))
+        self.assertEqual(len(report.errors), len(BUILD_FILES))
         self.assertFalse(self.output.exists())
 
     def test_source_edits_require_rebuilding(self):
@@ -104,6 +105,22 @@ class WorldBuildTests(unittest.TestCase):
         report = build(self.source, self.output)
         self.assertTrue(any("conn_missing" in error for error in report.errors))
         self.assertEqual(self.snapshot(), before)
+
+    def test_invalid_encounters_prevent_all_runtime_writes(self):
+        self.assertEqual(build(self.source, self.output).errors, [])
+        before = self.snapshot()
+        self.data["buildings.json"][0]["name"] = "Must not be written"
+        self.write_source("buildings.json", self.data["buildings.json"])
+        self.write_source("wild.json", [{"id": "enc_test", "method": "grass", "requires": None,
+            "encounters": [{"pokemon": "species_pidgey", "levels": [3, 5, 7], "rate": 99}]}])
+        self.assertTrue(any("rates total 99" in error for error in build(self.source, self.output).errors))
+        self.assertEqual(self.snapshot(), before)
+
+    def test_encounter_references_are_required_even_in_draft_mode(self):
+        self.data["buildings.json"][0]["zones"][0]["encounter_sources"] = ["enc_missing"]
+        self.write_source("buildings.json", self.data["buildings.json"])
+        self.assertTrue(any("unknown encounter source" in error for error in build(self.source, self.output).errors))
+        self.assertFalse(self.output.exists())
 
     def test_draft_and_strict_incomplete_references(self):
         self.data["connections.json"].append({
@@ -151,7 +168,7 @@ class WorldBuildTests(unittest.TestCase):
         self.assertFalse(self.output.exists())
 
     def test_missing_category_is_not_silently_dropped(self):
-        path = self.source / "portals" / "part.json"
+        path = self.source / "world" / "portals" / "part.json"
         path.unlink()
         report = build(self.source, self.output)
         self.assertTrue(any("No source JSON files" in error for error in report.errors))
@@ -171,10 +188,18 @@ class WorldBuildTests(unittest.TestCase):
         self.assertEqual(self.snapshot(), before)
 
     def test_overlapping_source_and_output_are_rejected(self):
-        for output in (self.source, self.source / "generated", self.root):
+        for output in (self.source, self.source / "generated"):
             with self.subTest(output=output):
                 report = build(self.source, output)
                 self.assertTrue(any("must be separate" in error for error in report.errors))
+        report = build(self.root / "world", self.root)
+        self.assertTrue(any("must be separate" in error for error in report.errors))
+
+    def test_parent_output_root_preserves_authored_files(self):
+        before = {path: path.read_bytes() for path in self.source.rglob("*.json")}
+        self.assertEqual(build(self.source, self.root).errors, [])
+        self.assertEqual(build(self.source, self.root, check=True).errors, [])
+        self.assertEqual({path: path.read_bytes() for path in self.source.rglob("*.json")}, before)
 
     def add_warp(self, warp):
         self.data["buildings.json"][0]["zones"][0]["warps"].append(warp)
@@ -190,13 +215,13 @@ class WorldBuildTests(unittest.TestCase):
         report = build(self.source, self.output, strict=True)
         self.assertEqual(report.errors, [])
         self.assertEqual(report.warnings, [])
-        links = json.loads((self.output / "portals.json").read_text())
+        links = json.loads((self.output / "world" / "portals.json").read_text())
         self.assertEqual(links, [
             {"type": "drop", "warps": ["warp_b", "warp_a"]},
             {"type": "drop", "warps": ["warp_c", "warp_a"]},
         ])
         self.assertEqual(build(self.source, self.output, check=True, strict=True).errors, [])
-        self.assertEqual(validate(self.output, strict=True).errors, [])
+        self.assertEqual(validate(self.output / "world", strict=True).errors, [])
 
     def test_explicit_departure_from_a_shared_landing(self):
         self.add_warp("warp_c")

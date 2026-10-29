@@ -1,0 +1,84 @@
+[
+  {
+    "id": "enc_route_3_grass",
+    "method": "grass",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_jigglypuff",
+        "levels": [
+          3,
+          5,
+          7
+        ],
+        "rate": 10
+      },
+      {
+        "pokemon": "species_mankey",
+        "levels": [
+          7
+        ],
+        "rate": 10
+      },
+      {
+        "pokemon": "species_nidoran_f",
+        "levels": [
+          6
+        ],
+        "rate": 1,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_nidoran_f",
+        "levels": [
+          6,
+          7
+        ],
+        "rate": 14,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_nidoran_m",
+        "levels": [
+          6,
+          7
+        ],
+        "rate": 14,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_nidoran_m",
+        "levels": [
+          6
+        ],
+        "rate": 1,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_pidgey",
+        "levels": [
+          6,
+          7
+        ],
+        "rate": 30
+      },
+      {
+        "pokemon": "species_spearow",
+        "levels": [
+          6,
+          7,
+          8
+        ],
+        "rate": 35
+      }
+    ]
+  }
+]

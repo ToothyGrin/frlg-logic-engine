@@ -459,7 +459,7 @@ Examples include:
 ```text
 enc_route_1_grass
 enc_viridian_city_old_rod
-enc_viridian_city_surfing
+enc_viridian_city_surf
 ```
 
 Different encounter methods may share the encounter-table abstraction when their schema and
@@ -482,7 +482,8 @@ The same applicability test can filter encounters, trade exchanges, and vendor o
 Validate each filtered collection according to its meaning. Encounter rates total 100%
 separately for each supported game, with one aggregated record per species. A fixed
 trade resolves to one exchange per applicable game; a vendor may resolve to several offers.
-The existing engine does not yet implement these acquisition readers or encounter checks.
+Wild encounter loading, validation, and version-filtered availability are implemented;
+see `ENCOUNTERS.md`. Readers for the other acquisition types remain future work.
 
 ### Stable Source Identity
 
@@ -616,6 +617,9 @@ derive runtime indexes. Compact reference data may remain in single authored fil
 
 The initial world categories now use this layout. `tools/build_world.py` assembles the
 source arrays, validates them in memory, and writes the six existing runtime JSON files.
+It now also builds `data/source/encounters/wild/` into `data/encounters/wild.json`,
+checking encounter schemas and Zone references before writing any collection. Builder
+source/output options refer to the data roots containing `world/` and `encounters/`.
 `--check` verifies validation and output freshness without writing. Generated files stay
 tracked for runtime use; see `data/source/world/README.md` for grouping and packaging.
 

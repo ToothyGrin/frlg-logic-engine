@@ -352,13 +352,13 @@ Do not attempt to complete Kanto yet.
 
 The next milestone is:
 
-> **Validate and solve the early-Kanto world graph using the new Zone, Connection, Warp, and
-> Portal model.**
+> **Extend the working early-Kanto graph and wild availability engine with the first
+> non-wild Pokémon acquisition sources.**
 
 The practical next steps are:
 
-1. settle only the remaining naming details needed by the schema;
-2. update the Pallet Town through Cerulean City data to the new conventions;
-3. implement validation and runtime indexes;
-4. implement the reachability solver;
-5. prove the model with tests before expanding the dataset.
+1. review the implemented wild encounter API and version/method filtering;
+2. define the first NPC trade and Pokémon vendor payloads under the accepted decisions;
+3. migrate their draft Zone references with validation and runtime availability;
+4. prove the supplied Route 2/Cerulean trades and Route 4 Magikarp vendor with tests;
+5. continue other acquisition types before broadening the world dataset.

@@ -1,0 +1,102 @@
+[
+  {
+    "id": "enc_mt_moon_cave_1f",
+    "method": "cave",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_clefairy",
+        "levels": [
+          8
+        ],
+        "rate": 1
+      },
+      {
+        "pokemon": "species_geodude",
+        "levels": [
+          7,
+          8,
+          9
+        ],
+        "rate": 25
+      },
+      {
+        "pokemon": "species_paras",
+        "levels": [
+          8
+        ],
+        "rate": 5
+      },
+      {
+        "pokemon": "species_zubat",
+        "levels": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "rate": 69
+      }
+    ]
+  },
+  {
+    "id": "enc_mt_moon_cave_b1f",
+    "method": "cave",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_paras",
+        "levels": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "rate": 100
+      }
+    ]
+  },
+  {
+    "id": "enc_mt_moon_cave_b2f",
+    "method": "cave",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_clefairy",
+        "levels": [
+          10,
+          12
+        ],
+        "rate": 6
+      },
+      {
+        "pokemon": "species_geodude",
+        "levels": [
+          9,
+          10
+        ],
+        "rate": 30
+      },
+      {
+        "pokemon": "species_paras",
+        "levels": [
+          10,
+          12
+        ],
+        "rate": 15
+      },
+      {
+        "pokemon": "species_zubat",
+        "levels": [
+          8,
+          9,
+          10,
+          11
+        ],
+        "rate": 49
+      }
+    ]
+  }
+]

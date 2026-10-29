@@ -6,7 +6,10 @@ local input_ids = {
     "state_has_soul_badge",
     "state_has_hm01_cut",
     "state_has_hm03_surf",
-    "state_delivered_oaks_parcel",
+    "state_has_old_rod",
+    "state_has_good_rod",
+    "state_has_super_rod",
+    "state_event_oaks_parcel_delivered",
     "state_event_brock_defeated",
 }
 

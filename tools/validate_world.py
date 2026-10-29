@@ -13,6 +13,8 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
+from validate_encounters import validate_encounters
+
 WORLD_FILES = {
     "connections.json": Path("connections.json"),
     "portals.json": Path("portals.json"),
@@ -21,6 +23,10 @@ WORLD_FILES = {
     "routes.json": Path("containers") / "routes.json",
     "settlements.json": Path("containers") / "settlements.json",
 }
+
+# Paths relative to data/source/ while authoring and data/ at runtime.
+BUILD_FILES = {name: Path("world") / path for name, path in WORLD_FILES.items()}
+BUILD_FILES["wild.json"] = Path("encounters") / "wild.json"
 
 CONTAINER_FILES = (
     "buildings.json",
@@ -79,6 +85,7 @@ def validate(root: Path, strict: bool = False) -> Report:
         name: load_json(root / relative_path, report)
         for name, relative_path in WORLD_FILES.items()
     }
+    data["wild.json"] = load_json(root.parent / "encounters" / "wild.json", report)
     if report.errors:
         return report
 
@@ -99,6 +106,7 @@ def validate_data(data: dict, strict: bool = False) -> Report:
     zone_owners: dict[str, tuple[str, str]] = {}
     zone_connections: defaultdict[str, set[str]] = defaultdict(set)
     zone_warps: dict[str, tuple[str, str, str]] = {}
+    encounter_zones = []
 
     for filename in CONTAINER_FILES:
         objects = data[filename]
@@ -134,6 +142,7 @@ def validate_data(data: dict, strict: bool = False) -> Report:
                     continue
                 if not zid.startswith("zone_"):
                     report.error(f"{filename}:{oid}: zone id must start with 'zone_': {zid}")
+                encounter_zones.append(zone)
                 if zid in zone_owners:
                     prev = zone_owners[zid]
                     report.error(f"Duplicate zone id {zid!r}: {prev[0]}:{prev[1]} and {filename}:{oid}")
@@ -163,6 +172,8 @@ def validate_data(data: dict, strict: bool = False) -> Report:
                         )
                     else:
                         zone_warps[wid] = (filename, oid, zid)
+
+    validate_encounters(data.get("wild.json"), encounter_zones, report)
 
     # Connections.
     connections = data["connections.json"]

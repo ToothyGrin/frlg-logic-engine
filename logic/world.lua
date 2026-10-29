@@ -8,7 +8,9 @@ end
 
 function World.build_indexes(data)
     local world = {
+        zones = {},
         zones_by_id = {},
+        encounter_sources_by_id = {},
         connections_by_id = {},
         warp_to_zone = {},
         warp_to_destination = {},
@@ -18,10 +20,21 @@ function World.build_indexes(data)
         for _, zone in ipairs(container.zones) do
             -- Zone lookup:
             add_unique(world.zones_by_id, zone.id, zone)
+            table.insert(world.zones, zone)
             for _, warp_id in ipairs(zone.warps) do
                 -- Warp ownership:
                 add_unique(world.warp_to_zone, warp_id, zone)
             end
+        end
+    end
+
+    for _, source in ipairs(data.encounters or {}) do
+        add_unique(world.encounter_sources_by_id, source.id, source)
+    end
+
+    for _, zone in ipairs(world.zones) do
+        for _, source_id in ipairs(zone.encounter_sources or {}) do
+            assert(world.encounter_sources_by_id[source_id], "Unknown encounter source: " .. source_id)
         end
     end
 
@@ -70,6 +83,7 @@ function World.load(read_json)
         containers = {},
         connections = read_json("data/world/connections.json"),
         portals = read_json("data/world/portals.json"),
+        encounters = read_json("data/encounters/wild.json"),
     }
 
     for _, path in ipairs(container_paths) do

@@ -1,0 +1,79 @@
+[
+  {
+    "id": "enc_viridian_forest_grass",
+    "method": "grass",
+    "requires": null,
+    "encounters": [
+      {
+        "pokemon": "species_caterpie",
+        "levels": [
+          3,
+          4,
+          5
+        ],
+        "rate": 40
+      },
+      {
+        "pokemon": "species_kakuna",
+        "levels": [
+          4,
+          5,
+          6
+        ],
+        "rate": 10,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_kakuna",
+        "levels": [
+          5
+        ],
+        "rate": 5,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_metapod",
+        "levels": [
+          5
+        ],
+        "rate": 5,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_metapod",
+        "levels": [
+          4,
+          5,
+          6
+        ],
+        "rate": 10,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_pikachu",
+        "levels": [
+          3,
+          5
+        ],
+        "rate": 5
+      },
+      {
+        "pokemon": "species_weedle",
+        "levels": [
+          3,
+          4,
+          5
+        ],
+        "rate": 40
+      }
+    ]
+  }
+]

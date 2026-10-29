@@ -14,7 +14,8 @@ including the Sevii Islands and post-game, subject to the exclusions in `docs/PR
 
 World loading, runtime indexing, Connection traversal, and reachability are implemented
 and tested against the authored early-Kanto graph. Cut and Surf capabilities are derived
-from badge and HM acquisition facts. The next milestone is reviewing early-game story gates.
+from badge and HM acquisition facts. Early story gates are verified. Wild encounter data
+and availability now combine reachable Zones, rod/Surf requirements, and game version.
 
 See:
 
@@ -23,12 +24,15 @@ See:
 - `docs/DECISIONS.md`
 - `docs/STATUS.md`
 - `docs/STATE.md`
+- `docs/ENCOUNTERS.md`
 - `docs/FRLG_VANILLA_LOGIC_REFERENCE.md`
 
 ## Development Tools
 
 World data is authored in small arrays under `data/source/world/` and generated into
-the existing runtime files under `data/world/`. After editing sources, build and validate:
+the existing runtime files under `data/world/`. Wild tables are authored under
+`data/source/encounters/wild/` and generated into `data/encounters/wild.json` by the same
+builder. After editing sources, build and validate:
 
 ```text
 python tools/build_world.py
@@ -69,8 +73,9 @@ python -m unittest discover -s tests -p "test_*.py"
 
 The standalone loader uses dkjson 2.11, included in `lib/dkjson.lua` with its license.
 
-`tools/test.lua` runs indexing, player-state evaluation, traversal, reachability, and authored-world progression
-checks. Individual test files under `tests/` can also be run directly.
+`tools/test.lua` runs indexing, player-state evaluation, traversal, reachability,
+authored-world progression, and encounter availability checks. Individual test files
+under `tests/` can also be run directly.
 
 `Reachability.solve(world, starting_zone_id, state)` returns a fresh table mapping reachable
 Zone IDs to `true`. Unmet requirements and reverse ledges block traversal. Unauthored

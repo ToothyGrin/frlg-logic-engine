@@ -1,6 +1,7 @@
 local World = require("logic.world")
 local State = require("logic.state")
 local Reachability = require("logic.reachability")
+local Encounters = require("logic.encounters")
 local read_json = require("logic.json_file")
 local json = require("lib.dkjson")
 
@@ -32,5 +33,8 @@ local reachable = Reachability.solve(world, "zone_players_house", state)
 assert(reachable.zone_pallet_town, "The player's house should connect to Pallet Town")
 assert(reachable.zone_viridian_city, "The opening path should reach Viridian City")
 assert(reachable.zone_pallet_town_water == nil, "Water should remain blocked without Surf")
+local available = Encounters.available(world, reachable, state, "firered")
+assert(available.species_available.species_pidgey, "Route 1 Pidgey should be available initially")
+assert(available.species_available.species_magikarp == nil, "Initial fishing should require a rod")
 
-print("World loaded; sample lookups and evaluated reachability passed.")
+print("World loaded; sample lookups, reachability, and encounter availability passed.")

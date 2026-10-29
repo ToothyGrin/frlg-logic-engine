@@ -33,6 +33,24 @@ Last verified: 29 October 2026.
   Lua indexes, and solver. All 53 existing pairs are migrated to normal links.
 - Tests for drop direction, shared landings, explicit onward routes from a landing,
   unpaired Warps, invalid link shapes/types, and duplicate outgoing routes.
+- Verified early story gates against vanilla scripts: completed parcel/Pokédex scene
+  moves the old man aside; Brock victory updates Pewter's scene and guide visibility.
+- Standardized the parcel input as `state_event_oaks_parcel_delivered`, with regression
+  checks for inventory/badge non-substitution, independent gates, and the Cut alternative.
+- Preserved 11 user-supplied Bulbapedia encounter screenshots with source links and
+  authoring notes under `assets/reference/encounters/`.
+- Wild encounter schema validation (D042–D043), optional Zone encounter references,
+  encounter-source indexing, and version-filtered runtime availability.
+- Forty-four wild tables in 13 area files, covering all supplied screenshot tables and
+  supplementing existing Mt. Moon/Route 25 references from primary game data.
+- All 72 effective screenshot/game tables cross-checked against game slots. Pallet's
+  Old Rod levels 5–10 confirmed for both games (FRLG-L020).
+- Old, Good, and Super Rod input facts; independent method gating and shore fishing
+  through authored Zone references. Shared sources report their reachable Zones once.
+- A single builder validates all seven runtime collections, including encounter
+  references and 100% rates/unique species per game, before writing any outputs.
+- Tests for version differences, exact level gaps, rods, Surf, unreachable/unplaced
+  sources, shared access, fresh results, malformed tables, and invalid-reference failures.
 
 ## Verification
 
@@ -44,7 +62,7 @@ Run from the project root:
 - `python -m unittest discover -s tests -p "test_*.py"`
 - `python tools/validate_world.py data/world`
 
-Both Lua commands and all 18 Python builder/generator tests passed. The generated files match
+Both Lua commands and all 27 Python builder/generator/schema tests passed. The generated files match
 their sources. World validation reported 0 errors and 6 warnings for
 not-yet-authored destinations: Route 21 water, Route 5, Route 5 center, Route 9,
 the Route 2 Diglett's Cave exit, and the Victory Road gate's north entrance.
@@ -52,17 +70,21 @@ the Route 2 Diglett's Cave exit, and the Victory Road gate's north entrance.
 ## Known Limitations
 
 - World data remains incomplete.
-- The Python validator handles topology/reference validation, including assembled sources
-  before generation. Acquisition schema validation remains future work.
+- The Python validator handles topology, wild schemas, and references before generation.
+  Other acquisition schemas and species-catalogue reference resolution remain future work.
 - The Lua loader does not yet perform comprehensive validation.
 - State evaluation currently covers Cut, Surf, and the graph's existing parcel/Brock
   inputs. HM and badge facts are supplied manually. Move knowledge and Pokémon
   compatibility are intentionally excluded by D031. This is not a complete vanilla
   progression model.
-- Existing story input names and their exact scene/object mapping still need review.
+- Parcel and Brock events abstract verified scene/object changes; automatic game-state
+  reading and other progression events remain future work.
 - Reachability skips Connection destinations and Portal endpoints whose Zones are not
   authored yet. It rejects unknown starting Zones and missing referenced Connections.
-- Encounters, item availability, and trainer logic are not evaluated.
+- Wild availability follows authored Zone references; complete shore and world authoring
+  remains unfinished. Route 23's tables are present but not placed in the graph.
+- Other Pokémon acquisition, evolution, held-item availability, item availability, and
+  trainer logic are not evaluated.
 - Drop mechanics are covered by fixtures; Mansion's actual drop records and tile
   activation behaviour still need verification during world authoring.
 
@@ -75,13 +97,10 @@ baseline was committed as `016b449`; use Git history for subsequent implementati
 Author future world changes under `data/source/world/`, then run the builder; do not edit
 generated runtime JSON directly.
 
-Review the early-game story gates against the researched vanilla behaviour, especially
-the parcel/old-man and Brock/Route 3 transitions. Settle their semantic input names and
-document any scene/object abstractions before changing the canonical graph.
-
-Then implement the accepted acquisition schemas, optional Zone content arrays,
-entry-level version filtering, and species-aggregated encounters through small working
-examples. The current Zone content arrays are still the pre-migration draft form.
+The early story-gate and wild encounter milestones are complete. Review the encounter API
+and then define the first non-wild acquisition schemas, starting with the supplied NPC
+trades and Route 4's Magikarp vendor. Migrate their draft Zone arrays with validation and
+availability together. Other acquisition arrays still use the pre-migration draft form.
 
 The release target remains publication-ready complete single-player FRLG coverage,
 including Sevii and post-game, subject to the agreed exclusions. Detailed acquisition
