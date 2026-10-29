@@ -9,8 +9,9 @@ Planned modes include Professor Oak Challenge support and manual Warp Randomiser
 
 ## Project Status
 
-World loading and runtime indexing are implemented and tested. The next milestone is
-Connection traversal, followed by state evaluation and reachability.
+World loading, runtime indexing, Connection traversal, and reachability are implemented
+and tested against the authored early-Kanto graph. The solver currently accepts supplied
+state flags; the next milestone is deriving capabilities from player progression state.
 
 See:
 
@@ -31,10 +32,18 @@ python tools/validate_world.py data/world
 Run the Lua checks from the project root:
 
 ```text
-lua tests/world_test.lua
+lua tools/test.lua
 lua tools/load_world.lua
 ```
 
 The standalone loader uses dkjson 2.11, included in `lib/dkjson.lua` with its license.
+
+`tools/test.lua` runs indexing, traversal, reachability, and authored-world progression
+checks. Individual test files under `tests/` can also be run directly.
+
+`Reachability.solve(world, starting_zone_id, state)` returns a fresh table mapping reachable
+Zone IDs to `true`. Unmet requirements and reverse ledges block traversal. Unauthored
+destinations are skipped so the draft map can be exercised; the Python validator reports
+incomplete references. This does not imply that the full vanilla game logic is complete.
 
 Authoring helpers are located under `tools/`.
