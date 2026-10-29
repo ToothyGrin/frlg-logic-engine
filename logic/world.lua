@@ -11,6 +11,9 @@ function World.build_indexes(data)
         zones = {},
         zones_by_id = {},
         encounter_sources_by_id = {},
+        pokemon_trades_by_id = {},
+        pokemon_vendors_by_id = {},
+        item_vendors_by_id = {},
         connections_by_id = {},
         warp_to_zone = {},
         warp_to_destination = {},
@@ -32,7 +35,19 @@ function World.build_indexes(data)
         add_unique(world.encounter_sources_by_id, source.id, source)
     end
 
+    local acquisition_kinds = {"pokemon_trades", "pokemon_vendors", "item_vendors"}
+    for _, kind in ipairs(acquisition_kinds) do
+        for _, source in ipairs(data[kind] or {}) do
+            add_unique(world[kind .. "_by_id"], source.id, source)
+        end
+    end
+
     for _, zone in ipairs(world.zones) do
+        for _, kind in ipairs(acquisition_kinds) do
+            for _, source_id in ipairs(zone[kind] or {}) do
+                assert(world[kind .. "_by_id"][source_id], "Unknown acquisition source: " .. source_id)
+            end
+        end
         for _, source_id in ipairs(zone.encounter_sources or {}) do
             assert(world.encounter_sources_by_id[source_id], "Unknown encounter source: " .. source_id)
         end
@@ -84,6 +99,9 @@ function World.load(read_json)
         connections = read_json("data/world/connections.json"),
         portals = read_json("data/world/portals.json"),
         encounters = read_json("data/encounters/wild.json"),
+        pokemon_trades = read_json("data/acquisitions/pokemon_trades.json"),
+        pokemon_vendors = read_json("data/acquisitions/pokemon_vendors.json"),
+        item_vendors = read_json("data/acquisitions/item_vendors.json"),
     }
 
     for _, path in ipairs(container_paths) do

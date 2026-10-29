@@ -14,6 +14,7 @@ from collections import defaultdict
 from pathlib import Path
 
 from validate_encounters import validate_encounters
+from validate_acquisitions import KINDS, validate_acquisitions
 
 WORLD_FILES = {
     "connections.json": Path("connections.json"),
@@ -27,6 +28,8 @@ WORLD_FILES = {
 # Paths relative to data/source/ while authoring and data/ at runtime.
 BUILD_FILES = {name: Path("world") / path for name, path in WORLD_FILES.items()}
 BUILD_FILES["wild.json"] = Path("encounters") / "wild.json"
+for kind in KINDS:
+    BUILD_FILES[kind + ".json"] = Path("acquisitions") / (kind + ".json")
 
 CONTAINER_FILES = (
     "buildings.json",
@@ -86,6 +89,8 @@ def validate(root: Path, strict: bool = False) -> Report:
         for name, relative_path in WORLD_FILES.items()
     }
     data["wild.json"] = load_json(root.parent / "encounters" / "wild.json", report)
+    for kind in KINDS:
+        data[kind + ".json"] = load_json(root.parent / "acquisitions" / (kind + ".json"), report)
     if report.errors:
         return report
 
@@ -174,6 +179,7 @@ def validate_data(data: dict, strict: bool = False) -> Report:
                         zone_warps[wid] = (filename, oid, zid)
 
     validate_encounters(data.get("wild.json"), encounter_zones, report)
+    validate_acquisitions(data, encounter_zones, report)
 
     # Connections.
     connections = data["connections.json"]

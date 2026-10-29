@@ -74,11 +74,11 @@
           "warp_route_2_traders_house_exit"
         ],
         "encounter_sources": [],
-        "pokemon_sources": [
-          "pokemon_trade_route_2"
-        ],
         "item_sources": [],
-        "trainers": []
+        "trainers": [],
+        "pokemon_trades": [
+          "pokemon_trade_route_2_traders_house"
+        ]
       }
     ]
   }

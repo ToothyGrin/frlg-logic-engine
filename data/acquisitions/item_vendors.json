@@ -1,0 +1,249 @@
+[
+  {
+    "id": "item_vendor_celadon_game_corner_prize_room_left_window",
+    "requires": "state_has_coin_case",
+    "offers": [
+      {
+        "item": "item_smoke_ball",
+        "quantity": 1,
+        "price": 800,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_miracle_seed",
+        "quantity": 1,
+        "price": 1000,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_charcoal",
+        "quantity": 1,
+        "price": 1000,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_mystic_water",
+        "quantity": 1,
+        "price": 1000,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_yellow_flute",
+        "quantity": 1,
+        "price": 1600,
+        "currency": "coins",
+        "repeatable": true
+      }
+    ]
+  },
+  {
+    "id": "item_vendor_celadon_game_corner_prize_room_right_window",
+    "requires": "state_has_coin_case",
+    "offers": [
+      {
+        "item": "item_tm13_ice_beam",
+        "quantity": 1,
+        "price": 4000,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_tm23_iron_tail",
+        "quantity": 1,
+        "price": 3500,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_tm24_thunderbolt",
+        "quantity": 1,
+        "price": 4000,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_tm30_shadow_ball",
+        "quantity": 1,
+        "price": 4500,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_tm35_flamethrower",
+        "quantity": 1,
+        "price": 4000,
+        "currency": "coins",
+        "repeatable": true
+      }
+    ]
+  },
+  {
+    "id": "item_vendor_cerulean_city_pokemart",
+    "requires": null,
+    "offers": [
+      {
+        "item": "item_poke_ball",
+        "quantity": 1,
+        "price": 200,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_super_potion",
+        "quantity": 1,
+        "price": 700,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_potion",
+        "quantity": 1,
+        "price": 300,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_antidote",
+        "quantity": 1,
+        "price": 100,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_paralyze_heal",
+        "quantity": 1,
+        "price": 200,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_awakening",
+        "quantity": 1,
+        "price": 250,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_burn_heal",
+        "quantity": 1,
+        "price": 250,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_escape_rope",
+        "quantity": 1,
+        "price": 550,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_repel",
+        "quantity": 1,
+        "price": 350,
+        "currency": "money",
+        "repeatable": true
+      }
+    ]
+  },
+  {
+    "id": "item_vendor_pewter_city_pokemart",
+    "requires": null,
+    "offers": [
+      {
+        "item": "item_poke_ball",
+        "quantity": 1,
+        "price": 200,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_potion",
+        "quantity": 1,
+        "price": 300,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_antidote",
+        "quantity": 1,
+        "price": 100,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_paralyze_heal",
+        "quantity": 1,
+        "price": 200,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_awakening",
+        "quantity": 1,
+        "price": 250,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_burn_heal",
+        "quantity": 1,
+        "price": 250,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_escape_rope",
+        "quantity": 1,
+        "price": 550,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_repel",
+        "quantity": 1,
+        "price": 350,
+        "currency": "money",
+        "repeatable": true
+      }
+    ]
+  },
+  {
+    "id": "item_vendor_viridian_city_pokemart",
+    "requires": "state_event_oaks_parcel_delivered",
+    "offers": [
+      {
+        "item": "item_poke_ball",
+        "quantity": 1,
+        "price": 200,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_potion",
+        "quantity": 1,
+        "price": 300,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_antidote",
+        "quantity": 1,
+        "price": 100,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_paralyze_heal",
+        "quantity": 1,
+        "price": 200,
+        "currency": "money",
+        "repeatable": true
+      }
+    ]
+  }
+]

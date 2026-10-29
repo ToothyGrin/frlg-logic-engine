@@ -38,7 +38,10 @@
         ],
         "encounter_sources": [],
         "item_sources": [],
-        "trainers": []
+        "trainers": [],
+        "item_vendors": [
+          "item_vendor_pewter_city_pokemart"
+        ]
       }
     ]
   },

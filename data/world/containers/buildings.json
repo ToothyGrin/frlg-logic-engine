@@ -27,7 +27,9 @@
           "warp_cerulean_city_berry_powder_house_exit"
         ],
         "encounter_sources": [],
-        "item_sources": [],
+        "item_sources": [
+          "item_gift_cerulean_city_berry_powder_house_man"
+        ],
         "trainers": []
       }
     ]
@@ -142,7 +144,10 @@
         ],
         "encounter_sources": [],
         "item_sources": [],
-        "trainers": []
+        "trainers": [],
+        "item_vendors": [
+          "item_vendor_cerulean_city_pokemart"
+        ]
       }
     ]
   },
@@ -158,10 +163,10 @@
         ],
         "encounter_sources": [],
         "item_sources": [],
-        "pokemon_sources": [
-          "pokemon_trade_cerulean_city"
-        ],
-        "trainers": []
+        "trainers": [],
+        "pokemon_trades": [
+          "pokemon_trade_cerulean_city_traders_house"
+        ]
       }
     ]
   },
@@ -298,7 +303,10 @@
         ],
         "encounter_sources": [],
         "item_sources": [],
-        "trainers": []
+        "trainers": [],
+        "item_vendors": [
+          "item_vendor_pewter_city_pokemart"
+        ]
       }
     ]
   },
@@ -411,11 +419,11 @@
           "warp_route_2_traders_house_exit"
         ],
         "encounter_sources": [],
-        "pokemon_sources": [
-          "pokemon_trade_route_2"
-        ],
         "item_sources": [],
-        "trainers": []
+        "trainers": [],
+        "pokemon_trades": [
+          "pokemon_trade_route_2_traders_house"
+        ]
       }
     ]
   },
@@ -431,11 +439,11 @@
           "warp_route_4_pokecenter_stair_up"
         ],
         "encounter_sources": [],
-        "pokemon_sources": [
-          "pokemon_vendor_route_4_magikarp_salesman"
-        ],
         "item_sources": [],
-        "trainers": []
+        "trainers": [],
+        "pokemon_vendors": [
+          "pokemon_vendor_route_4_pokecenter_salesman"
+        ]
       },
       {
         "id": "zone_route_4_pokecenter_2f",
@@ -521,7 +529,10 @@
         ],
         "encounter_sources": [],
         "item_sources": [],
-        "trainers": []
+        "trainers": [],
+        "item_vendors": [
+          "item_vendor_viridian_city_pokemart"
+        ]
       }
     ]
   },

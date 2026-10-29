@@ -1,0 +1,84 @@
+[
+  {
+    "id": "item_vendor_celadon_game_corner_prize_room_left_window",
+    "requires": "state_has_coin_case",
+    "offers": [
+      {
+        "item": "item_smoke_ball",
+        "quantity": 1,
+        "price": 800,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_miracle_seed",
+        "quantity": 1,
+        "price": 1000,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_charcoal",
+        "quantity": 1,
+        "price": 1000,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_mystic_water",
+        "quantity": 1,
+        "price": 1000,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_yellow_flute",
+        "quantity": 1,
+        "price": 1600,
+        "currency": "coins",
+        "repeatable": true
+      }
+    ]
+  },
+  {
+    "id": "item_vendor_celadon_game_corner_prize_room_right_window",
+    "requires": "state_has_coin_case",
+    "offers": [
+      {
+        "item": "item_tm13_ice_beam",
+        "quantity": 1,
+        "price": 4000,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_tm23_iron_tail",
+        "quantity": 1,
+        "price": 3500,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_tm24_thunderbolt",
+        "quantity": 1,
+        "price": 4000,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_tm30_shadow_ball",
+        "quantity": 1,
+        "price": 4500,
+        "currency": "coins",
+        "repeatable": true
+      },
+      {
+        "item": "item_tm35_flamethrower",
+        "quantity": 1,
+        "price": 4000,
+        "currency": "coins",
+        "repeatable": true
+      }
+    ]
+  }
+]

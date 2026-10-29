@@ -1,6 +1,6 @@
 # Project Status
 
-Last verified: 29 October 2026.
+Last verified: 30 October 2026.
 
 ## Completed
 
@@ -54,6 +54,11 @@ Last verified: 29 October 2026.
 
 ## Verification
 
+The nine-source trade/vendor milestone adds two NPC trades, the Route 4 salesman,
+three Poké Marts, and three unplaced Game Corner windows. The shared builder validates
+all ten collections. Runtime availability combines wild/vendor sources with trade
+dependency closure; it preserves held-item and cost metadata. Draft gifts are not evaluated.
+
 Run from the project root:
 
 - `lua tools/test.lua`
@@ -62,7 +67,7 @@ Run from the project root:
 - `python -m unittest discover -s tests -p "test_*.py"`
 - `python tools/validate_world.py data/world`
 
-Both Lua commands and all 27 Python builder/generator/schema tests passed. The generated files match
+Both Lua commands and all 33 Python builder/generator/schema tests passed. The generated files match
 their sources. World validation reported 0 errors and 6 warnings for
 not-yet-authored destinations: Route 21 water, Route 5, Route 5 center, Route 9,
 the Route 2 Diglett's Cave exit, and the Victory Road gate's north entrance.
@@ -73,7 +78,7 @@ the Route 2 Diglett's Cave exit, and the Victory Road gate's north entrance.
 - The Python validator handles topology, wild schemas, and references before generation.
   Other acquisition schemas and species-catalogue reference resolution remain future work.
 - The Lua loader does not yet perform comprehensive validation.
-- State evaluation currently covers Cut, Surf, and the graph's existing parcel/Brock
+- State evaluation currently covers Cut, Surf, rods, Coin Case, and the graph's parcel/Brock
   inputs. HM and badge facts are supplied manually. Move knowledge and Pokémon
   compatibility are intentionally excluded by D031. This is not a complete vanilla
   progression model.
@@ -83,8 +88,8 @@ the Route 2 Diglett's Cave exit, and the Victory Road gate's north entrance.
   authored yet. It rejects unknown starting Zones and missing referenced Connections.
 - Wild availability follows authored Zone references; complete shore and world authoring
   remains unfinished. Route 23's tables are present but not placed in the graph.
-- Other Pokémon acquisition, evolution, held-item availability, item availability, and
-  trainer logic are not evaluated.
+- Items from vendors and eligible trade-held items are evaluated. Wild held items,
+  other Pokémon acquisition, evolution, gifts/pickups, and trainer logic are not evaluated.
 - Drop mechanics are covered by fixtures; Mansion's actual drop records and tile
   activation behaviour still need verification during world authoring.
 
@@ -97,10 +102,18 @@ baseline was committed as `016b449`; use Git history for subsequent implementati
 Author future world changes under `data/source/world/`, then run the builder; do not edit
 generated runtime JSON directly.
 
-The early story-gate and wild encounter milestones are complete. Review the encounter API
-and then define the first non-wild acquisition schemas, starting with the supplied NPC
-trades and Route 4's Magikarp vendor. Migrate their draft Zone arrays with validation and
-availability together. Other acquisition arrays still use the pre-migration draft form.
+The early story-gate and wild encounter milestones are complete. NPC trade and shared
+Pokémon/item vendor shapes were approved on 30 October 2026 (D047–D048), including
+one source per Game Corner window. See `ACQUISITIONS.md` for accepted fields and examples.
+The nine-source implementation milestone is complete, including build collections,
+validation, acquisition availability, and typed Zone-reference migration for current
+slice sources. Review the runtime API before selecting the next milestone. Bike Voucher
+exchange and gift availability were explicitly excluded. The Powder Jar man and Running
+Shoes aide now have draft Zone references, alongside the existing gift references.
+These remain metadata without rewards or a runtime reader, preserving NPC locations for
+future item-randomiser support. The milestone has no remaining implementation work.
+Detailed item definitions and item-dependent evolution checks are deferred beyond v1
+for later Professor Oak mode work.
 
 The release target remains publication-ready complete single-player FRLG coverage,
 including Sevii and post-game, subject to the agreed exclusions. Detailed acquisition

@@ -145,7 +145,8 @@
         ],
         "encounter_sources": [],
         "item_sources": [
-          "item_pickup_pewter_city_west_of_museum"
+          "item_pickup_pewter_city_west_of_museum",
+          "item_gift_pewter_city_east_exit_prof_aide"
         ],
         "trainers": []
       },

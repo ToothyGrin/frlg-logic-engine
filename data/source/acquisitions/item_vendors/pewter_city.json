@@ -1,0 +1,64 @@
+[
+  {
+    "id": "item_vendor_pewter_city_pokemart",
+    "requires": null,
+    "offers": [
+      {
+        "item": "item_poke_ball",
+        "quantity": 1,
+        "price": 200,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_potion",
+        "quantity": 1,
+        "price": 300,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_antidote",
+        "quantity": 1,
+        "price": 100,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_paralyze_heal",
+        "quantity": 1,
+        "price": 200,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_awakening",
+        "quantity": 1,
+        "price": 250,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_burn_heal",
+        "quantity": 1,
+        "price": 250,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_escape_rope",
+        "quantity": 1,
+        "price": 550,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_repel",
+        "quantity": 1,
+        "price": 350,
+        "currency": "money",
+        "repeatable": true
+      }
+    ]
+  }
+]

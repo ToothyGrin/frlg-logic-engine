@@ -14,6 +14,7 @@ boolean state table consumed by `Reachability.solve`.
 | `state_has_old_rod` | Old Rod acquired |
 | `state_has_good_rod` | Good Rod acquired |
 | `state_has_super_rod` | Super Rod acquired |
+| `state_has_coin_case` | Coin Case acquired; enables reachable Game Corner prize windows |
 | `state_event_oaks_parcel_delivered` | Oak's parcel-delivery/Pokédex scene completed; old man moved aside |
 | `state_event_brock_defeated` | Brock victory progression completed; Pewter's Route 3 guide removed |
 
@@ -43,7 +44,7 @@ evaluator; those cases guard against introducing an automatic substitute for the
 
 ## Derived Outputs
 
-The returned table contains the nine normalized inputs plus:
+The returned table contains the ten normalized inputs plus:
 
 ```text
 state_can_cut = state_has_cascade_badge AND state_has_hm01_cut

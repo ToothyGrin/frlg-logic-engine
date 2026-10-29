@@ -34,6 +34,9 @@ class WorldBuildTests(unittest.TestCase):
             }],
             "portals.json": [{"type": "normal", "warps": ["warp_b", "warp_a"]}],
             "wild.json": [],
+            "pokemon_trades.json": [],
+            "pokemon_vendors.json": [],
+            "item_vendors.json": [],
         }
         for name, records in self.data.items():
             self.write_source(name, records)
@@ -121,6 +124,20 @@ class WorldBuildTests(unittest.TestCase):
         self.write_source("buildings.json", self.data["buildings.json"])
         self.assertTrue(any("unknown encounter source" in error for error in build(self.source, self.output).errors))
         self.assertFalse(self.output.exists())
+
+    def test_acquisition_errors_prevent_all_runtime_writes(self):
+        self.assertEqual(build(self.source, self.output).errors, [])
+        before = self.snapshot()
+        self.data["buildings.json"][0]["name"] = "Should not be written"
+        self.write_source("buildings.json", self.data["buildings.json"])
+        self.write_source("item_vendors.json", [{"id": "item_vendor_bad", "requires": None, "offers": []}])
+        self.assertTrue(build(self.source, self.output).errors)
+        self.assertEqual(self.snapshot(), before)
+        self.write_source("item_vendors.json", [])
+        self.data["buildings.json"][0]["zones"][0]["item_vendors"] = ["item_vendor_missing"]
+        self.write_source("buildings.json", self.data["buildings.json"])
+        self.assertTrue(build(self.source, self.output).errors)
+        self.assertEqual(self.snapshot(), before)
 
     def test_draft_and_strict_incomplete_references(self):
         self.data["connections.json"].append({

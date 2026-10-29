@@ -9,6 +9,7 @@ local input_ids = {
     "state_has_old_rod",
     "state_has_good_rod",
     "state_has_super_rod",
+    "state_has_coin_case",
     "state_event_oaks_parcel_delivered",
     "state_event_brock_defeated",
 }

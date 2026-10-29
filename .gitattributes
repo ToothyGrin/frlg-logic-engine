@@ -5,6 +5,8 @@
 *.png binary
 *.pdn binary
 
-# Development references stay in Git but are excluded from exported archives.
+# Development references and planning assets stay in Git but are excluded from exports.
 /assets/reference export-ignore
 /assets/reference/** export-ignore
+/assets/planning export-ignore
+/assets/planning/** export-ignore

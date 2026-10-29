@@ -1,0 +1,128 @@
+[
+  {
+    "id": "pokemon_vendor_celadon_game_corner_prize_room_middle_window",
+    "requires": "state_has_coin_case",
+    "offers": [
+      {
+        "pokemon": "species_abra",
+        "levels": [
+          9
+        ],
+        "price": 180,
+        "currency": "coins",
+        "repeatable": true,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_abra",
+        "levels": [
+          7
+        ],
+        "price": 120,
+        "currency": "coins",
+        "repeatable": true,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_clefairy",
+        "levels": [
+          8
+        ],
+        "price": 500,
+        "currency": "coins",
+        "repeatable": true,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_clefairy",
+        "levels": [
+          12
+        ],
+        "price": 750,
+        "currency": "coins",
+        "repeatable": true,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_dratini",
+        "levels": [
+          18
+        ],
+        "price": 2800,
+        "currency": "coins",
+        "repeatable": true,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_dratini",
+        "levels": [
+          24
+        ],
+        "price": 4600,
+        "currency": "coins",
+        "repeatable": true,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_scyther",
+        "levels": [
+          25
+        ],
+        "price": 5500,
+        "currency": "coins",
+        "repeatable": true,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_pinsir",
+        "levels": [
+          18
+        ],
+        "price": 2500,
+        "currency": "coins",
+        "repeatable": true,
+        "versions": [
+          "leafgreen"
+        ]
+      },
+      {
+        "pokemon": "species_porygon",
+        "levels": [
+          26
+        ],
+        "price": 9999,
+        "currency": "coins",
+        "repeatable": true,
+        "versions": [
+          "firered"
+        ]
+      },
+      {
+        "pokemon": "species_porygon",
+        "levels": [
+          18
+        ],
+        "price": 6500,
+        "currency": "coins",
+        "repeatable": true,
+        "versions": [
+          "leafgreen"
+        ]
+      }
+    ]
+  }
+]

@@ -2,6 +2,7 @@ local World = require("logic.world")
 local State = require("logic.state")
 local Reachability = require("logic.reachability")
 local Encounters = require("logic.encounters")
+local Acquisitions = require("logic.acquisitions")
 local read_json = require("logic.json_file")
 local json = require("lib.dkjson")
 
@@ -36,5 +37,7 @@ assert(reachable.zone_pallet_town_water == nil, "Water should remain blocked wit
 local available = Encounters.available(world, reachable, state, "firered")
 assert(available.species_available.species_pidgey, "Route 1 Pidgey should be available initially")
 assert(available.species_available.species_magikarp == nil, "Initial fishing should require a rod")
+local acquisitions = Acquisitions.available(world, reachable, state, "firered")
+assert(acquisitions.item_vendors_by_id.item_vendor_viridian_city_pokemart == nil, "Parcel delivery must precede shopping")
 
 print("World loaded; sample lookups, reachability, and encounter availability passed.")

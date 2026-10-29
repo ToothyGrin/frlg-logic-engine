@@ -847,6 +847,56 @@ but relevant single-player roaming availability belongs to complete-world covera
 
 ---
 
+### D047 — NPC Trades Use Version-Filtered Exchanges
+
+**Status:** Accepted (30 October 2026); nine-source milestone implemented
+
+An NPC trade source contains `id`, `requires`, and `exchanges`. Each exchange contains
+`requested_pokemon`, received `pokemon`, `level_rule`, `held_item`, `repeatable`, and
+optional `versions`. Species references use `species_*`; `held_item` is an `item_*`
+reference or `null`. `level_rule: "match_requested_pokemon"` represents the received
+Pokémon matching the submitted Pokémon's level without inventing a fixed level list.
+
+After version filtering, a fixed trade has exactly one exchange per applicable game.
+Availability requires the reachable trader, its source requirement, and availability
+of the requested species. The tracker does not simulate consuming a Pokémon from the
+player's collection. Held items remain part of the received Pokémon's trade data (D041).
+
+The accepted Route 2 example is `pokemon_trade_route_2_traders_house`: Abra for Mr. Mime,
+matching the submitted level, no held item, and not repeatable. See `ACQUISITIONS.md`
+for the approved shapes and implementation boundaries.
+
+---
+
+### D048 — Pokémon and Item Vendors Share Offer Fields
+
+**Status:** Accepted (30 October 2026); nine-source milestone implemented
+
+Both vendor source types contain `id`, `requires`, and `offers`. Every offer has numeric
+`price`, `currency` (`money` or `coins`), `repeatable`, and optional `versions` (D042).
+Pokémon offers contain `pokemon` and exact possible `levels`; item offers contain `item`
+and `quantity`. Prices are canonical metadata, not balance checks for v1.0 availability.
+`repeatable` records transaction renewal and does not remove previously obtained species
+from availability. Source requirements are additional progression gates; Zone references
+supply location access. No encounter-rate or per-species uniqueness rule applies to vendors.
+
+Route 4's salesman is one Pokémon vendor with one non-repeatable level-5 Magikarp offer
+for 500 money. Game Corner prizes use one object per physical window: left and right
+item vendors and a middle Pokémon vendor. Each window requires Coin Case acquisition
+(`state_has_coin_case`), and offers are repeatable. Version differences belong on offers,
+including differing levels and prices for the same species.
+
+Use the stable IDs, complete example catalogues, and optional Zone reference arrays
+recorded in `ACQUISITIONS.md`. Author area arrays and build separate trade, Pokémon-vendor,
+and item-vendor collections using D045's workflow. Runtime code, validation, player-state
+support, and draft-reference migration are implemented for the nine-source milestone.
+Game Corner catalogues remain unplaced until Celadon world authoring. Bike Voucher exchange
+and gift availability were explicitly excluded. The Powder Jar man and Running Shoes
+aide have Zone references only, like existing draft gifts; rewards remain unspecified
+and gift references stay unevaluated for now.
+
+---
+
 ## Open Decisions
 
 ### O001 — Final Type-Prefix Vocabulary

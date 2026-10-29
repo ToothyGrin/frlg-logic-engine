@@ -471,6 +471,16 @@ D043 fixes the initial encounter shape: source `id`, `method`, `requires`, and a
 without per-level weights or min/max ranges. The field `pokemon` references `species_*`
 IDs under D032.
 
+### NPC Trade and Vendor Payloads
+
+D047–D048 accept the concrete trade and vendor shapes in `ACQUISITIONS.md`.
+Trades use version-filtered `exchanges` with requested/received species, a level rule,
+received held item, and repeatability. Pokémon and item vendors use `offers` sharing
+price, currency, repeatability, and version filters. Game Corner windows are three
+separate sources. The nine-source milestone implements loading, indexing, validation,
+version filtering, vendor availability, and trade dependency closure. The six current
+slice sources use typed Zone references; Game Corner windows remain unplaced.
+
 ### Game-Version Applicability
 
 D042 uses a shared dataset and a selected version, `firered` or `leafgreen`. Acquisition

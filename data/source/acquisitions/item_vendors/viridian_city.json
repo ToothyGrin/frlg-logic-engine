@@ -1,0 +1,36 @@
+[
+  {
+    "id": "item_vendor_viridian_city_pokemart",
+    "requires": "state_event_oaks_parcel_delivered",
+    "offers": [
+      {
+        "item": "item_poke_ball",
+        "quantity": 1,
+        "price": 200,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_potion",
+        "quantity": 1,
+        "price": 300,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_antidote",
+        "quantity": 1,
+        "price": 100,
+        "currency": "money",
+        "repeatable": true
+      },
+      {
+        "item": "item_paralyze_heal",
+        "quantity": 1,
+        "price": 200,
+        "currency": "money",
+        "repeatable": true
+      }
+    ]
+  }
+]

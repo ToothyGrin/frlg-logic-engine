@@ -1,0 +1,28 @@
+[
+  {
+    "id": "pokemon_trade_cerulean_city_traders_house",
+    "requires": null,
+    "exchanges": [
+      {
+        "requested_pokemon": "species_poliwhirl",
+        "pokemon": "species_jynx",
+        "level_rule": "match_requested_pokemon",
+        "held_item": "item_fab_mail",
+        "repeatable": false
+      }
+    ]
+  },
+  {
+    "id": "pokemon_trade_route_2_traders_house",
+    "requires": null,
+    "exchanges": [
+      {
+        "requested_pokemon": "species_abra",
+        "pokemon": "species_mr_mime",
+        "level_rule": "match_requested_pokemon",
+        "held_item": null,
+        "repeatable": false
+      }
+    ]
+  }
+]

@@ -352,13 +352,14 @@ Do not attempt to complete Kanto yet.
 
 The next milestone is:
 
-> **Extend the working early-Kanto graph and wild availability engine with the first
-> non-wild Pokémon acquisition sources.**
+> **Review the completed nine-source trade/vendor milestone and choose the next
+> availability or world-authoring milestone.**
 
 The practical next steps are:
 
-1. review the implemented wild encounter API and version/method filtering;
-2. define the first NPC trade and Pokémon vendor payloads under the accepted decisions;
-3. migrate their draft Zone references with validation and runtime availability;
-4. prove the supplied Route 2/Cerulean trades and Route 4 Magikarp vendor with tests;
-5. continue other acquisition types before broadening the world dataset.
+The nine-source scope is complete: two NPC trades, the Route 4 salesman, three marts,
+and three unplaced Game Corner windows. `docs/ACQUISITIONS.md` documents the runtime API,
+dependency closure, authoring workflow, and boundaries. The Bike Voucher exchange and
+gift availability were excluded. The Powder Jar man and Running Shoes aide are included
+as source references only, alongside the other draft gifts, for possible future
+item-randomiser support. Their rewards and runtime readers are not implemented.

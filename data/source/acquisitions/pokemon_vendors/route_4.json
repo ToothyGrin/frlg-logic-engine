@@ -1,0 +1,17 @@
+[
+  {
+    "id": "pokemon_vendor_route_4_pokecenter_salesman",
+    "requires": null,
+    "offers": [
+      {
+        "pokemon": "species_magikarp",
+        "levels": [
+          5
+        ],
+        "price": 500,
+        "currency": "money",
+        "repeatable": false
+      }
+    ]
+  }
+]

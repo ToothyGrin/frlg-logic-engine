@@ -21,6 +21,10 @@ isolated build. These paths now refer to data roots containing `world/` and `enc
 defaulting to `data/source/` and `data/`. Generated files must stay outside the source root.
 The six world JSON files and `data/encounters/wild.json` stay at their runtime paths;
 do not edit them directly. All collections are validated before any output is written.
+The same builder also assembles three `data/source/acquisitions/` categories into
+`data/acquisitions/`: `pokemon_trades`, `pokemon_vendors`, and `item_vendors`.
+There are now ten generated collections. Trade/vendor schema and typed-reference errors
+prevent all generation, including in draft mode. See `docs/ACQUISITIONS.md` for the API.
 
 Run the builder regression tests:
 
@@ -33,8 +37,9 @@ See `data/source/world/README.md` for authoring conventions and the pre-commit w
 ## Archive Exports
 
 Commit reference images and their provenance README under `assets/reference/` alongside
-the authored data. `.gitattributes` marks that directory and its contents `export-ignore`,
-so Git archives exclude them while the repository retains them.
+the authored data. Keep planning assets under `assets/planning/`. `.gitattributes` marks
+both directories and their contents `export-ignore`, so Git archives exclude them while
+the repository retains them.
 
 After committing the intended changes, export the committed snapshot from the project root:
 
@@ -43,7 +48,7 @@ git archive --format=zip --output=frlg_tracker.zip HEAD
 ```
 
 This exports committed files only. Generated runtime data and future runtime artwork remain
-included; development references are excluded. A dedicated EmoTracker release packager is
+included; development references and planning assets are excluded. A dedicated EmoTracker release packager is
 not implemented yet and must preserve the same exclusion when added.
 
 ## Validator

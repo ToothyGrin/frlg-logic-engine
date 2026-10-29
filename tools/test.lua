@@ -6,5 +6,6 @@ require("tests.traversal_test")
 require("tests.reachability_test")
 require("tests.world_data_test")
 require("tests.encounters_test")
+require("tests.acquisitions_test")
 
 print("All Lua tests passed.")

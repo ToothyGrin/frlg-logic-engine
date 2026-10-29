@@ -25,6 +25,7 @@ See:
 - `docs/STATUS.md`
 - `docs/STATE.md`
 - `docs/ENCOUNTERS.md`
+- `docs/ACQUISITIONS.md`
 - `docs/FRLG_VANILLA_LOGIC_REFERENCE.md`
 
 ## Development Tools
@@ -87,3 +88,9 @@ from the acquired HM and its matching badge, without Pokémon move or compatibil
 See `docs/STATE.md` for the supported input contract and a complete usage example.
 
 Authoring helpers are located under `tools/`.
+
+`Acquisitions.available(world, reachable, state, version)` combines wild encounters,
+reachable Pokémon/item vendors, and eligible NPC trade chains. Its generated sources live
+under `data/acquisitions/`; author area arrays under `data/source/acquisitions/` and use
+the same builder. Nine initial sources are loaded; the three Game Corner windows remain
+unplaced until Celadon is authored. Gift references remain unevaluated draft metadata.

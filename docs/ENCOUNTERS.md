@@ -4,7 +4,7 @@
 
 Author area arrays under `data/source/encounters/wild/`, then run
 `python tools/build_world.py`. The same builder validates topology, encounter tables,
-and their references before writing any of the seven generated collections. Lua reads
+and their references before writing any of the ten generated collections. Lua reads
 `data/encounters/wild.json`; Python is not required at runtime.
 
 The initial dataset has 44 sources in 13 area files. It covers all 11 supplied Bulbapedia

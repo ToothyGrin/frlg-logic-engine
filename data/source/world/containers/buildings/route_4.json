@@ -11,11 +11,11 @@
           "warp_route_4_pokecenter_stair_up"
         ],
         "encounter_sources": [],
-        "pokemon_sources": [
-          "pokemon_vendor_route_4_magikarp_salesman"
-        ],
         "item_sources": [],
-        "trainers": []
+        "trainers": [],
+        "pokemon_vendors": [
+          "pokemon_vendor_route_4_pokecenter_salesman"
+        ]
       },
       {
         "id": "zone_route_4_pokecenter_2f",
