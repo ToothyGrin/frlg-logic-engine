@@ -9,8 +9,8 @@ Planned modes include Professor Oak Challenge support and manual Warp Randomiser
 
 ## Project Status
 
-The project is entering Phase 1 of development: world loading, indexing, state evaluation,
-and reachability.
+World loading and runtime indexing are implemented and tested. The next milestone is
+Connection traversal, followed by state evaluation and reachability.
 
 See:
 
@@ -25,7 +25,16 @@ See:
 World data can be checked with:
 
 ```text
-python tools/validate_world.py data
+python tools/validate_world.py data/world
 ```
+
+Run the Lua checks from the project root:
+
+```text
+lua tests/world_test.lua
+lua tools/load_world.lua
+```
+
+The standalone loader uses dkjson 2.11, included in `lib/dkjson.lua` with its license.
 
 Authoring helpers are located under `tools/`.
