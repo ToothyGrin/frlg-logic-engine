@@ -1,0 +1,83 @@
+[
+  {
+    "id": "conn_viridian_city_route_1_border",
+    "type": "border",
+    "zones": [
+      "zone_viridian_city",
+      "zone_route_1"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_viridian_city_north_old_man_event",
+    "type": "border",
+    "zones": [
+      "zone_viridian_city",
+      "zone_viridian_city_north"
+    ],
+    "requires": "state_delivered_oaks_parcel"
+  },
+  {
+    "id": "conn_viridian_city_north_cut_tree",
+    "type": "cut_tree",
+    "zones": [
+      "zone_viridian_city",
+      "zone_viridian_city_north"
+    ],
+    "requires": "state_can_cut"
+  },
+  {
+    "id": "conn_viridian_city_land_water",
+    "type": "water",
+    "zones": [
+      "zone_viridian_city",
+      "zone_viridian_city_water"
+    ],
+    "requires": "state_can_surf"
+  },
+  {
+    "id": "conn_viridian_city_move_tutor_island_cut_tree",
+    "type": "cut_tree",
+    "zones": [
+      "zone_viridian_city",
+      "zone_viridian_city_move_tutor_island"
+    ],
+    "requires": "state_can_cut"
+  },
+  {
+    "id": "conn_viridian_city_move_tutor_island_water",
+    "type": "water",
+    "zones": [
+      "zone_viridian_city_water",
+      "zone_viridian_city_move_tutor_island"
+    ],
+    "requires": "state_can_surf"
+  },
+  {
+    "id": "conn_viridian_city_move_tutor_island_ledge",
+    "type": "ledge",
+    "zones": [
+      "zone_viridian_city_move_tutor_island",
+      "zone_viridian_city"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_viridian_city_route_22_border",
+    "type": "border",
+    "zones": [
+      "zone_viridian_city",
+      "zone_route_22"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_viridian_city_route_2_border",
+    "type": "border",
+    "zones": [
+      "zone_viridian_city_north",
+      "zone_route_2_southwest"
+    ],
+    "requires": null
+  }
+]

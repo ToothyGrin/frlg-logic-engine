@@ -279,9 +279,9 @@ create a reverse route. Landing-only and unpaired Warps remain possible.
 Actual departure behaviour must be verified from the source's activation and tile rules,
 not merely reciprocal destination references in map records.
 
-Implementation note: the current data, validator, and Lua engine still use bare Portal
-pairs and `warp_to_sibling`. Migration to D044 must update these together; the examples
-above describe the accepted target design rather than current runtime behaviour.
+D044 is implemented in source/generated data, builder validation, generator, Lua indexes,
+and reachability. The runtime lookup is `warp_to_destination`; bare Portal pairs are no
+longer accepted. Existing authored links are normal; Mansion drops await world authoring.
 
 ## State
 
@@ -369,7 +369,7 @@ while queue is not empty:
     traverse any valid Connection to an unreached Zone
 
     inspect current Zone's Warps
-    traverse any active Portal pairing to an unreached Zone
+    follow any active outgoing Warp destination to an unreached Zone
 
     add newly reached Zones to reachable and queue
 ```
@@ -599,7 +599,7 @@ warp_cerulean_city_burgled_house_south_entrance
 ```
 
 Qualifiers are included as needed, rather than forcing every Warp into a fixed number of
-name segments. Ownership and destination still come from Zone declarations and Portal pairs.
+name segments. Ownership and destination still come from Zone declarations and typed Warp links.
 
 ## Authored and Runtime Data Files
 
@@ -614,15 +614,16 @@ must not be edited manually. Preserve meaningful nested-array ordering and autho
 object once even when it links areas. Lua continues to read category aggregates and
 derive runtime indexes. Compact reference data may remain in single authored files.
 
-This is the accepted target layout; the existing directly authored data has not yet
-been migrated. Introduce the source split, generated-file workflow, checks, and runtime
-packaging together.
+The initial world categories now use this layout. `tools/build_world.py` assembles the
+source arrays, validates them in memory, and writes the six existing runtime JSON files.
+`--check` verifies validation and output freshness without writing. Generated files stay
+tracked for runtime use; see `data/source/world/README.md` for grouping and packaging.
 
 ## Modes
 
 ### Vanilla
 
-Vanilla mode uses the canonical FRLG state rules, Connections, and Portal pairings.
+Vanilla mode uses the canonical FRLG state rules, Connections, and typed Warp links.
 
 ### Warp Randomiser
 

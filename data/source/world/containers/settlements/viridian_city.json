@@ -1,0 +1,82 @@
+[
+  {
+    "id": "viridian_city",
+    "name": "Viridian City",
+    "zones": [
+      {
+        "id": "zone_viridian_city",
+        "connections": [
+          "conn_viridian_city_north_old_man_event",
+          "conn_viridian_city_north_cut_tree",
+          "conn_viridian_city_move_tutor_island_cut_tree",
+          "conn_viridian_city_move_tutor_island_ledge",
+          "conn_viridian_city_land_water",
+          "conn_viridian_city_route_1_border",
+          "conn_viridian_city_route_22_border"
+        ],
+        "warps": [
+          "warp_viridian_city_pokecenter_entrance",
+          "warp_viridian_city_pokemart_entrance",
+          "warp_viridian_city_trainer_school_entrance",
+          "warp_viridian_city_residence_1_entrance"
+        ],
+        "encounter_sources": [
+          "enc_viridian_city_old_rod",
+          "enc_viridian_city_good_rod",
+          "enc_viridian_city_super_rod"
+        ],
+        "item_sources": [
+          "item_gift_viridian_city_old_man",
+          "item_pickup_viridian_city_behind_tree"
+        ],
+        "trainers": []
+      },
+      {
+        "id": "zone_viridian_city_north",
+        "connections": [
+          "conn_viridian_city_north_old_man_event",
+          "conn_viridian_city_north_cut_tree",
+          "conn_viridian_city_route_2_border"
+        ],
+        "warps": [
+          "warp_viridian_city_gym_entrance"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_viridian_city_water",
+        "connections": [
+          "conn_viridian_city_land_water",
+          "conn_viridian_city_move_tutor_island_water"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_viridian_city_surf",
+          "enc_viridian_city_old_rod",
+          "enc_viridian_city_good_rod",
+          "enc_viridian_city_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_viridian_city_move_tutor_island",
+        "connections": [
+          "conn_viridian_city_move_tutor_island_cut_tree",
+          "conn_viridian_city_move_tutor_island_water",
+          "conn_viridian_city_move_tutor_island_ledge"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_viridian_city_old_rod",
+          "enc_viridian_city_good_rod",
+          "enc_viridian_city_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

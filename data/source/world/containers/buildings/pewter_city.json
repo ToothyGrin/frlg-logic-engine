@@ -1,0 +1,135 @@
+[
+  {
+    "id": "pewter_city_pokecenter",
+    "name": "Pewter City PokeCenter",
+    "zones": [
+      {
+        "id": "zone_pewter_city_pokecenter_1f",
+        "connections": [],
+        "warps": [
+          "warp_pewter_city_pokecenter_exit",
+          "warp_pewter_city_pokecenter_stair_up"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_pewter_city_pokecenter_2f",
+        "connections": [],
+        "warps": [
+          "warp_pewter_city_pokecenter_stair_down"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "pewter_city_pokemart",
+    "name": "Pewter City PokeMart",
+    "zones": [
+      {
+        "id": "zone_pewter_city_pokemart",
+        "connections": [],
+        "warps": [
+          "warp_pewter_city_pokemart_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "pewter_city_gym",
+    "name": "Pewter City Gym",
+    "zones": [
+      {
+        "id": "zone_pewter_city_gym",
+        "connections": [],
+        "warps": [
+          "warp_pewter_city_gym_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [
+          "item_gift_pewter_city_defeat_brock"
+        ],
+        "trainers": [
+          "trainer_pewter_city_gym_camper_liam",
+          "trainer_leader_brock"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "pewter_city_south_house",
+    "name": "Pewter City South House",
+    "zones": [
+      {
+        "id": "zone_pewter_city_south_house",
+        "connections": [],
+        "warps": [
+          "warp_pewter_city_south_house_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "pewter_city_north_house",
+    "name": "Pewter City North House",
+    "zones": [
+      {
+        "id": "zone_pewter_city_north_house",
+        "connections": [],
+        "warps": [
+          "warp_pewter_city_north_house_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "pewter_city_museum",
+    "name": "Pewter City Museum of Science",
+    "zones": [
+      {
+        "id": "zone_pewter_city_museum_1f",
+        "connections": [],
+        "warps": [
+          "warp_pewter_city_museum_exit",
+          "warp_pewter_city_museum_stair_up"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_pewter_city_museum_2f",
+        "connections": [],
+        "warps": [
+          "warp_pewter_city_museum_stair_down"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_pewter_city_museum_side",
+        "connections": [],
+        "warps": [
+          "warp_pewter_city_museum_side_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

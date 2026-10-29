@@ -92,8 +92,12 @@ Current working drafts now include separate JSON data for concepts such as:
 - Buildings and other Instances;
 - Connections.
 
-The project remains pre-production. The canonical schema, validator, reachability solver,
-complete game data, and EmoTracker UI still need to be implemented.
+The project remains pre-production. Topology validation, world loading/indexing, initial
+state evaluation, and reachability are implemented. Small authoritative source arrays now
+generate the existing runtime category files, with validation and stale-output checking.
+Typed Warp links support normal routes and one-way drops. Acquisition schemas/logic,
+complete game data, and EmoTracker UI remain implementation work. See `STATUS.md` for
+verified milestones.
 
 ## Development Principles
 

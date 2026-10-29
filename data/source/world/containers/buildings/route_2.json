@@ -1,0 +1,85 @@
+[
+  {
+    "id": "viridian_forest_south_gate",
+    "name": "Viridian Forest South Gate",
+    "zones": [
+      {
+        "id": "zone_viridian_forest_south_gate",
+        "connections": [],
+        "warps": [
+          "warp_viridian_forest_south_gate_south_exit",
+          "warp_viridian_forest_south_gate_north_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "viridian_forest_north_gate",
+    "name": "Viridian Forest North Gate",
+    "zones": [
+      {
+        "id": "zone_viridian_forest_north_gate",
+        "connections": [],
+        "warps": [
+          "warp_viridian_forest_north_gate_south_exit",
+          "warp_viridian_forest_north_gate_north_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "route_2_gate",
+    "name": "Route 2 Gate",
+    "zones": [
+      {
+        "id": "zone_route_2_gate_1f",
+        "connections": [],
+        "warps": [
+          "warp_route_2_gate_north_exit",
+          "warp_route_2_gate_south_exit",
+          "warp_route_2_gate_stair_up"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_route_2_gate_2f",
+        "connections": [],
+        "warps": [
+          "warp_route_2_gate_stair_down"
+        ],
+        "encounter_sources": [],
+        "item_sources": [
+          "item_gift_route_2_prof_aide"
+        ],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "route_2_traders_house",
+    "name": "Route 2 Trader's House",
+    "zones": [
+      {
+        "id": "zone_route_2_traders_house",
+        "connections": [],
+        "warps": [
+          "warp_route_2_traders_house_exit"
+        ],
+        "encounter_sources": [],
+        "pokemon_sources": [
+          "pokemon_trade_route_2"
+        ],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

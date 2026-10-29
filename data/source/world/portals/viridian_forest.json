@@ -1,0 +1,16 @@
+[
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_forest_south_gate_north_entrance",
+      "warp_viridian_forest_south_gate_north_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_forest_north_gate_south_entrance",
+      "warp_viridian_forest_north_gate_south_exit"
+    ]
+  }
+]

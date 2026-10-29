@@ -1,0 +1,56 @@
+[
+  {
+    "id": "players_house",
+    "name": "Player's House",
+    "zones": [
+      {
+        "id": "zone_players_house",
+        "connections": [],
+        "warps": [
+          "warp_players_house_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "rivals_house",
+    "name": "Rival's House",
+    "zones": [
+      {
+        "id": "zone_rivals_house",
+        "connections": [],
+        "warps": [
+          "warp_rivals_house_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [
+          "item_gift_rivals_house_daisy"
+        ],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "oaks_lab",
+    "name": "Oak's Lab",
+    "zones": [
+      {
+        "id": "zone_oaks_lab",
+        "connections": [],
+        "warps": [
+          "warp_oaks_lab_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [
+          "item_gift_oaks_lab_professor_oak_after_parcel"
+        ],
+        "trainers": [
+          "trainer_oaks_lab_rival"
+        ]
+      }
+    ]
+  }
+]

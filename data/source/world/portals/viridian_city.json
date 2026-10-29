@@ -1,0 +1,44 @@
+[
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_city_pokecenter_entrance",
+      "warp_viridian_city_pokecenter_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_city_pokecenter_stair_up",
+      "warp_viridian_city_pokecenter_stair_down"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_city_pokemart_entrance",
+      "warp_viridian_city_pokemart_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_city_trainer_school_entrance",
+      "warp_viridian_city_trainer_school_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_city_residence_1_entrance",
+      "warp_viridian_city_residence_1_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_city_gym_entrance",
+      "warp_viridian_city_gym_exit"
+    ]
+  }
+]

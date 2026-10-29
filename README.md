@@ -27,7 +27,28 @@ See:
 
 ## Development Tools
 
-World data can be checked with:
+World data is authored in small arrays under `data/source/world/` and generated into
+the existing runtime files under `data/world/`. After editing sources, build and validate:
+
+```text
+python tools/build_world.py
+```
+
+Before committing or packaging, check freshness without writing:
+
+```text
+python tools/build_world.py --check
+```
+
+The generated files remain tracked and must not be edited directly. See
+`data/source/world/README.md` for the authoring and packaging workflow.
+
+Warp links in `portals.json` are objects with `type` and `warps`: `normal` permits both
+directions, while `drop` permits only the first-to-second direction. The loader derives
+`warp_to_destination`; multiple departures may share a landing. Bare Warp pairs are no
+longer supported.
+
+Generated world data can also be checked independently with:
 
 ```text
 python tools/validate_world.py data/world
@@ -38,6 +59,12 @@ Run the Lua checks from the project root:
 ```text
 lua tools/test.lua
 lua tools/load_world.lua
+```
+
+Run the Python builder tests with:
+
+```text
+python -m unittest discover -s tests -p "test_*.py"
 ```
 
 The standalone loader uses dkjson 2.11, included in `lib/dkjson.lua` with its license.

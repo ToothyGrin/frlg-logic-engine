@@ -1,0 +1,19 @@
+[
+  {
+    "id": "victory_road_gate",
+    "name": "Victory Road Gate",
+    "zones": [
+      {
+        "id": "zone_victory_road_gate",
+        "connections": [],
+        "warps": [
+          "warp_victory_road_gate_south_exit",
+          "warp_victory_road_gate_north_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

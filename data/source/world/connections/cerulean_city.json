@@ -1,0 +1,74 @@
+[
+  {
+    "id": "conn_cerulean_city_water_route_4_border",
+    "type": "border",
+    "zones": [
+      "zone_cerulean_city_water",
+      "zone_route_4_water"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_cerulean_city_southeast_cut_tree",
+    "type": "cut_tree",
+    "zones": [
+      "zone_cerulean_city",
+      "zone_cerulean_city_southeast"
+    ],
+    "requires": "state_can_cut"
+  },
+  {
+    "id": "conn_cerulean_city_route_24_border",
+    "type": "border",
+    "zones": [
+      "zone_cerulean_city",
+      "zone_route_24"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_cerulean_city_water_route_24_border",
+    "type": "border",
+    "zones": [
+      "zone_cerulean_city_water",
+      "zone_route_24_water"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_cerulean_city_route_5_border",
+    "type": "border",
+    "zones": [
+      "zone_cerulean_city_southeast",
+      "zone_route_5"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_cerulean_city_route_5_ledge",
+    "type": "ledge",
+    "zones": [
+      "zone_cerulean_city_southeast",
+      "zone_route_5_center"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_cerulean_city_route_9_border",
+    "type": "border",
+    "zones": [
+      "zone_cerulean_city_southeast",
+      "zone_route_9"
+    ],
+    "requires": "state_can_cut"
+  },
+  {
+    "id": "conn_cerulean_city_water_cave_border",
+    "type": "water",
+    "zones": [
+      "zone_cerulean_city_water",
+      "zone_cerulean_city_cave"
+    ],
+    "requires": "state_can_surf"
+  }
+]

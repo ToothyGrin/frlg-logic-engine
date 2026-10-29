@@ -1,1 +1,4 @@
-["warp_<a>", "warp_<b>"]
+{
+  "type": "normal",
+  "warps": ["warp_<a>", "warp_<b>"]
+}

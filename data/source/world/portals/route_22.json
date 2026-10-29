@@ -1,0 +1,16 @@
+[
+  {
+    "type": "normal",
+    "warps": [
+      "warp_victory_road_gate_south_entrance",
+      "warp_victory_road_gate_south_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_victory_road_gate_north_entrance",
+      "warp_victory_road_gate_north_exit"
+    ]
+  }
+]

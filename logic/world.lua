@@ -11,7 +11,7 @@ function World.build_indexes(data)
         zones_by_id = {},
         connections_by_id = {},
         warp_to_zone = {},
-        warp_to_sibling = {},
+        warp_to_destination = {},
     }
 
     for _, container in ipairs(data.containers) do
@@ -30,13 +30,29 @@ function World.build_indexes(data)
         add_unique(world.connections_by_id, connection.id, connection)
     end
 
-    for _, portal in ipairs(data.portals) do
-        local warp_a = portal[1]
-        local warp_b = portal[2]
+    for _, link in ipairs(data.portals) do
+        assert(type(link) == "table", "Warp link must be an object")
+        assert(
+            link.type == "normal" or link.type == "drop",
+            "Unknown Warp link type: " .. tostring(link.type)
+        )
+        assert(
+            type(link.warps) == "table" and #link.warps == 2,
+            "Warp link must contain exactly two Warp IDs"
+        )
+        local warp_a = link.warps[1]
+        local warp_b = link.warps[2]
+        assert(
+            type(warp_a) == "string" and warp_a ~= ""
+                and type(warp_b) == "string" and warp_b ~= "",
+            "Warp link endpoints must be non-empty strings"
+        )
+        assert(warp_a ~= warp_b, "Warp link endpoints must be distinct")
 
-        -- Both Portal directions:
-        add_unique(world.warp_to_sibling, warp_a, warp_b)
-        add_unique(world.warp_to_sibling, warp_b, warp_a)
+        add_unique(world.warp_to_destination, warp_a, warp_b)
+        if link.type == "normal" then
+            add_unique(world.warp_to_destination, warp_b, warp_a)
+        end
     end
 
     return world

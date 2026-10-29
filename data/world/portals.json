@@ -1,88 +1,373 @@
 [
-  ["warp_players_house_entrance", "warp_players_house_exit"],
-  ["warp_rivals_house_entrance", "warp_rivals_house_exit"],
-  ["warp_oaks_lab_entrance", "warp_oaks_lab_exit"],
-  ["warp_viridian_city_pokecenter_entrance", "warp_viridian_city_pokecenter_exit"],
-  ["warp_viridian_city_pokecenter_stair_up", "warp_viridian_city_pokecenter_stair_down"],
-  ["warp_viridian_city_pokemart_entrance", "warp_viridian_city_pokemart_exit"],
-  ["warp_viridian_city_trainer_school_entrance", "warp_viridian_city_trainer_school_exit"],
-  ["warp_viridian_city_residence_1_entrance", "warp_viridian_city_residence_1_exit"],
-  ["warp_viridian_city_gym_entrance", "warp_viridian_city_gym_exit"],
-  [
-    "warp_viridian_forest_south_gate_south_entrance",
-    "warp_viridian_forest_south_gate_south_exit"
-  ],
-  [
-    "warp_viridian_forest_south_gate_north_entrance",
-    "warp_viridian_forest_south_gate_north_exit"
-  ],
-  [
-    "warp_viridian_forest_north_gate_south_entrance",
-    "warp_viridian_forest_north_gate_south_exit"
-  ],
-  [
-    "warp_viridian_forest_north_gate_north_entrance",
-    "warp_viridian_forest_north_gate_north_exit"
-  ],
-  ["warp_route_2_gate_north_entrance", "warp_route_2_gate_north_exit"],
-  ["warp_route_2_gate_south_entrance", "warp_route_2_gate_south_exit"],
-  ["warp_route_2_gate_stair_up", "warp_route_2_gate_stair_down"],
-  ["warp_route_2_traders_house_entrance", "warp_route_2_traders_house_exit"],
-  ["warp_route_2_diglett_cave_entrance", "warp_route_2_diglett_cave_exit"],
-  ["warp_pewter_city_pokecenter_entrance", "warp_pewter_city_pokecenter_exit"],
-  ["warp_pewter_city_pokecenter_stair_up", "warp_pewter_city_pokecenter_stair_down"],
-  ["warp_pewter_city_pokemart_entrance", "warp_pewter_city_pokemart_exit"],
-  ["warp_pewter_city_gym_entrance", "warp_pewter_city_gym_exit"],
-  ["warp_pewter_city_south_house_entrance", "warp_pewter_city_south_house_exit"],
-  ["warp_pewter_city_north_house_entrance", "warp_pewter_city_north_house_exit"],
-  ["warp_pewter_city_museum_entrance", "warp_pewter_city_museum_exit"],
-  ["warp_pewter_city_museum_stair_up", "warp_pewter_city_museum_stair_down"],
-  ["warp_pewter_city_museum_side_entrance", "warp_pewter_city_museum_side_exit"],
-  ["warp_route_4_pokecenter_entrance", "warp_route_4_pokecenter_exit"],
-  ["warp_route_4_pokecenter_stair_up", "warp_route_4_pokecenter_stair_down"],
-  ["warp_route_4_mtmoon_west_entrance", "warp_mt_moon_1f_exit"],
-  ["warp_mt_moon_1f_east_ladder_down", "warp_mt_moon_b1f_east_corner_ladder_up"],
-  [
-    "warp_mt_moon_b1f_east_corner_ladder_down",
-    "warp_mt_moon_b2f_central_deadend_ladder_up"
-  ],
-  ["warp_mt_moon_1f_center_ladder_down", "warp_mt_moon_b1f_west_room_ladder_up"],
-  [
-    "warp_mt_moon_b1f_west_room_ladder_down",
-    "warp_mt_moon_b2f_northeast_deadend_ladder_up"
-  ],
-  ["warp_mt_moon_1f_northwest_ladder_down", "warp_mt_moon_b1f_west_corner_ladder_up"],
-  ["warp_mt_moon_b1f_west_corner_ladder_down", "warp_mt_moon_b2f_center_ladder_up"],
-  ["warp_mt_moon_b1f_east_room_ladder_down", "warp_mt_moon_b2f_northwest_ladder_up"],
-  ["warp_mt_moon_b1f_east_room_ladder_up", "warp_route_4_mtmoon_east_entrance"],
-  ["warp_cerulean_city_pokecenter_entrance", "warp_cerulean_city_pokecenter_exit"],
-  ["warp_cerulean_city_pokecenter_stair_up", "warp_cerulean_city_pokecenter_stair_down"],
-  ["warp_cerulean_city_pokemart_entrance", "warp_cerulean_city_pokemart_exit"],
-  ["warp_cerulean_city_gym_entrance", "warp_cerulean_city_gym_exit"],
-  ["warp_cerulean_city_bike_shop_entrance", "warp_cerulean_city_bike_shop_exit"],
-  ["warp_cerulean_city_traders_house_entrance", "warp_cerulean_city_traders_house_exit"],
-  [
-    "warp_cerulean_city_burgled_house_south_entrance",
-    "warp_cerulean_city_burgled_house_south_exit"
-  ],
-  [
-    "warp_cerulean_city_burgled_house_north_entrance",
-    "warp_cerulean_city_burgled_house_north_exit"
-  ],
-  [
-    "warp_cerulean_city_backyard_house_south_entrance",
-    "warp_cerulean_city_backyard_house_south_exit"
-  ],
-  [
-    "warp_cerulean_city_backyard_house_north_entrance",
-    "warp_cerulean_city_backyard_house_north_exit"
-  ],
-  [
-    "warp_cerulean_city_berry_powder_house_entrance",
-    "warp_cerulean_city_berry_powder_house_exit"
-  ],
-  ["warp_cerulean_city_old_mans_house_entrance", "warp_cerulean_city_old_mans_house_exit"],
-  ["warp_victory_road_gate_south_entrance", "warp_victory_road_gate_south_exit"],
-  ["warp_victory_road_gate_north_entrance", "warp_victory_road_gate_north_exit"],
-  ["warp_route_25_sea_cottage_entrance", "warp_route_25_sea_cottage_exit"]
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_backyard_house_north_entrance",
+      "warp_cerulean_city_backyard_house_north_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_backyard_house_south_entrance",
+      "warp_cerulean_city_backyard_house_south_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_berry_powder_house_entrance",
+      "warp_cerulean_city_berry_powder_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_bike_shop_entrance",
+      "warp_cerulean_city_bike_shop_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_burgled_house_north_entrance",
+      "warp_cerulean_city_burgled_house_north_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_burgled_house_south_entrance",
+      "warp_cerulean_city_burgled_house_south_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_gym_entrance",
+      "warp_cerulean_city_gym_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_old_mans_house_entrance",
+      "warp_cerulean_city_old_mans_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_pokecenter_entrance",
+      "warp_cerulean_city_pokecenter_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_pokecenter_stair_up",
+      "warp_cerulean_city_pokecenter_stair_down"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_pokemart_entrance",
+      "warp_cerulean_city_pokemart_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_traders_house_entrance",
+      "warp_cerulean_city_traders_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_1f_center_ladder_down",
+      "warp_mt_moon_b1f_west_room_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_1f_east_ladder_down",
+      "warp_mt_moon_b1f_east_corner_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_1f_northwest_ladder_down",
+      "warp_mt_moon_b1f_west_corner_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_b1f_east_corner_ladder_down",
+      "warp_mt_moon_b2f_central_deadend_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_b1f_east_room_ladder_down",
+      "warp_mt_moon_b2f_northwest_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_b1f_east_room_ladder_up",
+      "warp_route_4_mtmoon_east_entrance"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_b1f_west_corner_ladder_down",
+      "warp_mt_moon_b2f_center_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_b1f_west_room_ladder_down",
+      "warp_mt_moon_b2f_northeast_deadend_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_oaks_lab_entrance",
+      "warp_oaks_lab_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_gym_entrance",
+      "warp_pewter_city_gym_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_museum_entrance",
+      "warp_pewter_city_museum_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_museum_side_entrance",
+      "warp_pewter_city_museum_side_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_museum_stair_up",
+      "warp_pewter_city_museum_stair_down"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_north_house_entrance",
+      "warp_pewter_city_north_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_pokecenter_entrance",
+      "warp_pewter_city_pokecenter_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_pokecenter_stair_up",
+      "warp_pewter_city_pokecenter_stair_down"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_pokemart_entrance",
+      "warp_pewter_city_pokemart_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_south_house_entrance",
+      "warp_pewter_city_south_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_players_house_entrance",
+      "warp_players_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_rivals_house_entrance",
+      "warp_rivals_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_25_sea_cottage_entrance",
+      "warp_route_25_sea_cottage_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_2_diglett_cave_entrance",
+      "warp_route_2_diglett_cave_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_2_gate_north_entrance",
+      "warp_route_2_gate_north_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_2_gate_south_entrance",
+      "warp_route_2_gate_south_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_2_gate_stair_up",
+      "warp_route_2_gate_stair_down"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_2_traders_house_entrance",
+      "warp_route_2_traders_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_4_mtmoon_west_entrance",
+      "warp_mt_moon_1f_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_4_pokecenter_entrance",
+      "warp_route_4_pokecenter_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_4_pokecenter_stair_up",
+      "warp_route_4_pokecenter_stair_down"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_victory_road_gate_north_entrance",
+      "warp_victory_road_gate_north_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_victory_road_gate_south_entrance",
+      "warp_victory_road_gate_south_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_city_gym_entrance",
+      "warp_viridian_city_gym_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_city_pokecenter_entrance",
+      "warp_viridian_city_pokecenter_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_city_pokecenter_stair_up",
+      "warp_viridian_city_pokecenter_stair_down"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_city_pokemart_entrance",
+      "warp_viridian_city_pokemart_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_city_residence_1_entrance",
+      "warp_viridian_city_residence_1_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_city_trainer_school_entrance",
+      "warp_viridian_city_trainer_school_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_forest_north_gate_north_entrance",
+      "warp_viridian_forest_north_gate_north_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_forest_north_gate_south_entrance",
+      "warp_viridian_forest_north_gate_south_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_forest_south_gate_north_entrance",
+      "warp_viridian_forest_south_gate_north_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_forest_south_gate_south_entrance",
+      "warp_viridian_forest_south_gate_south_exit"
+    ]
+  }
 ]

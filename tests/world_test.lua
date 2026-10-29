@@ -25,7 +25,7 @@ local function test_build_indexes()
         },
         connections = { connection },
         portals = {
-            { "warp_a", "warp_b" },
+            { type = "normal", warps = { "warp_a", "warp_b" } },
         },
     }
 
@@ -39,9 +39,9 @@ local function test_build_indexes()
     assert(world.warp_to_zone.warp_b == zone_b)
     assert(world.warp_to_zone.warp_unpaired == zone_a)
 
-    assert(world.warp_to_sibling.warp_a == "warp_b")
-    assert(world.warp_to_sibling.warp_b == "warp_a")
-    assert(world.warp_to_sibling.warp_unpaired == nil)
+    assert(world.warp_to_destination.warp_a == "warp_b")
+    assert(world.warp_to_destination.warp_b == "warp_a")
+    assert(world.warp_to_destination.warp_unpaired == nil)
 end
 
 local function test_duplicate_rejection()
@@ -91,14 +91,14 @@ local function test_duplicate_rejection()
             },
         },
         {
-            name = "duplicate Portal membership",
+            name = "duplicate outgoing Warp",
             duplicate_id = "warp_a",
             data = {
                 containers = {},
                 connections = {},
                 portals = {
-                    { "warp_a", "warp_b" },
-                    { "warp_a", "warp_c" },
+                    { type = "normal", warps = { "warp_a", "warp_b" } },
+                    { type = "normal", warps = { "warp_a", "warp_c" } },
                 },
             },
         },

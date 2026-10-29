@@ -1,0 +1,38 @@
+[
+  {
+    "id": "conn_pewter_city_route_2_border",
+    "type": "border",
+    "zones": [
+      "zone_pewter_city",
+      "zone_route_2_northwest"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_pewter_city_route_3_border",
+    "type": "border",
+    "zones": [
+      "zone_pewter_city",
+      "zone_route_3"
+    ],
+    "requires": "state_event_brock_defeated"
+  },
+  {
+    "id": "conn_pewter_city_museum_backyard_cut_tree",
+    "type": "cut_tree",
+    "zones": [
+      "zone_pewter_city",
+      "zone_pewter_city_museum_backyard"
+    ],
+    "requires": "state_can_cut"
+  },
+  {
+    "id": "conn_pewter_city_museum_backyard_ledge",
+    "type": "ledge",
+    "zones": [
+      "zone_pewter_city_museum_backyard",
+      "zone_pewter_city"
+    ],
+    "requires": null
+  }
+]

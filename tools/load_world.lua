@@ -23,7 +23,7 @@ assert(
     == world.zones_by_id["zone_players_house"]
 )
 assert(
-    world.warp_to_sibling["warp_players_house_exit"]
+    world.warp_to_destination["warp_players_house_exit"]
     == "warp_players_house_entrance"
 )
 

@@ -1,0 +1,9 @@
+[
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_25_sea_cottage_entrance",
+      "warp_route_25_sea_cottage_exit"
+    ]
+  }
+]

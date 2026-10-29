@@ -1,0 +1,65 @@
+[
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_pokecenter_entrance",
+      "warp_pewter_city_pokecenter_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_pokecenter_stair_up",
+      "warp_pewter_city_pokecenter_stair_down"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_pokemart_entrance",
+      "warp_pewter_city_pokemart_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_gym_entrance",
+      "warp_pewter_city_gym_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_south_house_entrance",
+      "warp_pewter_city_south_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_north_house_entrance",
+      "warp_pewter_city_north_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_museum_entrance",
+      "warp_pewter_city_museum_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_museum_stair_up",
+      "warp_pewter_city_museum_stair_down"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_pewter_city_museum_side_entrance",
+      "warp_pewter_city_museum_side_exit"
+    ]
+  }
+]

@@ -47,10 +47,10 @@ function Reachability.solve(world, starting_zone_id, state)
         end
 
         for _, warp_id in ipairs(zone.warps) do
-            local sibling_id = world.warp_to_sibling[warp_id]
+            local destination_warp_id = world.warp_to_destination[warp_id]
 
-            if sibling_id ~= nil then
-                local destination_zone = world.warp_to_zone[sibling_id]
+            if destination_warp_id ~= nil then
+                local destination_zone = world.warp_to_zone[destination_warp_id]
 
                 if destination_zone ~= nil then
                     enqueue(destination_zone.id)

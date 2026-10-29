@@ -1,0 +1,32 @@
+[
+  {
+    "id": "route_3",
+    "name": "Route 3",
+    "zones": [
+      {
+        "id": "zone_route_3",
+        "connections": [
+          "conn_pewter_city_route_3_border",
+          "conn_route_3_route_4_border"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_route_3_grass"
+        ],
+        "item_sources": [
+          "item_pickup_route_3_between_two_ledges"
+        ],
+        "trainers": [
+          "trainer_route_3_lass_janice",
+          "trainer_route_3_bug_catcher_colton",
+          "trainer_route_3_youngster_ben",
+          "trainer_route_3_bug_catcher_greg",
+          "trainer_route_3_lass_sally",
+          "trainer_route_3_youngster_calvin",
+          "trainer_route_3_bug_catcher_james",
+          "trainer_route_3_lass_robin"
+        ]
+      }
+    ]
+  }
+]

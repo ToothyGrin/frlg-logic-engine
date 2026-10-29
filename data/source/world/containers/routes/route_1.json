@@ -1,0 +1,23 @@
+[
+  {
+    "id": "route_1",
+    "name": "Route 1",
+    "zones": [
+      {
+        "id": "zone_route_1",
+        "connections": [
+          "conn_pallet_town_route_1_border",
+          "conn_viridian_city_route_1_border"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_route_1_grass"
+        ],
+        "item_sources": [
+          "item_gift_route_1_pokemart_employee"
+        ],
+        "trainers": []
+      }
+    ]
+  }
+]

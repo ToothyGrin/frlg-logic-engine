@@ -10,7 +10,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
-from collections import Counter, defaultdict
+from collections import defaultdict
 from pathlib import Path
 
 WORLD_FILES = {
@@ -30,6 +30,7 @@ CONTAINER_FILES = (
 )
 ID_RE = re.compile(r"^[a-z0-9]+(?:_[a-z0-9]+)*$")
 CONNECTION_TYPES = {"border", "cut_tree", "water", "ledge"}
+WARP_LINK_TYPES = {"normal", "drop"}
 
 
 class Report:
@@ -81,6 +82,13 @@ def validate(root: Path, strict: bool = False) -> Report:
     if report.errors:
         return report
 
+    return validate_data(data, strict=strict)
+
+
+def validate_data(data: dict, strict: bool = False) -> Report:
+    """Validate assembled collections before generated files are written."""
+    report = Report(strict=strict)
+
     # Empty-string placeholders are always invalid. Use [] or omit unfinished objects.
     for filename, content in data.items():
         for path in walk_empty_strings(content):
@@ -100,6 +108,9 @@ def validate(root: Path, strict: bool = False) -> Report:
             continue
 
         for obj in objects:
+            if not isinstance(obj, dict):
+                report.error(f"{filename}: every container must be an object")
+                continue
             oid = obj.get("id")
             if not isinstance(oid, str) or not ID_RE.fullmatch(oid):
                 report.error(f"{filename}: invalid container id {oid!r}")
@@ -114,6 +125,9 @@ def validate(root: Path, strict: bool = False) -> Report:
                 continue
 
             for zone in zones:
+                if not isinstance(zone, dict):
+                    report.error(f"{filename}:{oid}: every zone must be an object")
+                    continue
                 zid = zone.get("id")
                 if not isinstance(zid, str) or not ID_RE.fullmatch(zid):
                     report.error(f"{filename}:{oid}: invalid zone id {zid!r}")
@@ -130,9 +144,14 @@ def validate(root: Path, strict: bool = False) -> Report:
                     if field in zone and not isinstance(zone[field], list):
                         report.error(f"{filename}:{oid}:{zid}: {field} must be an array")
 
-                for cid in zone.get("connections", []):
-                    zone_connections[zid].add(cid)
-                for wid in zone.get("warps", []):
+                refs = zone.get("connections", [])
+                for cid in refs if isinstance(refs, list) else []:
+                    if not isinstance(cid, str) or not ID_RE.fullmatch(cid):
+                        report.error(f"{filename}:{oid}:{zid}: invalid connection id {cid!r}")
+                    else:
+                        zone_connections[zid].add(cid)
+                warps = zone.get("warps", [])
+                for wid in warps if isinstance(warps, list) else []:
                     if not isinstance(wid, str) or not ID_RE.fullmatch(wid):
                         report.error(f"{filename}:{oid}:{zid}: invalid warp id {wid!r}")
                     elif not wid.startswith("warp_"):
@@ -155,6 +174,9 @@ def validate(root: Path, strict: bool = False) -> Report:
     conn_by_id: dict[str, dict] = {}
 
     for conn in connections:
+        if not isinstance(conn, dict):
+            report.error("connections.json: every connection must be an object")
+            continue
         cid = conn.get("id")
         if not isinstance(cid, str) or not ID_RE.fullmatch(cid):
             report.error(f"connections.json: invalid connection id {cid!r}")
@@ -166,7 +188,7 @@ def validate(root: Path, strict: bool = False) -> Report:
         conn_by_id[cid] = conn
 
         ctype = conn.get("type")
-        if ctype not in CONNECTION_TYPES:
+        if not isinstance(ctype, str) or ctype not in CONNECTION_TYPES:
             report.warning(f"connections.json:{cid}: unknown connection type {ctype!r}")
 
         endpoints = conn.get("zones")
@@ -175,6 +197,8 @@ def validate(root: Path, strict: bool = False) -> Report:
             continue
         if endpoints[0] == endpoints[1]:
             report.error(f"connections.json:{cid}: endpoints must be distinct")
+        if any(not isinstance(zid, str) or not ID_RE.fullmatch(zid) for zid in endpoints):
+            report.error(f"connections.json:{cid}: endpoints must be valid zone ids")
 
         requires = conn.get("requires")
         if requires is not None:
@@ -190,7 +214,12 @@ def validate(root: Path, strict: bool = False) -> Report:
                 report.error(f"{zid}: references undefined connection {cid}")
 
     for cid, conn in conn_by_id.items():
-        for zid in conn.get("zones", []):
+        endpoints = conn.get("zones", [])
+        if not isinstance(endpoints, list):
+            continue
+        for zid in endpoints:
+            if not isinstance(zid, str):
+                continue
             if zid not in zone_owners:
                 report.warning(
                     f"connections.json:{cid}: endpoint zone not authored yet: {zid}",
@@ -199,39 +228,53 @@ def validate(root: Path, strict: bool = False) -> Report:
             elif cid not in zone_connections[zid]:
                 report.error(f"{zid}: is endpoint of {cid} but does not declare it")
 
-    # Portals are unordered pairs of unique Warp ids. Every authored Warp belongs to one portal.
-    portal_warps: list[str] = []
+    # Direction comes from the link type. Destinations may repeat; departures may not.
+    warp_departures: dict[str, tuple[str, int]] = {}
     portals = data["portals.json"]
 
     if not isinstance(portals, list):
         report.error("portals.json: expected a top-level array")
         portals = []
 
-    for index, pair in enumerate(portals):
+    for index, link in enumerate(portals):
+        if not isinstance(link, dict):
+            report.error(f"portals.json[{index}]: Warp link must be an object with type and warps")
+            continue
+        link_type = link.get("type")
+        if not isinstance(link_type, str) or link_type not in WARP_LINK_TYPES:
+            report.error(f"portals.json[{index}]: unknown Warp link type {link_type!r}")
+            continue
+        pair = link.get("warps")
         if not isinstance(pair, list) or len(pair) != 2:
-            report.error(f"portals.json[{index}]: portal must contain exactly two warp ids")
+            report.error(f"portals.json[{index}]: warps must contain exactly two warp ids")
             continue
         if pair[0] == pair[1]:
-            report.error(f"portals.json[{index}]: portal endpoints must be distinct")
+            report.error(f"portals.json[{index}]: Warp link endpoints must be distinct")
+            continue
+        valid = True
         for wid in pair:
             if not isinstance(wid, str) or not ID_RE.fullmatch(wid) or not wid.startswith("warp_"):
                 report.error(f"portals.json[{index}]: invalid warp id {wid!r}")
+                valid = False
             else:
-                portal_warps.append(wid)
                 if wid not in zone_warps:
                     report.warning(
                         f"portals.json[{index}]: warp not declared by an authored zone yet: {wid}",
                         incomplete=True,
                     )
 
-    for wid, count in Counter(portal_warps).items():
-        if count > 1:
-            report.error(f"Warp {wid} appears in {count} portal pairs")
-
-    portal_warp_set = set(portal_warps)
-    for wid, (_, _, zid) in zone_warps.items():
-        if wid not in portal_warp_set:
-            report.warning(f"{zid}: authored warp has no portal pair: {wid}", incomplete=True)
+        if not valid:
+            continue
+        departures = [pair] if link_type == "drop" else [pair, list(reversed(pair))]
+        for source, destination in departures:
+            if source in warp_departures:
+                previous_destination, previous_index = warp_departures[source]
+                report.error(
+                    f"portals.json[{index}]: duplicate outgoing Warp {source}; "
+                    f"already maps to {previous_destination} in portals.json[{previous_index}]"
+                )
+            else:
+                warp_departures[source] = (destination, index)
 
     return report
 

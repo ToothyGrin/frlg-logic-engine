@@ -1,0 +1,23 @@
+[
+  {
+    "type": "normal",
+    "warps": [
+      "warp_players_house_entrance",
+      "warp_players_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_rivals_house_entrance",
+      "warp_rivals_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_oaks_lab_entrance",
+      "warp_oaks_lab_exit"
+    ]
+  }
+]

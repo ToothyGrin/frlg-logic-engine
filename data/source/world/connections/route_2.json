@@ -1,0 +1,20 @@
+[
+  {
+    "id": "conn_route_2_south_cut_tree",
+    "type": "cut_tree",
+    "zones": [
+      "zone_route_2_southwest",
+      "zone_route_2_southeast"
+    ],
+    "requires": "state_can_cut"
+  },
+  {
+    "id": "conn_route_2_north_cut_tree",
+    "type": "cut_tree",
+    "zones": [
+      "zone_route_2_northwest",
+      "zone_route_2_northeast"
+    ],
+    "requires": "state_can_cut"
+  }
+]

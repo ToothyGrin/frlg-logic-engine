@@ -1,0 +1,34 @@
+[
+  {
+    "id": "viridian_forest",
+    "name": "Viridian Forest",
+    "zones": [
+      {
+        "id": "zone_viridian_forest",
+        "connections": [],
+        "warps": [
+          "warp_viridian_forest_south_gate_north_entrance",
+          "warp_viridian_forest_north_gate_south_entrance"
+        ],
+        "encounter_sources": [
+          "enc_viridian_forest_grass"
+        ],
+        "item_sources": [
+          "item_pickup_viridian_forest_lone_tree",
+          "item_pickup_viridian_forest_southwest_deadend",
+          "item_pickup_viridian_forest_southeast",
+          "item_pickup_viridian_forest_center_flowerpatch",
+          "item_pickup_viridian_forest_opp_sammy",
+          "item_pickup_viridian_forest_northeast_road"
+        ],
+        "trainers": [
+          "trainer_viridian_forest_bug_catcher_rick",
+          "trainer_viridian_forest_bug_catcher_doug",
+          "trainer_viridian_forest_bug_catcher_anthony",
+          "trainer_viridian_forest_bug_catcher_charlie",
+          "trainer_viridian_forest_bug_catcher_sammy"
+        ]
+      }
+    ]
+  }
+]

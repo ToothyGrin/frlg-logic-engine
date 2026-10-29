@@ -1,0 +1,11 @@
+[
+  {
+    "id": "conn_route_22_land_water",
+    "type": "water",
+    "zones": [
+      "zone_route_22",
+      "zone_route_22_water"
+    ],
+    "requires": "state_can_surf"
+  }
+]

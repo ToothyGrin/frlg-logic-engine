@@ -1,0 +1,168 @@
+[
+  {
+    "id": "cerulean_city_pokecenter",
+    "name": "Cerulean City PokeCenter",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_pokecenter_1f",
+        "connections": [],
+        "warps": [
+          "warp_cerulean_city_pokecenter_exit",
+          "warp_cerulean_city_pokecenter_stair_up"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_cerulean_city_pokecenter_2f",
+        "connections": [],
+        "warps": [
+          "warp_cerulean_city_pokecenter_stair_down"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_pokemart",
+    "name": "Cerulean City PokeMart",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_pokemart",
+        "connections": [],
+        "warps": [
+          "warp_cerulean_city_pokemart_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_gym",
+    "name": "Cerulean City Gym",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_gym",
+        "connections": [],
+        "warps": [
+          "warp_cerulean_city_gym_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [
+          "item_gift_cerulean_city_defeat_misty"
+        ],
+        "trainers": [
+          "trainer_cerulean_city_gym_swimmer_m_luis",
+          "trainer_cerulean_city_gym_picnicker_diana",
+          "trainer_leader_misty"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_bike_shop",
+    "name": "Cerulean City Bike Shop",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_bike_shop",
+        "connections": [],
+        "warps": [
+          "warp_cerulean_city_bike_shop_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_traders_house",
+    "name": "Cerulean City Trader's House",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_traders_house",
+        "connections": [],
+        "warps": [
+          "warp_cerulean_city_traders_house_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "pokemon_sources": [
+          "pokemon_trade_cerulean_city"
+        ],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_burgled_house",
+    "name": "Cerulean City Burgled House",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_burgled_house",
+        "connections": [],
+        "warps": [
+          "warp_cerulean_city_burgled_house_south_exit",
+          "warp_cerulean_city_burgled_house_north_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_backyard_house",
+    "name": "Cerulean City Backyard House",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_backyard_house",
+        "connections": [],
+        "warps": [
+          "warp_cerulean_city_backyard_house_south_exit",
+          "warp_cerulean_city_backyard_house_north_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_berry_powder_house",
+    "name": "Cerulean City Berry Powder House",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_berry_powder_house",
+        "connections": [],
+        "warps": [
+          "warp_cerulean_city_berry_powder_house_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "cerulean_city_old_mans_house",
+    "name": "Cerulean City Old Man's House",
+    "zones": [
+      {
+        "id": "zone_cerulean_city_old_mans_house",
+        "connections": [],
+        "warps": [
+          "warp_cerulean_city_old_mans_house_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

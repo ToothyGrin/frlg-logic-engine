@@ -1,0 +1,51 @@
+[
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_forest_south_gate_south_entrance",
+      "warp_viridian_forest_south_gate_south_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_viridian_forest_north_gate_north_entrance",
+      "warp_viridian_forest_north_gate_north_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_2_gate_north_entrance",
+      "warp_route_2_gate_north_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_2_gate_south_entrance",
+      "warp_route_2_gate_south_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_2_gate_stair_up",
+      "warp_route_2_gate_stair_down"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_2_traders_house_entrance",
+      "warp_route_2_traders_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_2_diglett_cave_entrance",
+      "warp_route_2_diglett_cave_exit"
+    ]
+  }
+]

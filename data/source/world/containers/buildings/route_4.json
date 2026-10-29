@@ -1,0 +1,32 @@
+[
+  {
+    "id": "route_4_pokecenter",
+    "name": "Route 4 PokeCenter",
+    "zones": [
+      {
+        "id": "zone_route_4_pokecenter_1f",
+        "connections": [],
+        "warps": [
+          "warp_route_4_pokecenter_exit",
+          "warp_route_4_pokecenter_stair_up"
+        ],
+        "encounter_sources": [],
+        "pokemon_sources": [
+          "pokemon_vendor_route_4_magikarp_salesman"
+        ],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_route_4_pokecenter_2f",
+        "connections": [],
+        "warps": [
+          "warp_route_4_pokecenter_stair_down"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

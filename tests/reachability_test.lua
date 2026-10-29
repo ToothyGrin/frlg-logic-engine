@@ -44,7 +44,7 @@ local function test_reachability()
             },
         },
         portals = {
-            { "warp_c", "warp_d" },
+            { type = "normal", warps = { "warp_c", "warp_d" } },
         },
     }
 
@@ -117,7 +117,7 @@ local function test_incomplete_destinations()
         connections = {
             {id = "conn_missing_destination", type = "border", zones = {"zone_a", "zone_missing"}},
         },
-        portals = {{"warp_paired", "warp_missing"}},
+        portals = {{type = "normal", warps = {"warp_paired", "warp_missing"}}},
     })
 
     local reachable = Reachability.solve(world, "zone_a", {})

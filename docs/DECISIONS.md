@@ -742,7 +742,7 @@ Detailed encounter validation and runtime acquisition remain implementation work
 
 ### D044 — Standardize Warp Links With Type-Based Direction
 
-**Status:** Accepted (29 October 2026); implementation migration pending
+**Status:** Accepted (29 October 2026); implemented
 
 Use one collection of typed Warp links, following Connections' type-based direction
 convention. Each object has `type` and a two-element `warps` array:
@@ -774,15 +774,16 @@ alone do not establish a traversable return route.
 - [Mansion 1F arrival records](https://github.com/pret/pokefirered/blob/master/data/maps/PokemonMansion_1F/map.json#L138-L158)
 - [Warp activation checks](https://github.com/pret/pokefirered/blob/master/src/field_control_avatar.c#L806-L869)
 
-This revises D017's bare-pair representation and D018's sibling lookup. Migrate the
-existing Portal data, generator, validator, indexes, solver, and tests together in a
-later implementation step. File placement is addressed under O007.
+This revises D017's bare-pair representation and D018's sibling lookup. The existing
+53 Portal pairs have been migrated to normal links, together with the source builder,
+generator, validator, indexes, solver, and tests. Typed links remain in `portals.json`.
+Drop mechanics are tested with fixtures; Mansion-specific records await world authoring.
 
 ---
 
 ### D045 — Build Runtime Collections From Small Authored Source Files
 
-**Status:** Accepted (29 October 2026); implementation migration pending
+**Status:** Accepted (29 October 2026); initial world source/build workflow implemented
 
 Adopt the authored-source/generated-aggregate pattern inspected in the supplied
 MobiusFFTool project. Retain category-based runtime collections while partitioning
@@ -816,9 +817,10 @@ at this stage. Small reference categories may remain single authored files until
 is useful. Detailed partitions and cross-area authoring conventions will be documented
 with migration.
 
-The current data files are still authored directly. Source extraction, builder/check
-commands, generated-file documentation, validation integration, and deployment workflow
-must be introduced together in a later implementation step.
+The initial world categories are implemented through `tools/build_world.py`: small source
+arrays, generated aggregates, shared validation, stale-output checking, and documented
+packaging. This migration retains the existing Portal and content schemas; their separate
+accepted changes remain pending. Future acquisition categories can extend this workflow.
 
 ---
 
@@ -936,7 +938,7 @@ are authored once; differing entries are split by applicability. See D042–D043
 
 ### O006 — One-Way Warp and Drop Representation
 
-**Status:** Resolved by D044; implementation pending
+**Status:** Resolved by D044; typed-link implementation complete
 
 Pokémon Mansion and similar mechanics include one-way discrete movement that fits the Warp
 concept but not the normal bidirectional Portal pairing.
@@ -948,7 +950,7 @@ direction semantics. D044 records the schema and required migration.
 
 ### O007 — Physical File Organisation
 
-**Status:** Resolved by D045; implementation pending
+**Status:** Resolved by D045; initial world workflow implemented
 
 Author small category-based source files grouped by area or natural entity, and build
 the broad runtime category collections. D045 records the accepted source/aggregate split

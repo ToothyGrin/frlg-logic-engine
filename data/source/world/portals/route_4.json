@@ -1,0 +1,23 @@
+[
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_4_pokecenter_entrance",
+      "warp_route_4_pokecenter_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_4_pokecenter_stair_up",
+      "warp_route_4_pokecenter_stair_down"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_route_4_mtmoon_west_entrance",
+      "warp_mt_moon_1f_exit"
+    ]
+  }
+]

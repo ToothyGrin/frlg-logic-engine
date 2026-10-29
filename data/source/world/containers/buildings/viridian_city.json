@@ -1,0 +1,93 @@
+[
+  {
+    "id": "viridian_city_pokecenter",
+    "name": "Viridian City PokeCenter",
+    "zones": [
+      {
+        "id": "zone_viridian_city_pokecenter_1f",
+        "connections": [],
+        "warps": [
+          "warp_viridian_city_pokecenter_exit",
+          "warp_viridian_city_pokecenter_stair_up"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_viridian_city_pokecenter_2f",
+        "connections": [],
+        "warps": [
+          "warp_viridian_city_pokecenter_stair_down"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "viridian_city_pokemart",
+    "name": "Viridian City PokeMart",
+    "zones": [
+      {
+        "id": "zone_viridian_city_pokemart",
+        "connections": [],
+        "warps": [
+          "warp_viridian_city_pokemart_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "viridian_city_trainer_school",
+    "name": "Viridian City Trainer School",
+    "zones": [
+      {
+        "id": "zone_viridian_city_trainer_school",
+        "connections": [],
+        "warps": [
+          "warp_viridian_city_trainer_school_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "viridian_city_residence_1",
+    "name": "Viridian City Residence 1",
+    "zones": [
+      {
+        "id": "zone_viridian_city_residence_1",
+        "connections": [],
+        "warps": [
+          "warp_viridian_city_residence_1_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "viridian_city_gym",
+    "name": "Viridian City Gym",
+    "zones": [
+      {
+        "id": "zone_viridian_city_gym",
+        "connections": [],
+        "warps": [
+          "warp_viridian_city_gym_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "conn_pallet_town_route_1_border",
+    "type": "border",
+    "zones": [
+      "zone_pallet_town",
+      "zone_route_1"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_pallet_town_land_water",
+    "type": "water",
+    "zones": [
+      "zone_pallet_town",
+      "zone_pallet_town_water"
+    ],
+    "requires": "state_can_surf"
+  },
+  {
+    "id": "conn_pallet_town_route_21_border",
+    "type": "border",
+    "zones": [
+      "zone_pallet_town_water",
+      "zone_route_21_water"
+    ],
+    "requires": null
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "id": "route_25_sea_cottage",
+    "name": "Sea Cottage",
+    "zones": [
+      {
+        "id": "zone_route_25_sea_cottage",
+        "connections": [],
+        "warps": [
+          "warp_route_25_sea_cottage_exit"
+        ],
+        "encounter_sources": [],
+        "item_sources": [
+          "item_gift_route_25_bill"
+        ],
+        "trainers": []
+      }
+    ]
+  }
+]

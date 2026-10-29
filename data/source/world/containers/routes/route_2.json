@@ -1,0 +1,67 @@
+[
+  {
+    "id": "route_2",
+    "name": "Route 2",
+    "zones": [
+      {
+        "id": "zone_route_2_southwest",
+        "connections": [
+          "conn_viridian_city_route_2_border",
+          "conn_route_2_south_cut_tree"
+        ],
+        "warps": [
+          "warp_viridian_forest_south_gate_south_entrance"
+        ],
+        "encounter_sources": [
+          "enc_route_2_grass"
+        ],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_route_2_southeast",
+        "connections": [
+          "conn_route_2_south_cut_tree"
+        ],
+        "warps": [
+          "warp_route_2_gate_south_entrance"
+        ],
+        "encounter_sources": [],
+        "item_sources": [
+          "item_pickup_route_2_below_ledge_1",
+          "item_pickup_route_2_below_ledge_2"
+        ],
+        "trainers": []
+      },
+      {
+        "id": "zone_route_2_northwest",
+        "connections": [
+          "conn_pewter_city_route_2_border",
+          "conn_route_2_north_cut_tree"
+        ],
+        "warps": [
+          "warp_viridian_forest_north_gate_north_entrance"
+        ],
+        "encounter_sources": [
+          "enc_route_2_grass"
+        ],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_route_2_northeast",
+        "connections": [
+          "conn_route_2_north_cut_tree"
+        ],
+        "warps": [
+          "warp_route_2_gate_north_entrance",
+          "warp_route_2_traders_house_entrance",
+          "warp_route_2_diglett_cave_entrance"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

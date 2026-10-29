@@ -1,212 +1,317 @@
 [
   {
-    "id": "conn_pallet_town_route_1_border",
+    "id": "conn_cerulean_city_cave_route_4_border",
     "type": "border",
-    "zones": ["zone_pallet_town", "zone_route_1"],
+    "zones": [
+      "zone_route_4_top",
+      "zone_cerulean_city_cave"
+    ],
     "requires": null
   },
   {
-    "id": "conn_pallet_town_land_water",
-    "type": "water",
-    "zones": ["zone_pallet_town", "zone_pallet_town_water"],
-    "requires": "state_can_surf"
-  },
-  {
-    "id": "conn_pallet_town_route_21_border",
+    "id": "conn_cerulean_city_route_24_border",
     "type": "border",
-    "zones": ["zone_pallet_town_water", "zone_route_21_water"],
-    "requires": null
-  },
-  {
-    "id": "conn_viridian_city_route_1_border",
-    "type": "border",
-    "zones": ["zone_viridian_city", "zone_route_1"],
-    "requires": null
-  },
-  {
-    "id": "conn_viridian_city_north_old_man_event",
-    "type": "border",
-    "zones": ["zone_viridian_city", "zone_viridian_city_north"],
-    "requires": "state_delivered_oaks_parcel"
-  },
-  {
-    "id": "conn_viridian_city_north_cut_tree",
-    "type": "cut_tree",
-    "zones": ["zone_viridian_city", "zone_viridian_city_north"],
-    "requires": "state_can_cut"
-  },
-  {
-    "id": "conn_viridian_city_land_water",
-    "type": "water",
-    "zones": ["zone_viridian_city", "zone_viridian_city_water"],
-    "requires": "state_can_surf"
-  },
-  {
-    "id": "conn_viridian_city_move_tutor_island_cut_tree",
-    "type": "cut_tree",
-    "zones": ["zone_viridian_city", "zone_viridian_city_move_tutor_island"],
-    "requires": "state_can_cut"
-  },
-  {
-    "id": "conn_viridian_city_move_tutor_island_water",
-    "type": "water",
-    "zones": ["zone_viridian_city_water", "zone_viridian_city_move_tutor_island"],
-    "requires": "state_can_surf"
-  },
-  {
-    "id": "conn_viridian_city_move_tutor_island_ledge",
-    "type": "ledge",
-    "zones": ["zone_viridian_city_move_tutor_island", "zone_viridian_city"],
-    "requires": null
-  },
-  {
-    "id": "conn_viridian_city_route_22_border",
-    "type": "border",
-    "zones": ["zone_viridian_city", "zone_route_22"],
-    "requires": null
-  },
-  {
-    "id": "conn_route_22_land_water",
-    "type": "water",
-    "zones": ["zone_route_22", "zone_route_22_water"],
-    "requires": "state_can_surf"
-  },
-  {
-    "id": "conn_viridian_city_route_2_border",
-    "type": "border",
-    "zones": ["zone_viridian_city_north", "zone_route_2_southwest"],
-    "requires": null
-  },
-  {
-    "id": "conn_route_2_south_cut_tree",
-    "type": "cut_tree",
-    "zones": ["zone_route_2_southwest", "zone_route_2_southeast"],
-    "requires": "state_can_cut"
-  },
-  {
-    "id": "conn_route_2_north_cut_tree",
-    "type": "cut_tree",
-    "zones": ["zone_route_2_northwest", "zone_route_2_northeast"],
-    "requires": "state_can_cut"
-  },
-  {
-    "id": "conn_pewter_city_route_2_border",
-    "type": "border",
-    "zones": ["zone_pewter_city", "zone_route_2_northwest"],
-    "requires": null
-  },
-  {
-    "id": "conn_pewter_city_route_3_border",
-    "type": "border",
-    "zones": ["zone_pewter_city", "zone_route_3"],
-    "requires": "state_event_brock_defeated"
-  },
-  {
-    "id": "conn_pewter_city_museum_backyard_cut_tree",
-    "type": "cut_tree",
-    "zones": ["zone_pewter_city", "zone_pewter_city_museum_backyard"],
-    "requires": "state_can_cut"
-  },
-  {
-    "id": "conn_pewter_city_museum_backyard_ledge",
-    "type": "ledge",
-    "zones": ["zone_pewter_city_museum_backyard", "zone_pewter_city"],
-    "requires": null
-  },
-  {
-    "id": "conn_route_3_route_4_border",
-    "type": "border",
-    "zones": ["zone_route_3", "zone_route_4_west"],
-    "requires": null
-  },
-  {
-    "id": "conn_route_4_top_east_ledge",
-    "type": "ledge",
-    "zones": ["zone_route_4_top", "zone_route_4_east"],
-    "requires": null
-  },
-  {
-    "id": "conn_route_4_east_easternmost_ledge",
-    "type": "ledge",
-    "zones": ["zone_route_4_east", "zone_route_4_easternmost"],
+    "zones": [
+      "zone_cerulean_city",
+      "zone_route_24"
+    ],
     "requires": null
   },
   {
     "id": "conn_cerulean_city_route_4_border",
     "type": "border",
-    "zones": ["zone_route_4_easternmost", "zone_cerulean_city"],
-    "requires": null
-  },
-  {
-    "id": "conn_cerulean_city_cave_route_4_border",
-    "type": "border",
-    "zones": ["zone_route_4_top", "zone_cerulean_city_cave"],
-    "requires": null
-  },
-  {
-    "id": "conn_cerulean_city_water_route_4_border",
-    "type": "border",
-    "zones": ["zone_cerulean_city_water", "zone_route_4_water"],
-    "requires": null
-  },
-  {
-    "id": "conn_cerulean_city_southeast_cut_tree",
-    "type": "cut_tree",
-    "zones": ["zone_cerulean_city", "zone_cerulean_city_southeast"],
-    "requires": "state_can_cut"
-  },
-  {
-    "id": "conn_cerulean_city_route_24_border",
-    "type": "border",
-    "zones": ["zone_cerulean_city", "zone_route_24"],
-    "requires": null
-  },
-  {
-    "id": "conn_route_24_land_water",
-    "type": "water",
-    "zones": ["zone_route_24", "zone_route_24_water"],
-    "requires": "state_can_surf"
-  },
-  {
-    "id": "conn_cerulean_city_water_route_24_border",
-    "type": "border",
-    "zones": ["zone_cerulean_city_water", "zone_route_24_water"],
+    "zones": [
+      "zone_route_4_easternmost",
+      "zone_cerulean_city"
+    ],
     "requires": null
   },
   {
     "id": "conn_cerulean_city_route_5_border",
     "type": "border",
-    "zones": ["zone_cerulean_city_southeast", "zone_route_5"],
+    "zones": [
+      "zone_cerulean_city_southeast",
+      "zone_route_5"
+    ],
     "requires": null
   },
   {
     "id": "conn_cerulean_city_route_5_ledge",
     "type": "ledge",
-    "zones": ["zone_cerulean_city_southeast", "zone_route_5_center"],
+    "zones": [
+      "zone_cerulean_city_southeast",
+      "zone_route_5_center"
+    ],
     "requires": null
   },
   {
     "id": "conn_cerulean_city_route_9_border",
     "type": "border",
-    "zones": ["zone_cerulean_city_southeast", "zone_route_9"],
+    "zones": [
+      "zone_cerulean_city_southeast",
+      "zone_route_9"
+    ],
+    "requires": "state_can_cut"
+  },
+  {
+    "id": "conn_cerulean_city_southeast_cut_tree",
+    "type": "cut_tree",
+    "zones": [
+      "zone_cerulean_city",
+      "zone_cerulean_city_southeast"
+    ],
     "requires": "state_can_cut"
   },
   {
     "id": "conn_cerulean_city_water_cave_border",
     "type": "water",
-    "zones": ["zone_cerulean_city_water", "zone_cerulean_city_cave"],
+    "zones": [
+      "zone_cerulean_city_water",
+      "zone_cerulean_city_cave"
+    ],
+    "requires": "state_can_surf"
+  },
+  {
+    "id": "conn_cerulean_city_water_route_24_border",
+    "type": "border",
+    "zones": [
+      "zone_cerulean_city_water",
+      "zone_route_24_water"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_cerulean_city_water_route_4_border",
+    "type": "border",
+    "zones": [
+      "zone_cerulean_city_water",
+      "zone_route_4_water"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_pallet_town_land_water",
+    "type": "water",
+    "zones": [
+      "zone_pallet_town",
+      "zone_pallet_town_water"
+    ],
+    "requires": "state_can_surf"
+  },
+  {
+    "id": "conn_pallet_town_route_1_border",
+    "type": "border",
+    "zones": [
+      "zone_pallet_town",
+      "zone_route_1"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_pallet_town_route_21_border",
+    "type": "border",
+    "zones": [
+      "zone_pallet_town_water",
+      "zone_route_21_water"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_pewter_city_museum_backyard_cut_tree",
+    "type": "cut_tree",
+    "zones": [
+      "zone_pewter_city",
+      "zone_pewter_city_museum_backyard"
+    ],
+    "requires": "state_can_cut"
+  },
+  {
+    "id": "conn_pewter_city_museum_backyard_ledge",
+    "type": "ledge",
+    "zones": [
+      "zone_pewter_city_museum_backyard",
+      "zone_pewter_city"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_pewter_city_route_2_border",
+    "type": "border",
+    "zones": [
+      "zone_pewter_city",
+      "zone_route_2_northwest"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_pewter_city_route_3_border",
+    "type": "border",
+    "zones": [
+      "zone_pewter_city",
+      "zone_route_3"
+    ],
+    "requires": "state_event_brock_defeated"
+  },
+  {
+    "id": "conn_route_22_land_water",
+    "type": "water",
+    "zones": [
+      "zone_route_22",
+      "zone_route_22_water"
+    ],
     "requires": "state_can_surf"
   },
   {
     "id": "conn_route_24_25_border",
     "type": "border",
-    "zones": ["zone_route_24", "zone_route_25"],
+    "zones": [
+      "zone_route_24",
+      "zone_route_25"
+    ],
     "requires": null
+  },
+  {
+    "id": "conn_route_24_land_water",
+    "type": "water",
+    "zones": [
+      "zone_route_24",
+      "zone_route_24_water"
+    ],
+    "requires": "state_can_surf"
   },
   {
     "id": "conn_route_25_land_water",
     "type": "water",
-    "zones": ["zone_route_25", "zone_route_25_water"],
+    "zones": [
+      "zone_route_25",
+      "zone_route_25_water"
+    ],
     "requires": "state_can_surf"
+  },
+  {
+    "id": "conn_route_2_north_cut_tree",
+    "type": "cut_tree",
+    "zones": [
+      "zone_route_2_northwest",
+      "zone_route_2_northeast"
+    ],
+    "requires": "state_can_cut"
+  },
+  {
+    "id": "conn_route_2_south_cut_tree",
+    "type": "cut_tree",
+    "zones": [
+      "zone_route_2_southwest",
+      "zone_route_2_southeast"
+    ],
+    "requires": "state_can_cut"
+  },
+  {
+    "id": "conn_route_3_route_4_border",
+    "type": "border",
+    "zones": [
+      "zone_route_3",
+      "zone_route_4_west"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_route_4_east_easternmost_ledge",
+    "type": "ledge",
+    "zones": [
+      "zone_route_4_east",
+      "zone_route_4_easternmost"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_route_4_top_east_ledge",
+    "type": "ledge",
+    "zones": [
+      "zone_route_4_top",
+      "zone_route_4_east"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_viridian_city_land_water",
+    "type": "water",
+    "zones": [
+      "zone_viridian_city",
+      "zone_viridian_city_water"
+    ],
+    "requires": "state_can_surf"
+  },
+  {
+    "id": "conn_viridian_city_move_tutor_island_cut_tree",
+    "type": "cut_tree",
+    "zones": [
+      "zone_viridian_city",
+      "zone_viridian_city_move_tutor_island"
+    ],
+    "requires": "state_can_cut"
+  },
+  {
+    "id": "conn_viridian_city_move_tutor_island_ledge",
+    "type": "ledge",
+    "zones": [
+      "zone_viridian_city_move_tutor_island",
+      "zone_viridian_city"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_viridian_city_move_tutor_island_water",
+    "type": "water",
+    "zones": [
+      "zone_viridian_city_water",
+      "zone_viridian_city_move_tutor_island"
+    ],
+    "requires": "state_can_surf"
+  },
+  {
+    "id": "conn_viridian_city_north_cut_tree",
+    "type": "cut_tree",
+    "zones": [
+      "zone_viridian_city",
+      "zone_viridian_city_north"
+    ],
+    "requires": "state_can_cut"
+  },
+  {
+    "id": "conn_viridian_city_north_old_man_event",
+    "type": "border",
+    "zones": [
+      "zone_viridian_city",
+      "zone_viridian_city_north"
+    ],
+    "requires": "state_delivered_oaks_parcel"
+  },
+  {
+    "id": "conn_viridian_city_route_1_border",
+    "type": "border",
+    "zones": [
+      "zone_viridian_city",
+      "zone_route_1"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_viridian_city_route_22_border",
+    "type": "border",
+    "zones": [
+      "zone_viridian_city",
+      "zone_route_22"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_viridian_city_route_2_border",
+    "type": "border",
+    "zones": [
+      "zone_viridian_city_north",
+      "zone_route_2_southwest"
+    ],
+    "requires": null
   }
 ]

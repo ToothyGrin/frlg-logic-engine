@@ -1,0 +1,43 @@
+[
+  {
+    "id": "route_22",
+    "name": "Route 22",
+    "zones": [
+      {
+        "id": "zone_route_22",
+        "connections": [
+          "conn_viridian_city_route_22_border",
+          "conn_route_22_land_water"
+        ],
+        "warps": [
+          "warp_victory_road_gate_south_entrance"
+        ],
+        "encounter_sources": [
+          "enc_route_22_grass",
+          "enc_route_22_old_rod",
+          "enc_route_22_good_rod",
+          "enc_route_22_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": [
+          "trainer_route_22_rival"
+        ]
+      },
+      {
+        "id": "zone_route_22_water",
+        "connections": [
+          "conn_route_22_land_water"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_route_22_surf",
+          "enc_route_22_old_rod",
+          "enc_route_22_good_rod",
+          "enc_route_22_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

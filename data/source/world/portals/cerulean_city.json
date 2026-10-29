@@ -1,0 +1,86 @@
+[
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_pokecenter_entrance",
+      "warp_cerulean_city_pokecenter_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_pokecenter_stair_up",
+      "warp_cerulean_city_pokecenter_stair_down"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_pokemart_entrance",
+      "warp_cerulean_city_pokemart_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_gym_entrance",
+      "warp_cerulean_city_gym_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_bike_shop_entrance",
+      "warp_cerulean_city_bike_shop_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_traders_house_entrance",
+      "warp_cerulean_city_traders_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_burgled_house_south_entrance",
+      "warp_cerulean_city_burgled_house_south_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_burgled_house_north_entrance",
+      "warp_cerulean_city_burgled_house_north_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_backyard_house_south_entrance",
+      "warp_cerulean_city_backyard_house_south_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_backyard_house_north_entrance",
+      "warp_cerulean_city_backyard_house_north_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_berry_powder_house_entrance",
+      "warp_cerulean_city_berry_powder_house_exit"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_cerulean_city_old_mans_house_entrance",
+      "warp_cerulean_city_old_mans_house_exit"
+    ]
+  }
+]

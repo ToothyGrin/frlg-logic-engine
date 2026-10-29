@@ -1,0 +1,38 @@
+[
+  {
+    "id": "conn_route_4_top_east_ledge",
+    "type": "ledge",
+    "zones": [
+      "zone_route_4_top",
+      "zone_route_4_east"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_route_4_east_easternmost_ledge",
+    "type": "ledge",
+    "zones": [
+      "zone_route_4_east",
+      "zone_route_4_easternmost"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_cerulean_city_route_4_border",
+    "type": "border",
+    "zones": [
+      "zone_route_4_easternmost",
+      "zone_cerulean_city"
+    ],
+    "requires": null
+  },
+  {
+    "id": "conn_cerulean_city_cave_route_4_border",
+    "type": "border",
+    "zones": [
+      "zone_route_4_top",
+      "zone_cerulean_city_cave"
+    ],
+    "requires": null
+  }
+]

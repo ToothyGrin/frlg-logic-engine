@@ -1,0 +1,54 @@
+[
+  {
+    "id": "route_24",
+    "name": "Route 24",
+    "zones": [
+      {
+        "id": "zone_route_24",
+        "connections": [
+          "conn_cerulean_city_route_24_border",
+          "conn_route_24_land_water",
+          "conn_route_24_25_border"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_route_24_grass",
+          "enc_route_24_old_rod",
+          "enc_route_24_good_rod",
+          "enc_route_24_super_rod"
+        ],
+        "item_sources": [
+          "item_gift_route_24_nugget_bridge",
+          "item_pickup_route_24_northwest_plateau",
+          "item_pickup_route_24_northeast_plateau"
+        ],
+        "trainers": [
+          "trainer_route_24_rival",
+          "trainer_route_24_bug_catcher_cale",
+          "trainer_route_24_lass_ali",
+          "trainer_route_24_youngster_timmy",
+          "trainer_route_24_lass_reli",
+          "trainer_route_24_camper_ethan",
+          "trainer_route_24_rocket_grunt",
+          "trainer_route_24_camper_shale"
+        ]
+      },
+      {
+        "id": "zone_route_24_water",
+        "connections": [
+          "conn_route_24_land_water",
+          "conn_cerulean_city_water_route_24_border"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_route_24_surf",
+          "enc_route_24_old_rod",
+          "enc_route_24_good_rod",
+          "enc_route_24_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

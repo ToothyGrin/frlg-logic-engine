@@ -42,7 +42,13 @@ def interactive() -> None:
             "requires": (lambda v: None if v.lower() in {"", "null", "none"} else v)(prompt("Requirement", "null")),
         })
     elif kind == "portal":
-        dump([prompt("Warp A", "warp_"), prompt("Warp B", "warp_")])
+        link_type = prompt("Type (normal / drop)", "normal").lower()
+        if link_type not in {"normal", "drop"}:
+            raise SystemExit(f"Unknown Warp link type: {link_type}")
+        dump({
+            "type": link_type,
+            "warps": [prompt("Warp A (departure for a drop)", "warp_"), prompt("Warp B (destination)", "warp_")],
+        })
     elif kind == "zone":
         dump(zone_object(prompt("Zone id", "zone_")))
     elif kind == "container":
@@ -73,6 +79,7 @@ def main() -> None:
     p.add_argument("--requires", default=None)
 
     p = sub.add_parser("portal")
+    p.add_argument("--type", choices=["normal", "drop"], default="normal")
     p.add_argument("--warp-a", required=True)
     p.add_argument("--warp-b", required=True)
 
@@ -96,7 +103,7 @@ def main() -> None:
     elif args.command == "connection":
         dump({"id": args.id, "type": args.type, "zones": [args.zone_a, args.zone_b], "requires": args.requires})
     elif args.command == "portal":
-        dump([args.warp_a, args.warp_b])
+        dump({"type": args.type, "warps": [args.warp_a, args.warp_b]})
     elif args.command == "zone":
         dump(zone_object(args.id))
     elif args.command == "container":

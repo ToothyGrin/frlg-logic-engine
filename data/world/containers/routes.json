@@ -10,8 +10,12 @@
           "conn_viridian_city_route_1_border"
         ],
         "warps": [],
-        "encounter_sources": ["enc_route_1_grass"],
-        "item_sources": ["item_gift_route_1_pokemart_employee"],
+        "encounter_sources": [
+          "enc_route_1_grass"
+        ],
+        "item_sources": [
+          "item_gift_route_1_pokemart_employee"
+        ],
         "trainers": []
       }
     ]
@@ -22,16 +26,27 @@
     "zones": [
       {
         "id": "zone_route_2_southwest",
-        "connections": ["conn_viridian_city_route_2_border", "conn_route_2_south_cut_tree"],
-        "warps": ["warp_viridian_forest_south_gate_south_entrance"],
-        "encounter_sources": ["enc_route_2_grass"],
+        "connections": [
+          "conn_viridian_city_route_2_border",
+          "conn_route_2_south_cut_tree"
+        ],
+        "warps": [
+          "warp_viridian_forest_south_gate_south_entrance"
+        ],
+        "encounter_sources": [
+          "enc_route_2_grass"
+        ],
         "item_sources": [],
         "trainers": []
       },
       {
         "id": "zone_route_2_southeast",
-        "connections": ["conn_route_2_south_cut_tree"],
-        "warps": ["warp_route_2_gate_south_entrance"],
+        "connections": [
+          "conn_route_2_south_cut_tree"
+        ],
+        "warps": [
+          "warp_route_2_gate_south_entrance"
+        ],
         "encounter_sources": [],
         "item_sources": [
           "item_pickup_route_2_below_ledge_1",
@@ -41,15 +56,24 @@
       },
       {
         "id": "zone_route_2_northwest",
-        "connections": ["conn_pewter_city_route_2_border", "conn_route_2_north_cut_tree"],
-        "warps": ["warp_viridian_forest_north_gate_north_entrance"],
-        "encounter_sources": ["enc_route_2_grass"],
+        "connections": [
+          "conn_pewter_city_route_2_border",
+          "conn_route_2_north_cut_tree"
+        ],
+        "warps": [
+          "warp_viridian_forest_north_gate_north_entrance"
+        ],
+        "encounter_sources": [
+          "enc_route_2_grass"
+        ],
         "item_sources": [],
         "trainers": []
       },
       {
         "id": "zone_route_2_northeast",
-        "connections": ["conn_route_2_north_cut_tree"],
+        "connections": [
+          "conn_route_2_north_cut_tree"
+        ],
         "warps": [
           "warp_route_2_gate_north_entrance",
           "warp_route_2_traders_house_entrance",
@@ -62,100 +86,18 @@
     ]
   },
   {
-    "id": "route_3",
-    "name": "Route 3",
-    "zones": [
-      {
-        "id": "zone_route_3",
-        "connections": ["conn_pewter_city_route_3_border", "conn_route_3_route_4_border"],
-        "warps": [],
-        "encounter_sources": ["enc_route_3_grass"],
-        "item_sources": ["item_pickup_route_3_between_two_ledges"],
-        "trainers": [
-          "trainer_route_3_lass_janice",
-          "trainer_route_3_bug_catcher_colton",
-          "trainer_route_3_youngster_ben",
-          "trainer_route_3_bug_catcher_greg",
-          "trainer_route_3_lass_sally",
-          "trainer_route_3_youngster_calvin",
-          "trainer_route_3_bug_catcher_james",
-          "trainer_route_3_lass_robin"
-        ]
-      }
-    ]
-  },
-  {
-    "id": "route_4",
-    "name": "Route 4",
-    "zones": [
-      {
-        "id": "zone_route_4_west",
-        "connections": ["conn_route_3_route_4_border"],
-        "warps": ["warp_route_4_pokecenter_entrance", "warp_route_4_mtmoon_west_entrance"],
-        "encounter_sources": [],
-        "item_sources": ["item_pickup_route_4_between_the_rocks"],
-        "trainers": []
-      },
-      {
-        "id": "zone_route_4_east",
-        "connections": [
-          "conn_route_4_top_east_ledge",
-          "conn_route_4_east_easternmost_ledge"
-        ],
-        "warps": ["warp_route_4_mtmoon_east_entrance"],
-        "encounter_sources": [],
-        "item_sources": [
-          "item_pickup_route_4_east_of_mtmoon",
-          "item_pickup_route_4_south_of_road",
-          "item_pickup_route_4_north_of_road"
-        ],
-        "trainers": []
-      },
-      {
-        "id": "zone_route_4_easternmost",
-        "connections": [
-          "conn_route_4_east_easternmost_ledge",
-          "conn_cerulean_city_route_4_border"
-        ],
-        "warps": [],
-        "encounter_sources": ["enc_route_4_grass"],
-        "item_sources": [],
-        "trainers": []
-      },
-      {
-        "id": "zone_route_4_top",
-        "connections": [
-          "conn_route_4_top_east_ledge",
-          "conn_cerulean_city_cave_route_4_border"
-        ],
-        "warps": [],
-        "encounter_sources": [],
-        "item_sources": [],
-        "trainers": ["trainer_route_4_lass_crissy"]
-      },
-      {
-        "id": "zone_route_4_water",
-        "connections": ["conn_cerulean_city_water_route_4_border"],
-        "warps": [],
-        "encounter_sources": [
-          "enc_route_4_surf",
-          "enc_route_4_old_rod",
-          "enc_route_4_good_rod",
-          "enc_route_4_super_rod"
-        ],
-        "item_sources": [],
-        "trainers": []
-      }
-    ]
-  },
-  {
     "id": "route_22",
     "name": "Route 22",
     "zones": [
       {
         "id": "zone_route_22",
-        "connections": ["conn_viridian_city_route_22_border", "conn_route_22_land_water"],
-        "warps": ["warp_victory_road_gate_south_entrance"],
+        "connections": [
+          "conn_viridian_city_route_22_border",
+          "conn_route_22_land_water"
+        ],
+        "warps": [
+          "warp_victory_road_gate_south_entrance"
+        ],
         "encounter_sources": [
           "enc_route_22_grass",
           "enc_route_22_old_rod",
@@ -163,11 +105,15 @@
           "enc_route_22_super_rod"
         ],
         "item_sources": [],
-        "trainers": ["trainer_route_22_rival"]
+        "trainers": [
+          "trainer_route_22_rival"
+        ]
       },
       {
         "id": "zone_route_22_water",
-        "connections": ["conn_route_22_land_water"],
+        "connections": [
+          "conn_route_22_land_water"
+        ],
         "warps": [],
         "encounter_sources": [
           "enc_route_22_surf",
@@ -238,8 +184,13 @@
     "zones": [
       {
         "id": "zone_route_25",
-        "connections": ["conn_route_24_25_border", "conn_route_25_land_water"],
-        "warps": ["warp_route_25_sea_cottage_entrance"],
+        "connections": [
+          "conn_route_24_25_border",
+          "conn_route_25_land_water"
+        ],
+        "warps": [
+          "warp_route_25_sea_cottage_entrance"
+        ],
         "encounter_sources": [
           "enc_route_25_grass",
           "enc_route_25_old_rod",
@@ -266,13 +217,124 @@
       },
       {
         "id": "zone_route_25_water",
-        "connections": ["conn_route_25_land_water"],
+        "connections": [
+          "conn_route_25_land_water"
+        ],
         "warps": [],
         "encounter_sources": [
           "enc_route_25_surf",
           "enc_route_25_old_rod",
           "enc_route_25_good_rod",
           "enc_route_25_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  },
+  {
+    "id": "route_3",
+    "name": "Route 3",
+    "zones": [
+      {
+        "id": "zone_route_3",
+        "connections": [
+          "conn_pewter_city_route_3_border",
+          "conn_route_3_route_4_border"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_route_3_grass"
+        ],
+        "item_sources": [
+          "item_pickup_route_3_between_two_ledges"
+        ],
+        "trainers": [
+          "trainer_route_3_lass_janice",
+          "trainer_route_3_bug_catcher_colton",
+          "trainer_route_3_youngster_ben",
+          "trainer_route_3_bug_catcher_greg",
+          "trainer_route_3_lass_sally",
+          "trainer_route_3_youngster_calvin",
+          "trainer_route_3_bug_catcher_james",
+          "trainer_route_3_lass_robin"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "route_4",
+    "name": "Route 4",
+    "zones": [
+      {
+        "id": "zone_route_4_west",
+        "connections": [
+          "conn_route_3_route_4_border"
+        ],
+        "warps": [
+          "warp_route_4_pokecenter_entrance",
+          "warp_route_4_mtmoon_west_entrance"
+        ],
+        "encounter_sources": [],
+        "item_sources": [
+          "item_pickup_route_4_between_the_rocks"
+        ],
+        "trainers": []
+      },
+      {
+        "id": "zone_route_4_east",
+        "connections": [
+          "conn_route_4_top_east_ledge",
+          "conn_route_4_east_easternmost_ledge"
+        ],
+        "warps": [
+          "warp_route_4_mtmoon_east_entrance"
+        ],
+        "encounter_sources": [],
+        "item_sources": [
+          "item_pickup_route_4_east_of_mtmoon",
+          "item_pickup_route_4_south_of_road",
+          "item_pickup_route_4_north_of_road"
+        ],
+        "trainers": []
+      },
+      {
+        "id": "zone_route_4_easternmost",
+        "connections": [
+          "conn_route_4_east_easternmost_ledge",
+          "conn_cerulean_city_route_4_border"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_route_4_grass"
+        ],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_route_4_top",
+        "connections": [
+          "conn_route_4_top_east_ledge",
+          "conn_cerulean_city_cave_route_4_border"
+        ],
+        "warps": [],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": [
+          "trainer_route_4_lass_crissy"
+        ]
+      },
+      {
+        "id": "zone_route_4_water",
+        "connections": [
+          "conn_cerulean_city_water_route_4_border"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_route_4_surf",
+          "enc_route_4_old_rod",
+          "enc_route_4_good_rod",
+          "enc_route_4_super_rod"
         ],
         "item_sources": [],
         "trainers": []

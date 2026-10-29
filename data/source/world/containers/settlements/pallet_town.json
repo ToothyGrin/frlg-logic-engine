@@ -1,0 +1,43 @@
+[
+  {
+    "id": "pallet_town",
+    "name": "Pallet Town",
+    "zones": [
+      {
+        "id": "zone_pallet_town",
+        "connections": [
+          "conn_pallet_town_route_1_border",
+          "conn_pallet_town_land_water"
+        ],
+        "warps": [
+          "warp_players_house_entrance",
+          "warp_rivals_house_entrance",
+          "warp_oaks_lab_entrance"
+        ],
+        "encounter_sources": [
+          "enc_pallet_town_old_rod",
+          "enc_pallet_town_good_rod",
+          "enc_pallet_town_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_pallet_town_water",
+        "connections": [
+          "conn_pallet_town_land_water",
+          "conn_pallet_town_route_21_border"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_pallet_town_surf",
+          "enc_pallet_town_old_rod",
+          "enc_pallet_town_good_rod",
+          "enc_pallet_town_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

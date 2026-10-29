@@ -1,0 +1,58 @@
+[
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_1f_east_ladder_down",
+      "warp_mt_moon_b1f_east_corner_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_b1f_east_corner_ladder_down",
+      "warp_mt_moon_b2f_central_deadend_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_1f_center_ladder_down",
+      "warp_mt_moon_b1f_west_room_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_b1f_west_room_ladder_down",
+      "warp_mt_moon_b2f_northeast_deadend_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_1f_northwest_ladder_down",
+      "warp_mt_moon_b1f_west_corner_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_b1f_west_corner_ladder_down",
+      "warp_mt_moon_b2f_center_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_b1f_east_room_ladder_down",
+      "warp_mt_moon_b2f_northwest_ladder_up"
+    ]
+  },
+  {
+    "type": "normal",
+    "warps": [
+      "warp_mt_moon_b1f_east_room_ladder_up",
+      "warp_route_4_mtmoon_east_entrance"
+    ]
+  }
+]

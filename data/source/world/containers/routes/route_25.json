@@ -1,0 +1,56 @@
+[
+  {
+    "id": "route_25",
+    "name": "Route 25",
+    "zones": [
+      {
+        "id": "zone_route_25",
+        "connections": [
+          "conn_route_24_25_border",
+          "conn_route_25_land_water"
+        ],
+        "warps": [
+          "warp_route_25_sea_cottage_entrance"
+        ],
+        "encounter_sources": [
+          "enc_route_25_grass",
+          "enc_route_25_old_rod",
+          "enc_route_25_good_rod",
+          "enc_route_25_super_rod"
+        ],
+        "item_sources": [
+          "item_pickup_route_25_north_wall",
+          "item_pickup_route_25_southwest_flowers",
+          "item_pickup_route_25_northeast_flowers",
+          "item_pickup_route_25_east_of_cottage"
+        ],
+        "trainers": [
+          "trainer_route_25_hiker_franklin",
+          "trainer_route_25_hiker_wayne",
+          "trainer_route_25_youngster_joey",
+          "trainer_route_25_youngster_dan",
+          "trainer_route_25_picnicker_kelsey",
+          "trainer_route_25_hiker_nob",
+          "trainer_route_25_camper_flint",
+          "trainer_route_25_youngster_chad",
+          "trainer_route_25_lass_haley"
+        ]
+      },
+      {
+        "id": "zone_route_25_water",
+        "connections": [
+          "conn_route_25_land_water"
+        ],
+        "warps": [],
+        "encounter_sources": [
+          "enc_route_25_surf",
+          "enc_route_25_old_rod",
+          "enc_route_25_good_rod",
+          "enc_route_25_super_rod"
+        ],
+        "item_sources": [],
+        "trainers": []
+      }
+    ]
+  }
+]

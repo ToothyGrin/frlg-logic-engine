@@ -1,0 +1,11 @@
+[
+  {
+    "id": "conn_route_3_route_4_border",
+    "type": "border",
+    "zones": [
+      "zone_route_3",
+      "zone_route_4_west"
+    ],
+    "requires": null
+  }
+]
