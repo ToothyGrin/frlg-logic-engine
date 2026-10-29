@@ -121,7 +121,8 @@
         "connections": [
           "conn_pewter_city_route_2_border",
           "conn_pewter_city_route_3_border",
-          "conn_pewter_city_museum_backyard_cut_tree"
+          "conn_pewter_city_museum_backyard_cut_tree",
+          "conn_pewter_city_museum_backyard_ledge"
         ],
         "warps": [
           "warp_pewter_city_pokecenter_entrance",
@@ -137,7 +138,10 @@
       },
       {
         "id": "zone_pewter_city_museum_backyard",
-        "connections": ["conn_pewter_city_museum_backyard_cut_tree"],
+        "connections": [
+          "conn_pewter_city_museum_backyard_cut_tree",
+          "conn_pewter_city_museum_backyard_ledge"
+        ],
         "warps": ["warp_pewter_city_museum_side_entrance"],
         "encounter_sources": [],
         "item_sources": [],
