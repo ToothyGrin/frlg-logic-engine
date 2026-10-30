@@ -124,6 +124,7 @@ local function test_authored_world()
     local cut = Reachability.solve(world, "zone_players_house", {
         state_can_cut = true,
         state_event_brock_defeated = true,
+        state_event_ss_ticket_acquired = true,
     })
     assert(cut.zone_viridian_city_north, "Cut should provide the alternative path past the old man")
     assert(cut.zone_pewter_city_museum_backyard, "Cut should open the museum backyard")

@@ -24,6 +24,7 @@ See:
 - `docs/DECISIONS.md`
 - `docs/STATUS.md`
 - `docs/STATE.md`
+- `docs/PHASE2_SNAPSHOTS.md`
 - `docs/ENCOUNTERS.md`
 - `docs/ACQUISITIONS.md`
 - `docs/CHOICES.md`

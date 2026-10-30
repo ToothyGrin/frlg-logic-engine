@@ -315,7 +315,7 @@
         "id": "zone_route_4_top",
         "connections": [
           "conn_route_4_top_east_ledge",
-          "conn_cerulean_city_cave_route_4_border"
+          "conn_cerulean_city_northwest_riverbank_route_4_border"
         ],
         "warps": [],
         "encounter_sources": [],

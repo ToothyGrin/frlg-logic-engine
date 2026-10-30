@@ -15,6 +15,8 @@ local input_ids = {
     "state_event_mt_moon_miguel_defeated",
     "state_event_oaks_parcel_delivered",
     "state_event_brock_defeated",
+    "state_event_ss_ticket_acquired",
+    "state_event_cerulean_cave_guard_cleared",
 }
 
 function State.evaluate(player, world)

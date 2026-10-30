@@ -12,7 +12,7 @@
     "id": "conn_cerulean_city_southeast_cut_tree",
     "type": "cut_tree",
     "zones": [
-      "zone_cerulean_city",
+      "zone_cerulean_city_south_tree_approach",
       "zone_cerulean_city_southeast"
     ],
     "requires": "state_can_cut"
@@ -63,12 +63,39 @@
     "requires": "state_can_cut"
   },
   {
-    "id": "conn_cerulean_city_water_cave_border",
+    "id": "conn_cerulean_city_water_northwest_riverbank",
     "type": "water",
     "zones": [
       "zone_cerulean_city_water",
-      "zone_cerulean_city_cave"
+      "zone_cerulean_city_northwest_riverbank"
     ],
     "requires": "state_can_surf"
+  },
+  {
+    "id": "conn_cerulean_city_south_tree_approach_event",
+    "type": "border",
+    "zones": [
+      "zone_cerulean_city",
+      "zone_cerulean_city_south_tree_approach"
+    ],
+    "requires": "state_event_ss_ticket_acquired"
+  },
+  {
+    "id": "conn_cerulean_city_burgled_house_south_entrance_event",
+    "type": "border",
+    "zones": [
+      "zone_cerulean_city",
+      "zone_cerulean_city_burgled_house_south_entrance"
+    ],
+    "requires": "state_event_ss_ticket_acquired"
+  },
+  {
+    "id": "conn_cerulean_city_riverbank_cave_entrance_guard",
+    "type": "border",
+    "zones": [
+      "zone_cerulean_city_northwest_riverbank",
+      "zone_cerulean_city_cave_entrance"
+    ],
+    "requires": "state_event_cerulean_cave_guard_cleared"
   }
 ]

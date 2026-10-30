@@ -224,6 +224,9 @@ validation errors.
 
 ### Phase 2 — World Reachability Vertical Slice
 
+**Status:** Complete under the agreed topology/state model. See `PHASE2_SNAPSHOTS.md`
+for 23 full expected-Zone snapshots across all 71 in-scope Zones.
+
 Goal: prove the world solver on early Kanto.
 
 Initial scope:
@@ -352,9 +355,16 @@ Do not attempt to complete Kanto yet.
 
 The next milestone is:
 
-> **Review the completed exclusive-choice engine milestone and select the next task.**
+> **Phase 2's reachability exit condition is satisfied. Review the completed slice
+> before choosing the next milestone.**
 
-See `CHOICES.md` for the implemented source/group/state shapes, usage, and milestone scope.
+Solver mechanics, the agreed in-slice topology/requirements, Cerulean NPC barriers, and
+complete expected-Zone snapshots are implemented and tested. All 71 Zones in the ten-area
+scope have explicit positive and negative expectations across 23 scenarios. See
+`PHASE2_SNAPSHOTS.md`. No acquisition models, item definitions, evolution, UI, autotracking,
+or additional outside areas were needed to finish the remaining reachability work.
+
+See `CHOICES.md` for the separately implemented source/group/state shapes and usage.
 Manual state and future autotracking share one representation; actual memory tracking
 remains deferred. Fossil rewards and revival availability are not part of this milestone.
 

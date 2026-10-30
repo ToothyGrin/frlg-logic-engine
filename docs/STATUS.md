@@ -96,6 +96,14 @@ the Route 2 Diglett's Cave exit, and the Victory Road gate's north entrance.
 
 ## Next Task
 
+Phase 2's reachability exit condition is satisfied under the agreed topology/state model.
+All 71 Zones across the ten listed areas have hand-authored expected sets in 23 progression
+and alternate-start snapshots. Comparisons reject missing and unexpected Zones, validate
+scope coverage, and preserve previous results. The Cerulean NPC barrier correction and
+its focused tests remain in place. See `PHASE2_SNAPSHOTS.md` for scope and coverage.
+Review the completed slice before selecting more work; no acquisition/UI expansion is
+needed to close Phase 2.
+
 All O001–O008 design discussions are resolved in D032–D046. D044's typed Warp links
 and D045's source/build workflow are implemented and verified. The decision-review
 baseline was committed as `016b449`; use Git history for subsequent implementation commits.
@@ -121,7 +129,7 @@ lab/fossil groups, normalized manual state, readiness/access checks, mutual excl
 and original starter identity separated from rewards. Existing fossil references are
 reused without payloads. The builder validates twelve collections. Tests cover changes,
 removal, unknown state, alternatives, trade seeding, malformed data, and fresh results.
-See `CHOICES.md` for the API and evidence. Review before selecting further work;
+See `CHOICES.md` for the API and evidence. Return to the Phase 2 goal above;
 UI controls and actual autotracking remain deferred.
 
 The release target remains publication-ready complete single-player FRLG coverage,

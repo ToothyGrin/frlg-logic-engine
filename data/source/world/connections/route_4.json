@@ -27,11 +27,11 @@
     "requires": null
   },
   {
-    "id": "conn_cerulean_city_cave_route_4_border",
+    "id": "conn_cerulean_city_northwest_riverbank_route_4_border",
     "type": "border",
     "zones": [
       "zone_route_4_top",
-      "zone_cerulean_city_cave"
+      "zone_cerulean_city_northwest_riverbank"
     ],
     "requires": null
   }

@@ -8,7 +8,8 @@
         "connections": [
           "conn_cerulean_city_route_4_border",
           "conn_cerulean_city_route_24_border",
-          "conn_cerulean_city_southeast_cut_tree"
+          "conn_cerulean_city_south_tree_approach_event",
+          "conn_cerulean_city_burgled_house_south_entrance_event"
         ],
         "warps": [
           "warp_cerulean_city_pokecenter_entrance",
@@ -16,7 +17,6 @@
           "warp_cerulean_city_gym_entrance",
           "warp_cerulean_city_bike_shop_entrance",
           "warp_cerulean_city_traders_house_entrance",
-          "warp_cerulean_city_burgled_house_south_entrance",
           "warp_cerulean_city_backyard_house_south_entrance",
           "warp_cerulean_city_berry_powder_house_entrance",
           "warp_cerulean_city_old_mans_house_entrance"
@@ -55,7 +55,7 @@
       {
         "id": "zone_cerulean_city_water",
         "connections": [
-          "conn_cerulean_city_water_cave_border",
+          "conn_cerulean_city_water_northwest_riverbank",
           "conn_cerulean_city_water_route_4_border",
           "conn_cerulean_city_water_route_24_border"
         ],
@@ -70,12 +70,48 @@
         "trainers": []
       },
       {
-        "id": "zone_cerulean_city_cave",
+        "id": "zone_cerulean_city_northwest_riverbank",
         "connections": [
-          "conn_cerulean_city_cave_route_4_border",
-          "conn_cerulean_city_water_cave_border"
+          "conn_cerulean_city_northwest_riverbank_route_4_border",
+          "conn_cerulean_city_water_northwest_riverbank",
+          "conn_cerulean_city_riverbank_cave_entrance_guard"
         ],
         "warps": [],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_cerulean_city_south_tree_approach",
+        "connections": [
+          "conn_cerulean_city_south_tree_approach_event",
+          "conn_cerulean_city_southeast_cut_tree"
+        ],
+        "warps": [],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_cerulean_city_burgled_house_south_entrance",
+        "connections": [
+          "conn_cerulean_city_burgled_house_south_entrance_event"
+        ],
+        "warps": [
+          "warp_cerulean_city_burgled_house_south_entrance"
+        ],
+        "encounter_sources": [],
+        "item_sources": [],
+        "trainers": []
+      },
+      {
+        "id": "zone_cerulean_city_cave_entrance",
+        "connections": [
+          "conn_cerulean_city_riverbank_cave_entrance_guard"
+        ],
+        "warps": [
+          "warp_cerulean_city_cave_entrance"
+        ],
         "encounter_sources": [],
         "item_sources": [],
         "trainers": []

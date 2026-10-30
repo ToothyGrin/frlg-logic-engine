@@ -20,6 +20,8 @@ input; existing boolean-only callers can omit it.
 | `state_event_mt_moon_miguel_defeated` | Miguel defeated; fossil selection unlocked |
 | `state_event_oaks_parcel_delivered` | Oak's parcel-delivery/Pokédex scene completed; old man moved aside |
 | `state_event_brock_defeated` | Brock victory progression completed; Pewter's Route 3 guide removed |
+| `state_event_ss_ticket_acquired` | S.S. Ticket acquisition event completed; Cerulean's policeman and southern NPC blockers move aside |
+| `state_event_cerulean_cave_guard_cleared` | Cerulean Cave guard removed; permits access from the riverbank to the cave doorway |
 
 Only the boolean value `true` enables a fact. Missing, false, and nonboolean values become
 false. Unsupported keys are ignored. This is a small supported-input list, not a complete
@@ -47,7 +49,19 @@ evaluator; those cases guard against introducing an automatic substitute for the
 
 ## Derived Outputs
 
-The returned table contains the twelve normalized boolean inputs plus:
+Cerulean's ticket predicate represents `FLAG_GOT_SS_TICKET`, not current Bag contents
+or merely helping Bill (FRLG-L002). Both the burgled-house south doorway and the southern
+tree approach have their own ticket-gated Connections. The latter is followed by a
+separate Cut Connection, so the direct tree route requires both conditions. The house
+provides an alternative route to the southeast after the ticket event, without Cut.
+
+The cave guard predicate is currently supplied manually. It represents guard removal,
+not an automatic inference from winning the Indigo League. The exact post-game
+derivation remains separate research under FRLG-L016. The new doorway Zone is distinct
+from the renamed northwest riverbank; existing Surf/Route 4 approaches retain their
+requirements. Its exterior Warp remains unpaired until the cave interior is authored.
+
+The returned table contains the fourteen normalized boolean inputs plus:
 
 ```text
 state_can_cut = state_has_cascade_badge AND state_has_hm01_cut
