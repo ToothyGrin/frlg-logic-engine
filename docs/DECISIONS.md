@@ -407,7 +407,7 @@ derived acquisition. Cross-game connectivity is an example of external acquisiti
 
 ### D028 — Starter Choice Is Custom Player State
 
-**Status:** Accepted
+**Status:** Superseded in representation by D049 (30 October 2026); mutual exclusivity retained
 
 The initial starter choice is represented as dedicated mutually exclusive player state
 rather than a generic Pokémon-choice source object.
@@ -420,6 +420,10 @@ starter_choice = bulbasaur | charmander | squirtle
 
 A reusable choice abstraction may be introduced later only if concrete game or mod data
 justifies it.
+
+D049 accepts that abstraction for the concrete lab-starter and Mt. Moon fossil choices.
+Their selected source is authoritative; starter-dependent state is derived from its
+original slot, separately from the reward species.
 
 ---
 
@@ -894,6 +898,42 @@ Game Corner catalogues remain unplaced until Celadon world authoring. Bike Vouch
 and gift availability were explicitly excluded. The Powder Jar man and Running Shoes
 aide have Zone references only, like existing draft gifts; rewards remain unspecified
 and gift references stay unevaluated for now.
+
+---
+
+### D049 — Individual Sources Share Explicit Exclusive Choice Groups
+
+**Status:** Accepted (30 October 2026); manual engine milestone implemented
+
+Represent each physical starter ball and fossil pickup as an independent, stable source.
+Group alternatives in a separate object containing `id`, `option_type`, `options` (source
+IDs), `max_selections: 1`, and optional readiness `requires`. The lab uses `pokemon_gift` options; Mt. Moon uses
+`item_pickup` options. Source identity follows the original selectable slot, not a reward
+that a randomiser might replace. Preserve existing homogeneous Zone source arrays.
+
+Use `player.choices[choice_id]` with `status` equal to `unknown`, `unselected`, or
+`selected`. Only selected state carries a `source` ID, which must belong to the group.
+Manual controls and future autotracking populate this same authoritative representation.
+Derive starter-dependent facts from the selected original slot and received Pokémon from
+its reward data. Do not maintain independently editable starter flags.
+
+Show unresolved eligible options as alternatives, without adding all rewards to the
+simultaneously obtainable set. Preserve the selected acquisition after selection; exclude
+unchosen options through this choice mechanism. Other independent sources remain valid.
+
+Keep memory addresses, ROM mappings, decoding, and connection handling in a separate
+adapter. Gate starter-variable decoding on confirmed starter acquisition. Use persistent
+fossil acquisition flags rather than current inventory or object visibility. Rebuild
+state from coherent snapshots after save changes/rewinds instead of accumulating stale
+choices. Unknown observations must not silently become a concrete selection.
+
+Implementation reuses existing west/east fossil references in place of the draft's
+numbered placeholders. Only known-unselected ready/reachable options are alternatives;
+confirmed selected gifts remain acquired after leaving. See `CHOICES.md` for the API,
+original-object mapping, examples, and evidence. Fossil reward payloads, item
+definitions, revival availability, and Professor Oak evolution logic remain deferred;
+this decision records source references and choice relationships without implementing
+those domains. General gift payloads outside the starter example still need definition.
 
 ---
 

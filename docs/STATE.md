@@ -1,7 +1,8 @@
 # Player State and Capability Evaluation
 
-`State.evaluate(player)` in `logic/state.lua` turns supported player facts into the
-boolean state table consumed by `Reachability.solve`.
+`State.evaluate(player, world)` in `logic/state.lua` turns supported player facts into
+evaluated state for reachability and acquisitions. Supply the indexed world with choice
+input; existing boolean-only callers can omit it.
 
 ## Supported Inputs
 
@@ -15,6 +16,8 @@ boolean state table consumed by `Reachability.solve`.
 | `state_has_good_rod` | Good Rod acquired |
 | `state_has_super_rod` | Super Rod acquired |
 | `state_has_coin_case` | Coin Case acquired; enables reachable Game Corner prize windows |
+| `state_event_oak_ready_for_starter` | Oak's lab is ready for starter selection |
+| `state_event_mt_moon_miguel_defeated` | Miguel defeated; fossil selection unlocked |
 | `state_event_oaks_parcel_delivered` | Oak's parcel-delivery/Pokédex scene completed; old man moved aside |
 | `state_event_brock_defeated` | Brock victory progression completed; Pewter's Route 3 guide removed |
 
@@ -44,7 +47,7 @@ evaluator; those cases guard against introducing an automatic substitute for the
 
 ## Derived Outputs
 
-The returned table contains the ten normalized inputs plus:
+The returned table contains the twelve normalized boolean inputs plus:
 
 ```text
 state_can_cut = state_has_cascade_badge AND state_has_hm01_cut
@@ -62,6 +65,12 @@ Surf capability separately gates Surf encounters and water Connections.
 
 Inputs named `state_can_cut` or `state_can_surf` are ignored; both outputs are recalculated
 from their authoritative facts. Party-related inputs are unsupported and have no effect.
+
+The state also contains fresh `choices` and derived `starter_choice`. Authored groups
+default to `unknown`; selected sources must belong to their group. Unsupported group
+IDs are ignored like unsupported boolean keys; malformed known group states fail.
+Supplied `player.starter_choice` cannot override the original identity derived from a
+selected slot. Supply the world when `player.choices` is present. See `CHOICES.md`.
 
 ## Usage
 

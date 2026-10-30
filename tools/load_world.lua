@@ -39,5 +39,10 @@ assert(available.species_available.species_pidgey, "Route 1 Pidgey should be ava
 assert(available.species_available.species_magikarp == nil, "Initial fishing should require a rod")
 local acquisitions = Acquisitions.available(world, reachable, state, "firered")
 assert(acquisitions.item_vendors_by_id.item_vendor_viridian_city_pokemart == nil, "Parcel delivery must precede shopping")
+local chosen = State.evaluate({choices = {
+    choice_oaks_lab_starter = {status = "selected", source = "pokemon_gift_oaks_lab_starter_ball_1"},
+}}, world)
+local with_starter = Acquisitions.available(world, reachable, chosen, "firered")
+assert(with_starter.species_available.species_bulbasaur and not with_starter.species_available.species_charmander)
 
-print("World loaded; sample lookups, reachability, and encounter availability passed.")
+print("World loaded; sample lookups, reachability, acquisitions, and starter choice passed.")

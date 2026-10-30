@@ -1,5 +1,6 @@
 local Encounters = require("logic.encounters")
 local Versions = require("logic.versions")
+local Choices = require("logic.choices")
 
 local Acquisitions = {}
 
@@ -81,6 +82,8 @@ function Acquisitions.available(world, reachable, state, version)
             end
         end
     end
+
+    Choices.apply(world, reachable, state, result)
 
     local trades = collect_sources(world, reachable, state, version, "pokemon_trades")
     local changed = true

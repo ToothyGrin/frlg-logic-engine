@@ -1,3 +1,4 @@
+local Choices = require("logic.choices")
 local State = {}
 
 -- Only supported authoritative facts are copied; capabilities are always derived.
@@ -10,11 +11,13 @@ local input_ids = {
     "state_has_good_rod",
     "state_has_super_rod",
     "state_has_coin_case",
+    "state_event_oak_ready_for_starter",
+    "state_event_mt_moon_miguel_defeated",
     "state_event_oaks_parcel_delivered",
     "state_event_brock_defeated",
 }
 
-function State.evaluate(player)
+function State.evaluate(player, world)
     assert(type(player) == "table", "Player state must be a table")
 
     local state = {}
@@ -30,6 +33,8 @@ function State.evaluate(player)
     state.state_can_surf = state.state_has_soul_badge
         and state.state_has_hm03_surf
 
+    state.choices = Choices.normalize(world, player.choices)
+    state.starter_choice = Choices.starter_identity(state.choices)
     return state
 end
 

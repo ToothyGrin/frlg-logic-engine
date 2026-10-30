@@ -1,0 +1,13 @@
+[
+  {
+    "id": "choice_oaks_lab_starter",
+    "option_type": "pokemon_gift",
+    "options": [
+      "pokemon_gift_oaks_lab_starter_ball_1",
+      "pokemon_gift_oaks_lab_starter_ball_2",
+      "pokemon_gift_oaks_lab_starter_ball_3"
+    ],
+    "max_selections": 1,
+    "requires": "state_event_oak_ready_for_starter"
+  }
+]

@@ -26,6 +26,7 @@ See:
 - `docs/STATE.md`
 - `docs/ENCOUNTERS.md`
 - `docs/ACQUISITIONS.md`
+- `docs/CHOICES.md`
 - `docs/FRLG_VANILLA_LOGIC_REFERENCE.md`
 
 ## Development Tools
@@ -93,4 +94,11 @@ Authoring helpers are located under `tools/`.
 reachable Pokémon/item vendors, and eligible NPC trade chains. Its generated sources live
 under `data/acquisitions/`; author area arrays under `data/source/acquisitions/` and use
 the same builder. Nine initial sources are loaded; the three Game Corner windows remain
-unplaced until Celadon is authored. Gift references remain unevaluated draft metadata.
+unplaced until Celadon is authored. Item-gift references remain unevaluated draft metadata.
+
+Exclusive choice groups now handle three starter gift sources and the existing fossil
+pickup references. Use `State.evaluate(player, world)` with `player.choices` to validate
+manual selection. Results report alternatives separately from obtainable species, keep
+original starter identity independent of rewards, and preserve confirmed choices after
+leaving their location. Fossil reward payloads and actual autotracking remain deferred.
+See `docs/CHOICES.md` for the state contract, readiness facts, and examples.

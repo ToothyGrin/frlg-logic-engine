@@ -57,11 +57,16 @@ def interactive() -> None:
         zones = csv(prompt("Zone ids (comma-separated)", f"zone_{oid}"))
         dump({"id": oid, "name": name, "zones": [zone_object(z) for z in zones]})
     elif kind == "choice":
+        choice_id = prompt("Choice id", "choice_")
+        option_type = prompt("Option type (item_pickup / pokemon_gift)", "item_pickup")
+        if option_type not in {"item_pickup", "pokemon_gift"}:
+            raise SystemExit(f"Unknown choice option type: {option_type}")
         dump({
-            "id": prompt("Choice id", "choice_"),
-            "option_type": prompt("Option type", "item_source"),
+            "id": choice_id,
+            "option_type": option_type,
             "options": csv(prompt("Option ids (comma-separated)")),
-            "max_selections": int(prompt("Maximum selections", "1")),
+            "max_selections": 1,
+            "requires": (lambda v: None if v.lower() in {"", "null", "none"} else v)(prompt("Requirement", "null")),
         })
     else:
         raise SystemExit(f"Unknown generator type: {kind}")
@@ -93,9 +98,10 @@ def main() -> None:
 
     p = sub.add_parser("choice")
     p.add_argument("--id", required=True)
-    p.add_argument("--option-type", choices=["item_source", "pokemon_source"], required=True)
+    p.add_argument("--option-type", choices=["item_pickup", "pokemon_gift"], required=True)
     p.add_argument("--options", nargs="+", required=True)
-    p.add_argument("--max-selections", type=int, default=1)
+    p.add_argument("--max-selections", type=int, choices=[1], default=1)
+    p.add_argument("--requires", default=None)
 
     args = parser.parse_args()
     if args.command is None:
@@ -109,7 +115,7 @@ def main() -> None:
     elif args.command == "container":
         dump({"id": args.id, "name": args.name, "zones": [zone_object(z) for z in args.zones]})
     elif args.command == "choice":
-        dump({"id": args.id, "option_type": args.option_type, "options": args.options, "max_selections": args.max_selections})
+        dump({"id": args.id, "option_type": args.option_type, "options": args.options, "max_selections": args.max_selections, "requires": args.requires})
 
 
 if __name__ == "__main__":

@@ -352,10 +352,11 @@ Do not attempt to complete Kanto yet.
 
 The next milestone is:
 
-> **Review the completed nine-source trade/vendor milestone and choose the next
-> availability or world-authoring milestone.**
+> **Review the completed exclusive-choice engine milestone and select the next task.**
 
-The practical next steps are:
+See `CHOICES.md` for the implemented source/group/state shapes, usage, and milestone scope.
+Manual state and future autotracking share one representation; actual memory tracking
+remains deferred. Fossil rewards and revival availability are not part of this milestone.
 
 The nine-source scope is complete: two NPC trades, the Route 4 salesman, three marts,
 and three unplaced Game Corner windows. `docs/ACQUISITIONS.md` documents the runtime API,

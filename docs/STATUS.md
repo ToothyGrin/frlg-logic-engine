@@ -67,8 +67,8 @@ Run from the project root:
 - `python -m unittest discover -s tests -p "test_*.py"`
 - `python tools/validate_world.py data/world`
 
-Both Lua commands and all 33 Python builder/generator/schema tests passed. The generated files match
-their sources. World validation reported 0 errors and 6 warnings for
+Both Lua commands and all 41 Python builder/generator/schema tests passed. The generated
+files match their sources. World validation reported 0 errors and 6 warnings for
 not-yet-authored destinations: Route 21 water, Route 5, Route 5 center, Route 9,
 the Route 2 Diglett's Cave exit, and the Victory Road gate's north entrance.
 
@@ -78,7 +78,7 @@ the Route 2 Diglett's Cave exit, and the Victory Road gate's north entrance.
 - The Python validator handles topology, wild schemas, and references before generation.
   Other acquisition schemas and species-catalogue reference resolution remain future work.
 - The Lua loader does not yet perform comprehensive validation.
-- State evaluation currently covers Cut, Surf, rods, Coin Case, and the graph's parcel/Brock
+- State evaluation currently covers Cut, Surf, rods, Coin Case, choices, readiness, and parcel/Brock
   inputs. HM and badge facts are supplied manually. Move knowledge and Pokémon
   compatibility are intentionally excluded by D031. This is not a complete vanilla
   progression model.
@@ -88,8 +88,9 @@ the Route 2 Diglett's Cave exit, and the Victory Road gate's north entrance.
   authored yet. It rejects unknown starting Zones and missing referenced Connections.
 - Wild availability follows authored Zone references; complete shore and world authoring
   remains unfinished. Route 23's tables are present but not placed in the graph.
-- Items from vendors and eligible trade-held items are evaluated. Wild held items,
-  other Pokémon acquisition, evolution, gifts/pickups, and trainer logic are not evaluated.
+- Vendor items, eligible trade-held items, and chosen starter gifts are evaluated.
+  Fossils have choice metadata only. Wild held items, other Pokémon acquisition,
+  evolution, item gifts/pickups, and trainer logic are not evaluated.
 - Drop mechanics are covered by fixtures; Mansion's actual drop records and tile
   activation behaviour still need verification during world authoring.
 
@@ -114,6 +115,14 @@ These remain metadata without rewards or a runtime reader, preserving NPC locati
 future item-randomiser support. The milestone has no remaining implementation work.
 Detailed item definitions and item-dependent evolution checks are deferred beyond v1
 for later Professor Oak mode work.
+
+The exclusive acquisition choice milestone (D049) is complete: three starter sources,
+lab/fossil groups, normalized manual state, readiness/access checks, mutual exclusion,
+and original starter identity separated from rewards. Existing fossil references are
+reused without payloads. The builder validates twelve collections. Tests cover changes,
+removal, unknown state, alternatives, trade seeding, malformed data, and fresh results.
+See `CHOICES.md` for the API and evidence. Review before selecting further work;
+UI controls and actual autotracking remain deferred.
 
 The release target remains publication-ready complete single-player FRLG coverage,
 including Sevii and post-game, subject to the agreed exclusions. Detailed acquisition

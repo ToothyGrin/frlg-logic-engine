@@ -1,3 +1,4 @@
+local Choices = require("logic.choices")
 local World = {}
 
 local function add_unique(index, id, value)
@@ -53,6 +54,8 @@ function World.build_indexes(data)
         end
     end
 
+    Choices.build_indexes(world, data)
+
     for _, connection in ipairs(data.connections) do
         -- Connection lookup:
         add_unique(world.connections_by_id, connection.id, connection)
@@ -102,6 +105,8 @@ function World.load(read_json)
         pokemon_trades = read_json("data/acquisitions/pokemon_trades.json"),
         pokemon_vendors = read_json("data/acquisitions/pokemon_vendors.json"),
         item_vendors = read_json("data/acquisitions/item_vendors.json"),
+        pokemon_gifts = read_json("data/acquisitions/pokemon_gifts.json"),
+        choices = read_json("data/acquisitions/choices.json"),
     }
 
     for _, path in ipairs(container_paths) do

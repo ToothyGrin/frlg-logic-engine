@@ -4,6 +4,10 @@ Approved 30 October 2026 as D047–D048. The nine-source trade/vendor milestone 
 implemented: two trades, two Pokémon vendors, and five item vendors. Examples below
 document the payloads used by the runtime collections.
 
+The subsequent exclusive-choice milestone adds starter gifts and fossil-choice metadata.
+Those use the same acquisition result through `Choices.apply` before trade closure;
+see `CHOICES.md` for selection states and the `pokemon_gifts_by_id`/`choices_by_id` outputs.
+
 ## NPC trades
 
 ```json
@@ -161,7 +165,7 @@ The proposed prize-room Zone references each window once:
 
 Area arrays under `data/source/acquisitions/{pokemon_trades,pokemon_vendors,item_vendors}/`
 build into matching `data/acquisitions/*.json` collections. The common builder validates
-all ten runtime collections before writing any output. Typed Zone references must resolve
+all twelve runtime collections before writing any output. Typed Zone references must resolve
 even in draft mode; missing arrays mean no sources. Shared sources can have several access
 Zones. Unplaced source catalogues are allowed but cannot become available.
 

@@ -316,16 +316,16 @@ Examples include:
 - story flags;
 - the starter choice.
 
-Starter selection is a custom mutually exclusive state rather than a general-purpose
-Pokémon-choice source object.
+D049 replaces D028's custom starter representation with individual selectable sources
+and shared exclusive choice groups. `player.choices[choice_id]` records `unknown`,
+`unselected`, or `selected` state; selected state names exactly one source in the group.
+The lab starter and Mt. Moon fossil are the first two concrete groups. See `CHOICES.md`.
 
-Conceptually:
-
-```text
-starter_choice = bulbasaur | charmander | squirtle
-```
-
-The exact storage representation may be adapted to EmoTracker later.
+Manual controls and future autotracking populate the same state. Starter-dependent facts
+are derived from the selected original slot, independently of its reward species.
+Memory decoding belongs in an adapter, outside canonical world/source data. The manual
+engine milestone is implemented. Chosen starter gifts seed species availability and trade
+chains; fossils remain source references and choice metadata without reward payloads.
 
 ### Derived Capability State
 

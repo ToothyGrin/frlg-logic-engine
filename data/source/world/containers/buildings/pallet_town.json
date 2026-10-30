@@ -49,6 +49,11 @@
         ],
         "trainers": [
           "trainer_oaks_lab_rival"
+        ],
+        "pokemon_gifts": [
+          "pokemon_gift_oaks_lab_starter_ball_1",
+          "pokemon_gift_oaks_lab_starter_ball_2",
+          "pokemon_gift_oaks_lab_starter_ball_3"
         ]
       }
     ]

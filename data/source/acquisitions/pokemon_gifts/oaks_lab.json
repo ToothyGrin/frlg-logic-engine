@@ -1,0 +1,26 @@
+[
+  {
+    "id": "pokemon_gift_oaks_lab_starter_ball_1",
+    "pokemon": "species_bulbasaur",
+    "levels": [
+      5
+    ],
+    "repeatable": false
+  },
+  {
+    "id": "pokemon_gift_oaks_lab_starter_ball_2",
+    "pokemon": "species_squirtle",
+    "levels": [
+      5
+    ],
+    "repeatable": false
+  },
+  {
+    "id": "pokemon_gift_oaks_lab_starter_ball_3",
+    "pokemon": "species_charmander",
+    "levels": [
+      5
+    ],
+    "repeatable": false
+  }
+]

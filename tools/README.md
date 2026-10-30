@@ -23,8 +23,12 @@ The six world JSON files and `data/encounters/wild.json` stay at their runtime p
 do not edit them directly. All collections are validated before any output is written.
 The same builder also assembles three `data/source/acquisitions/` categories into
 `data/acquisitions/`: `pokemon_trades`, `pokemon_vendors`, and `item_vendors`.
-There are now ten generated collections. Trade/vendor schema and typed-reference errors
+There are now twelve generated collections. Trade/vendor schema and typed-reference errors
 prevent all generation, including in draft mode. See `docs/ACQUISITIONS.md` for the API.
+Starter gifts and groups are authored under `data/source/acquisitions/pokemon_gifts/`
+and `data/source/acquisitions/choices/`, producing matching runtime collections. Validation
+checks gift payloads, option types, placed source membership, uniqueness, and one selection.
+Fossil options resolve existing Zone references without requiring reward payloads.
 
 Run the builder regression tests:
 
@@ -77,6 +81,16 @@ encounter references are errors in draft mode too. The validator reads the sibli
 `encounters/wild.json` collection alongside `world/`; see `docs/ENCOUNTERS.md`.
 
 ## Generator
+
+Generate an exclusive source-choice group:
+
+```text
+python tools/generate_entry.py choice --id choice_example --option-type item_pickup --options item_pickup_a item_pickup_b --requires state_ready
+```
+
+Supported option types are `item_pickup` and `pokemon_gift`; `max_selections` is 1.
+The interactive generator and template use the same shape. Requirements are optional.
+The builder verifies source declarations; the generator only prints a snippet.
 
 Generate a normal Warp link (the default) or a one-way drop:
 
